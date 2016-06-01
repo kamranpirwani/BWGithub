@@ -6,17 +6,18 @@
 //  Copyright © 2016 Kamran Pirwani. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "BWAppDelegate.h"
+#import "BWAppController.h"
 
-@interface AppDelegate ()
+@interface BWAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation BWAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [BWAppController initializeApplication];
     return YES;
 }
 
