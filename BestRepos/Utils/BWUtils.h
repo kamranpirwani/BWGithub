@@ -18,5 +18,6 @@
 + (void)logError:(NSString *)error;
 
 + (NSDictionary *)dictionaryFromJSONFileNamed:(NSString *)fileName;
++ (NSDictionary *)dictionaryFromPlistFileNamed:(NSString *)fileName;
 
 @end

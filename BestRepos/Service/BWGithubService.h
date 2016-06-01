@@ -11,6 +11,9 @@
 @class BWGithubRepositoryModel;
 @class BWGithubContributorModel;
 
+typedef NS_ENUM(NSInteger, BWGithubServiceErrorCode) {
+    kBWGithubServiceErrorCodeUnauthorized = -1101
+};
 @interface BWGithubService : NSObject
 
 + (instancetype)sharedInstance;

@@ -45,4 +45,10 @@ static NSString *BWUtilsJsonSuffix = @"json";
     return jsonDictionary;
 }
 
++ (NSDictionary *)dictionaryFromPlistFileNamed:(NSString *)fileName {
+    NSString* path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
+    NSDictionary *plistDictionary = [NSDictionary dictionaryWithContentsOfFile:path];
+    return plistDictionary;
+}
+
 @end

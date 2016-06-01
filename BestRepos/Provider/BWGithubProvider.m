@@ -19,34 +19,6 @@ static NSString *BWGithubProviderOrderKey = @"order";
 
 @implementation BWGithubProvider
 
-- (void)getMostPopularRepositoriesAndTheirTopContributors:(void(^)(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories))callback {
-    __weak typeof(self) weakSelf = self;
-    [self getMostPopularRepositories:^(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories) {
-        //dispatch back to the background thread
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            dispatch_group_t serviceGroup = dispatch_group_create();
-            
-            for (BWGithubRepositoryModel *repository in repositories) {
-                //increment task
-                dispatch_group_enter(serviceGroup);
-                [weakSelf getTopContributorsFromRepository:repository callback:^(NSError *error, NSArray<BWGithubContributorModel *> *contributors) {
-                    //decrement task
-                    dispatch_group_leave(serviceGroup);
-                    repository.topContributors = contributors;
-                }];
-            }
-            //wait until all of our network calls have completed
-            dispatch_group_wait(serviceGroup,DISPATCH_TIME_FOREVER);
-            //dispatch back to main thread
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if (callback) {
-                    callback(error, repositories);
-                }
-            });
-        });
-    }];
-}
-
 - (void)getMostPopularRepositories:(void(^)(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories))callback {
     
     [BWUtils assertCondition:(callback != nil)
