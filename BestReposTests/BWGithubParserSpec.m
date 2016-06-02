@@ -40,7 +40,7 @@ static const NSTimeInterval kBWGithubParserSpecTimeout = 30.f;
     
     BWGithubRepositoryModel *repositoryModel = [self getExpectedRepositoryModel];
 
-    [_mockProvider getMostPopularRepositories:^(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories) {
+    [_mockProvider searchForRepositoryWithQuery:nil callback:^(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories) {
         XCTAssert(repositories.count == 1, @"unexpected repository count in mock json");
         BWGithubRepositoryModel *responseModel = [repositories firstObject];
         XCTAssertEqual(repositoryModel.identifier, responseModel.identifier, @"unexpected repository id in mock json");

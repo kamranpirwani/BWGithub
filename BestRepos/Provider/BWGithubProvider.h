@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "BWBaseProvider.h"
 #import "BWGithubProviderProtocol.h"
+#import "BWGithubSearchQuery.h"
 
 @interface BWGithubProvider : BWBaseProvider <BWGithubProviderProtocol>
 

@@ -17,9 +17,7 @@
 
 static const NSTimeInterval kBWGithubServiceSpecTimeout = 60.f;
 
-@implementation BWGithubServiceSpec {
-
-}
+@implementation BWGithubServiceSpec
 
 - (void)setUp {
     [super setUp];

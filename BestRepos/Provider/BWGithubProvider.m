@@ -16,10 +16,14 @@ static NSString *BWGithubProviderQueryKey = @"q";
 static NSString *BWGithubProviderSortKey = @"sort";
 static NSString *BWGithubProviderOrderKey = @"order";
 
-
 @implementation BWGithubProvider
 
-- (void)getMostPopularRepositories:(void(^)(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories))callback {
+- (void)searchForRepositoryWithQuery:(BWGithubSearchQuery *)searchQuery
+                            callback:(void(^)(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories))callback {
+    
+    [BWUtils assertCondition:(searchQuery != nil)
+                     message:@"The search query must be non-nil"
+                       class:[self class] method:_cmd];
     
     [BWUtils assertCondition:(callback != nil)
                      message:@"The callback must be non-nil"
@@ -27,10 +31,20 @@ static NSString *BWGithubProviderOrderKey = @"order";
     
     NSString *requestMethod = @"GET";
     NSString *path = @"https://api.github.com/search/repositories";
+    
+    NSString *defaultSearchQuery = @"stars:>1";
+    NSString *combinedSearchQuery = nil;
+    
+    if (searchQuery.keywords.length > 0) {
+        combinedSearchQuery = [NSString stringWithFormat:@"%@+%@", searchQuery.keywords, defaultSearchQuery];
+    } else {
+        combinedSearchQuery = defaultSearchQuery;
+    }
+    
     NSDictionary *params = @{
-                             BWGithubProviderQueryKey : @"stars:>1",
-                             BWGithubProviderSortKey : @"stars",
-                             BWGithubProviderOrderKey : @"desc"
+                             BWGithubProviderQueryKey : combinedSearchQuery,
+                             BWGithubProviderSortKey : searchQuery.sortFieldString,
+                             BWGithubProviderOrderKey : searchQuery.sortOrderString
                              };
     
     [self requestWithMethod:requestMethod
@@ -45,6 +59,8 @@ static NSString *BWGithubProviderOrderKey = @"order";
                            callback(error, repositories);
                        }
                    }];
+
+    
 }
 
 - (void)getTopContributorsFromRepository:(BWGithubRepositoryModel *)repository

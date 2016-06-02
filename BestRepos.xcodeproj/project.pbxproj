@@ -26,7 +26,6 @@
 		FE2B33661CFD46E200E6CECD /* BWGithubProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B33651CFD46E200E6CECD /* BWGithubProvider.m */; };
 		FE2B33691CFD46F100E6CECD /* BWGithubMockProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B33681CFD46F100E6CECD /* BWGithubMockProvider.m */; };
 		FE2B33711CFD474200E6CECD /* BWGithubParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B33701CFD474200E6CECD /* BWGithubParser.m */; };
-		FE2B33751CFD47CD00E6CECD /* BWServiceLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B33741CFD47CD00E6CECD /* BWServiceLocator.m */; };
 		FE2B33781CFD483100E6CECD /* BWAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B33771CFD483100E6CECD /* BWAppController.m */; };
 		FE2B337C1CFD584800E6CECD /* BWUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B337B1CFD584800E6CECD /* BWUtils.m */; };
 		FE2B337F1CFE7D2500E6CECD /* BWGithubContributorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B337E1CFE7D2500E6CECD /* BWGithubContributorModel.m */; };
@@ -42,7 +41,10 @@
 		FE63385D1CFECCD9005DE1B5 /* BWProviderUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6338361CFE8954005DE1B5 /* BWProviderUtils.m */; };
 		FE63385F1CFEEB9C005DE1B5 /* BWGithubServiceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = FE63385E1CFEEB9C005DE1B5 /* BWGithubServiceSpec.m */; };
 		FE6338641CFF58B2005DE1B5 /* Credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE6338631CFF58B2005DE1B5 /* Credentials.plist */; };
-		FE63386A1CFF5A01005DE1B5 /* BWGithubAuthCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6338691CFF5A01005DE1B5 /* BWGithubAuthCredentials.m */; };
+		FE6338761CFFAA29005DE1B5 /* BWGithubAuthCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6338711CFFAA29005DE1B5 /* BWGithubAuthCredentials.m */; };
+		FE6338771CFFAA29005DE1B5 /* BWServiceLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6338751CFFAA29005DE1B5 /* BWServiceLocator.m */; };
+		FE63387A1CFFAA35005DE1B5 /* BWGithubSearchQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6338791CFFAA35005DE1B5 /* BWGithubSearchQuery.m */; };
+		FE63387B1CFFB3E9005DE1B5 /* BWGithubSearchQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6338791CFFAA35005DE1B5 /* BWGithubSearchQuery.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,8 +104,6 @@
 		FE2B336A1CFD470700E6CECD /* BWGithubProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubProviderProtocol.h; sourceTree = "<group>"; };
 		FE2B336F1CFD474200E6CECD /* BWGithubParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubParser.h; sourceTree = "<group>"; };
 		FE2B33701CFD474200E6CECD /* BWGithubParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWGithubParser.m; sourceTree = "<group>"; };
-		FE2B33731CFD47CD00E6CECD /* BWServiceLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWServiceLocator.h; sourceTree = "<group>"; };
-		FE2B33741CFD47CD00E6CECD /* BWServiceLocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWServiceLocator.m; sourceTree = "<group>"; };
 		FE2B33761CFD483100E6CECD /* BWAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWAppController.h; sourceTree = "<group>"; };
 		FE2B33771CFD483100E6CECD /* BWAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWAppController.m; sourceTree = "<group>"; };
 		FE2B337A1CFD584800E6CECD /* BWUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWUtils.h; sourceTree = "<group>"; };
@@ -123,8 +123,12 @@
 		FE63385B1CFECA06005DE1B5 /* BWGithubProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWGithubProviderSpec.m; sourceTree = "<group>"; };
 		FE63385E1CFEEB9C005DE1B5 /* BWGithubServiceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWGithubServiceSpec.m; sourceTree = "<group>"; };
 		FE6338631CFF58B2005DE1B5 /* Credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.plist; sourceTree = "<group>"; };
-		FE6338681CFF5A01005DE1B5 /* BWGithubAuthCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubAuthCredentials.h; sourceTree = "<group>"; };
-		FE6338691CFF5A01005DE1B5 /* BWGithubAuthCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWGithubAuthCredentials.m; sourceTree = "<group>"; };
+		FE6338701CFFAA29005DE1B5 /* BWGithubAuthCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubAuthCredentials.h; sourceTree = "<group>"; };
+		FE6338711CFFAA29005DE1B5 /* BWGithubAuthCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWGithubAuthCredentials.m; sourceTree = "<group>"; };
+		FE6338741CFFAA29005DE1B5 /* BWServiceLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWServiceLocator.h; sourceTree = "<group>"; };
+		FE6338751CFFAA29005DE1B5 /* BWServiceLocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWServiceLocator.m; sourceTree = "<group>"; };
+		FE6338781CFFAA35005DE1B5 /* BWGithubSearchQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubSearchQuery.h; sourceTree = "<group>"; };
+		FE6338791CFFAA35005DE1B5 /* BWGithubSearchQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWGithubSearchQuery.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,8 +334,9 @@
 		FE2B33721CFD47B500E6CECD /* Tech */ = {
 			isa = PBXGroup;
 			children = (
-				FE2B33731CFD47CD00E6CECD /* BWServiceLocator.h */,
-				FE2B33741CFD47CD00E6CECD /* BWServiceLocator.m */,
+				FE63386F1CFFAA29005DE1B5 /* Authentication */,
+				FE6338721CFFAA29005DE1B5 /* Search */,
+				FE6338731CFFAA29005DE1B5 /* Service Locator */,
 			);
 			path = Tech;
 			sourceTree = "<group>";
@@ -343,8 +348,6 @@
 				FE2B337B1CFD584800E6CECD /* BWUtils.m */,
 				FE6338351CFE8954005DE1B5 /* BWProviderUtils.h */,
 				FE6338361CFE8954005DE1B5 /* BWProviderUtils.m */,
-				FE6338681CFF5A01005DE1B5 /* BWGithubAuthCredentials.h */,
-				FE6338691CFF5A01005DE1B5 /* BWGithubAuthCredentials.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -365,6 +368,33 @@
 				FE63384C1CFEACBB005DE1B5 /* GET_top_contributors.json */,
 			);
 			path = "Mock Data";
+			sourceTree = "<group>";
+		};
+		FE63386F1CFFAA29005DE1B5 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				FE6338701CFFAA29005DE1B5 /* BWGithubAuthCredentials.h */,
+				FE6338711CFFAA29005DE1B5 /* BWGithubAuthCredentials.m */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		FE6338721CFFAA29005DE1B5 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				FE6338781CFFAA35005DE1B5 /* BWGithubSearchQuery.h */,
+				FE6338791CFFAA35005DE1B5 /* BWGithubSearchQuery.m */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		FE6338731CFFAA29005DE1B5 /* Service Locator */ = {
+			isa = PBXGroup;
+			children = (
+				FE6338741CFFAA29005DE1B5 /* BWServiceLocator.h */,
+				FE6338751CFFAA29005DE1B5 /* BWServiceLocator.m */,
+			);
+			path = "Service Locator";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -637,15 +667,16 @@
 				FE2B335A1CFD325A00E6CECD /* ViewController.m in Sources */,
 				FE2B33661CFD46E200E6CECD /* BWGithubProvider.m in Sources */,
 				FE2B33691CFD46F100E6CECD /* BWGithubMockProvider.m in Sources */,
-				FE2B33751CFD47CD00E6CECD /* BWServiceLocator.m in Sources */,
 				FE63383E1CFE981F005DE1B5 /* BWBaseProvider.m in Sources */,
 				FE2B33711CFD474200E6CECD /* BWGithubParser.m in Sources */,
 				FE2B33631CFD3A9500E6CECD /* BWGithubBarebonesUserModel.m in Sources */,
-				FE63386A1CFF5A01005DE1B5 /* BWGithubAuthCredentials.m in Sources */,
 				FE2B335D1CFD344900E6CECD /* BWGithubService.m in Sources */,
+				FE6338761CFFAA29005DE1B5 /* BWGithubAuthCredentials.m in Sources */,
+				FE63387A1CFFAA35005DE1B5 /* BWGithubSearchQuery.m in Sources */,
 				FE2B33601CFD379400E6CECD /* BWGithubRepositoryModel.m in Sources */,
 				FE2B33591CFD325A00E6CECD /* main.m in Sources */,
 				FE2B33781CFD483100E6CECD /* BWAppController.m in Sources */,
+				FE6338771CFFAA29005DE1B5 /* BWServiceLocator.m in Sources */,
 				FE2B337C1CFD584800E6CECD /* BWUtils.m in Sources */,
 				FE2B337F1CFE7D2500E6CECD /* BWGithubContributorModel.m in Sources */,
 				FE2B33541CFD325A00E6CECD /* BWAppDelegate.m in Sources */,
@@ -657,6 +688,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE63387B1CFFB3E9005DE1B5 /* BWGithubSearchQuery.m in Sources */,
 				FE6338511CFEADA0005DE1B5 /* BWGithubParser.m in Sources */,
 				FE63385D1CFECCD9005DE1B5 /* BWProviderUtils.m in Sources */,
 				FE63385A1CFEC76F005DE1B5 /* BWGithubContributorModel.m in Sources */,

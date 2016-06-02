@@ -13,6 +13,10 @@
 #import "BWGithubRepositoryModel_Internal.h"
 #import "BWGithubContributorModel.h"
 
+typedef NS_ENUM(NSInteger, BWGithubServiceErrorCode) {
+    kBWGithubServiceErrorCodeUnauthorized = -1101
+};
+
 @implementation BWGithubService {
     id<BWGithubProviderProtocol> _provider;
 }
@@ -39,9 +43,10 @@ static BWGithubService *_singleton = nil;
 
 #pragma mark - Pubic API
 
-- (void)getMostPopularRepositoriesAndTheirTopContributors:(void(^)(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories))callback {
+- (void)searchForRepositoryWithQuery:(BWGithubSearchQuery *)searchQuery
+                            callback:(void(^)(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories))callback {
     __weak typeof(self) weakSelf = self;
-    [_provider getMostPopularRepositories:^(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories) {
+    [_provider searchForRepositoryWithQuery:searchQuery callback:^(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories) {
         //exit out early if there's an error
         if (error) {
             if (callback) {
@@ -49,26 +54,36 @@ static BWGithubService *_singleton = nil;
                 return;
             }
         }
-        
-        /**
-         * Dispatch back to the background thread to retrieve the remaining top contributors
-         * Additionally, we don't want to block the main thread, as the dispatch group will
-         * block the thread until we have finished our operation
-         */
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            [weakSelf populateAllRepositoriesWithTopContributors:repositories withCallback:^{
-                //dispatch back to main thread
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    if (callback) {
-                        callback(error, repositories);
-                    }
-                });
-            }];
-        });
+        [weakSelf handleTopContributorAggegationWithError:error repositories:repositories andCallback:callback];
     }];
 }
 
+- (void)getMostPopularRepositoriesAndTheirTopContributors:(void(^)(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories))callback {
+    BWGithubSearchQuery *searchQuery = [BWGithubSearchQuery mostPopularRepositoriesSearchQuery];
+    [self searchForRepositoryWithQuery:searchQuery callback:callback];
+}
+
 #pragma mark - Private API
+
+- (void)handleTopContributorAggegationWithError:(NSError *)error
+                                   repositories:(NSArray<BWGithubRepositoryModel *> *)repositories
+                                    andCallback:(void(^)())callback {
+    /**
+     * Dispatch back to the background thread to retrieve the remaining top contributors
+     * Additionally, we don't want to block the main thread, as the dispatch group will
+     * block the thread until we have finished our operation
+     */
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [self populateAllRepositoriesWithTopContributors:repositories withCallback:^{
+            //dispatch back to main thread
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (callback) {
+                    callback(error, repositories);
+                }
+            });
+        }];
+    });
+}
 
 - (void)populateAllRepositoriesWithTopContributors:(NSArray<BWGithubRepositoryModel *> *)repositories withCallback:(void(^)())callback {
     //create a group to keep track of all our tasks

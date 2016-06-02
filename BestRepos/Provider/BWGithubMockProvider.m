@@ -12,8 +12,11 @@
 
 @implementation BWGithubMockProvider
 
-- (void)getMostPopularRepositories:(void(^)(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories))callback {
-    
+- (void)searchForRepositoryWithQuery:(BWGithubSearchQuery *)searchQuery
+                            callback:(void(^)(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories))callback {
+    /**
+     * The mock provider does not support searching generically, so we will just return the most popular repositories
+     */
     [BWUtils assertCondition:(callback != nil)
                      message:@"The callback must be non-nil"
                        class:[self class] method:_cmd];

@@ -11,6 +11,7 @@
 #import "BWGithubRepositoryModel_Internal.h"
 #import "BWGithubContributorModel_Internal.h"
 #import "BWProviderUtils.h"
+#import "BWGithubSearchQuery.h"
 
 @interface BWGithubProviderSpec : XCTestCase
 
@@ -38,7 +39,10 @@ static const NSTimeInterval kBWGithubProviderSpecTimeout = 60.f;
     XCTestExpectation *contributorExpectation = [self expectationWithDescription:@"Successfully hit real endpoint and retrieved contributors"];
 
     __weak typeof(self) weakSelf = self;
-    [_provider getMostPopularRepositories:^(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories) {
+    
+    BWGithubSearchQuery *searchQuery = [BWGithubSearchQuery mostPopularRepositoriesSearchQuery];
+    
+    [_provider searchForRepositoryWithQuery:searchQuery callback:^(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories) {
         XCTAssert(repositories.count > 0, @"unexpected results from repository endpoint");
         BWGithubRepositoryModel *firstRepository = [repositories firstObject];
         [weakSelf validateRepository:firstRepository];

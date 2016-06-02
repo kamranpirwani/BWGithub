@@ -7,21 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BWGithubRepositoryModel.h"
+#import "BWGithubContributorModel.h"
+#import "BWGithubSearchQuery.h"
 
-@class BWGithubRepositoryModel;
-@class BWGithubContributorModel;
-
-typedef NS_ENUM(NSInteger, BWGithubServiceErrorCode) {
-    kBWGithubServiceErrorCodeUnauthorized = -1101
-};
 @interface BWGithubService : NSObject
 
 + (instancetype)sharedInstance;
 
+- (void)searchForRepositoryWithQuery:(BWGithubSearchQuery *)searchQuery
+                            callback:(void(^)(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories))callback;
+
 /**
  * A convenience method which returns the top 100 starred repositories, along with their top contributors
- * @note This method allows the consumer to retrieve all of their relevant data in a single call. The consumer isn't even
- *       aware when interfacing with the API that we actually need to make several network calls to get all of this data
  */
 - (void)getMostPopularRepositoriesAndTheirTopContributors:(void(^)(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories))callback;
 
