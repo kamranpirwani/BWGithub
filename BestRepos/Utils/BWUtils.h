@@ -15,8 +15,6 @@
                   class:(Class)clazz
                  method:(SEL)method;
 
-+ (void)logError:(NSString *)error;
-
 + (NSDictionary *)dictionaryFromJSONFileNamed:(NSString *)fileName;
 + (NSDictionary *)dictionaryFromPlistFileNamed:(NSString *)fileName;
 

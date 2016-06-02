@@ -21,13 +21,14 @@ static NSString *BWGithubProviderOrderKey = @"order";
 - (void)searchForRepositoryWithQuery:(BWGithubSearchQuery *)searchQuery
                             callback:(void(^)(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories))callback {
     
-    [BWUtils assertCondition:(searchQuery != nil)
-                     message:@"The search query must be non-nil"
+    BOOL validParamaters = (searchQuery != nil && callback != nil);
+    [BWUtils assertCondition:validParamaters
+                     message:@"The search query and callback must be non-nil"
                        class:[self class] method:_cmd];
-    
-    [BWUtils assertCondition:(callback != nil)
-                     message:@"The callback must be non-nil"
-                       class:[self class] method:_cmd];
+    //exit early in production
+    if (!validParamaters) {
+        return;
+    }
     
     NSString *requestMethod = @"GET";
     NSString *path = @"https://api.github.com/search/repositories";
@@ -59,8 +60,6 @@ static NSString *BWGithubProviderOrderKey = @"order";
                            callback(error, repositories);
                        }
                    }];
-
-    
 }
 
 - (void)getTopContributorsFromRepository:(BWGithubRepositoryModel *)repository

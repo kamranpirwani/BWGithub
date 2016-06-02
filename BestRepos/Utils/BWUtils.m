@@ -25,10 +25,6 @@ static NSString *BWUtilsJsonSuffix = @"json";
     }
 }
 
-+ (void)logError:(NSString *)error {
-    NSLog(@"%@", error);
-}
-
 + (NSDictionary *)dictionaryFromJSONFileNamed:(NSString *)fileName {
     NSString *resource = [[NSBundle mainBundle] pathForResource:fileName ofType:BWUtilsJsonSuffix];
     NSData *jsonData = [NSData dataWithContentsOfFile:resource];
@@ -38,7 +34,10 @@ static NSString *BWUtilsJsonSuffix = @"json";
                                                                    options:kNilOptions
                                                                      error:&error];
     if (error) {
-        [self logError:@"Error parsing json file"];
+        [BWUtils assertCondition:NO
+                         message:[error description]
+                           class:[self class]
+                          method:_cmd];
         return nil;
     }
     
