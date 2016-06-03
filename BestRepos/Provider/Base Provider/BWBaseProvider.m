@@ -18,7 +18,7 @@
 - (instancetype)initWithQueue:(NSOperationQueue *)queue {
     self = [super init];
     if (self) {
-        [BWUtils assertCondition:queue
+        [BWUtils assertCondition:queue != nil
                          message:@"Queue for provider must be non-nil"
                            class:[self class]
                           method:_cmd];

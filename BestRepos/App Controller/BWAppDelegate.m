@@ -8,6 +8,7 @@
 
 #import "BWAppDelegate.h"
 #import "BWAppController.h"
+#import "BWRootViewController.h"
 
 @interface BWAppDelegate ()
 
@@ -18,6 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [BWAppController initializeApplication];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    BWRootViewController *rootViewController = [[BWRootViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
+    self.window.rootViewController = navigationController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

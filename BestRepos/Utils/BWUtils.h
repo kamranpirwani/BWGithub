@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface BWUtils : NSObject
 
@@ -17,5 +18,9 @@
 
 + (NSDictionary *)dictionaryFromJSONFileNamed:(NSString *)fileName;
 + (NSDictionary *)dictionaryFromPlistFileNamed:(NSString *)fileName;
+
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
+
++ (NSString *)abbreviateNumber:(long)number;
 
 @end

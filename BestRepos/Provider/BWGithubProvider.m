@@ -15,6 +15,9 @@
 static NSString *BWGithubProviderQueryKey = @"q";
 static NSString *BWGithubProviderSortKey = @"sort";
 static NSString *BWGithubProviderOrderKey = @"order";
+static NSString *BWGithubProviderPerPageKey = @"per_page";
+
+static NSInteger const kBWGithubProviderPerPageCount = 100;
 
 @implementation BWGithubProvider
 
@@ -45,7 +48,8 @@ static NSString *BWGithubProviderOrderKey = @"order";
     NSDictionary *params = @{
                              BWGithubProviderQueryKey : combinedSearchQuery,
                              BWGithubProviderSortKey : searchQuery.sortFieldString,
-                             BWGithubProviderOrderKey : searchQuery.sortOrderString
+                             BWGithubProviderOrderKey : searchQuery.sortOrderString,
+                             BWGithubProviderPerPageKey :  @(kBWGithubProviderPerPageCount)
                              };
     
     [self requestWithMethod:requestMethod

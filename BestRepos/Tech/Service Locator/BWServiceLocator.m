@@ -38,7 +38,7 @@ static BWServiceLocator *_singleton = nil;
 }
 
 - (void)addService:(id)service withProtocol:(Protocol *)protocol {
-    [BWUtils assertCondition:service message:@"The service you are trying to add is nil" class:[self class] method:_cmd];
+    [BWUtils assertCondition:service != nil message:@"The service you are trying to add is nil" class:[self class] method:_cmd];
     //exit early in production
     if (!service) {
         return;
