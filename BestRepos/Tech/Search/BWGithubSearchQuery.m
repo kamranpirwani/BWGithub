@@ -8,6 +8,11 @@
 
 #import "BWGithubSearchQuery.h"
 
+static NSString *const kBWGithubSearchQueryPrettySortFieldBestMatch = @"Best Match";
+static NSString *const kBWGithubSearchQueryPrettySortFieldStars = @"Stars";
+static NSString *const kBWGithubSearchQueryPrettySortFieldForks = @"Forks";
+static NSString *const kBWGithubSearchQueryPrettySortFieldUpdated = @"Updated";
+
 @implementation BWGithubSearchQuery
 
 - (instancetype)initWithSearchKeywords:(NSString *)keywords
@@ -24,10 +29,44 @@
 }
 
 + (instancetype)mostPopularRepositoriesSearchQuery {
-    BWGithubSearchQuery *searchQuery = [[BWGithubSearchQuery alloc] initWithSearchKeywords:nil
+    BWGithubSearchQuery *searchQuery = [[BWGithubSearchQuery alloc] initWithSearchKeywords:@""
                                                                                  sortField:kBWGithubSearchQuerySortStars
                                                                                  sortOrder:kBWGithubSortOrderDescending];
     return searchQuery;
+}
+
++ (NSArray <NSString *> *)allPrettySortFieldStrings {
+    return @[kBWGithubSearchQueryPrettySortFieldStars,
+             kBWGithubSearchQueryPrettySortFieldBestMatch,
+             kBWGithubSearchQueryPrettySortFieldForks,
+             kBWGithubSearchQueryPrettySortFieldUpdated
+             ];
+}
+
++ (NSString *)prettyStringFromSortField:(BWGithubSearchQuerySortField)sortField {
+    switch (sortField) {
+        case kBWGithubSearchQuerySortForks:
+            return kBWGithubSearchQueryPrettySortFieldForks;
+        case kBWGithubSearchQuerySortStars:
+            return kBWGithubSearchQueryPrettySortFieldStars;
+        case kBWGithubSearchQuerySortUpdated:
+            return kBWGithubSearchQueryPrettySortFieldUpdated;
+        case kBWGithubSearchQuerySortBestMatch:
+        default:
+            return kBWGithubSearchQueryPrettySortFieldBestMatch;
+    }
+}
+
++ (BWGithubSearchQuerySortField)sortFieldFromPrettyString:(NSString *)prettyString {
+    if ([prettyString isEqualToString:kBWGithubSearchQueryPrettySortFieldForks]) {
+        return kBWGithubSearchQuerySortForks;
+    } else if ([prettyString isEqualToString:kBWGithubSearchQueryPrettySortFieldStars]) {
+        return kBWGithubSearchQuerySortStars;
+    } else if ([prettyString isEqualToString:kBWGithubSearchQueryPrettySortFieldUpdated]) {
+        return kBWGithubSearchQuerySortUpdated;
+    } else {
+        return kBWGithubSearchQuerySortBestMatch;
+    }
 }
 
 - (void)setupSortFieldStringWithSortFieldEnum:(BWGithubSearchQuerySortField)sortField {
@@ -61,6 +100,25 @@
             _sortOrderString = @"desc";
             break;
     }
+}
+
+- (BOOL)isEqual:(id)object {
+    BWGithubSearchQuery *otherQuery = (BWGithubSearchQuery *)object;
+    BOOL areKeywordsEqual = [_keywords isEqualToString:otherQuery.keywords];
+    if (!areKeywordsEqual) {
+        return NO;
+    }
+    
+    BOOL areSortFieldsEqual = [_sortFieldString isEqualToString:otherQuery.sortFieldString];
+    if (!areSortFieldsEqual) {
+        return NO;
+    }
+    
+    BOOL areSortOrdersEqual = [_sortOrderString isEqualToString:otherQuery.sortOrderString];
+    if (!areSortOrdersEqual) {
+        return NO;
+    }
+    return YES;
 }
 
 

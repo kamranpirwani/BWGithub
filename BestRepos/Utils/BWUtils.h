@@ -23,4 +23,7 @@
 
 + (NSString *)abbreviateNumber:(long)number;
 
++ (NSString *)validateString:(NSString *)stringToValidate withDefaultValue:(NSString *)defaultValue;
++ (NSNumber *)validateNumber:(NSNumber *)numberToValidate withDefaultValue:(NSNumber *)defaultValue;
+
 @end

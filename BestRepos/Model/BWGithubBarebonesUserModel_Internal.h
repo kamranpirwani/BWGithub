@@ -13,5 +13,6 @@
 @property(nonatomic, readwrite) NSUInteger identifier;
 @property(nonatomic, readwrite) NSString *login;
 @property(nonatomic, readwrite) NSString *avatarUrl;
+@property(nonatomic, readwrite) NSString *profileUrl;
 
 @end

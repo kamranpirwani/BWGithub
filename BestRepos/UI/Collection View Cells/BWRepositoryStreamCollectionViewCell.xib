@@ -27,7 +27,7 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="This repositorty was created in 1979 when I was still in my diapers" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5vz-9s-GlV" userLabel="Repository Description">
                         <rect key="frame" x="15" y="90" width="389" height="73"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -35,20 +35,13 @@
                         <rect key="frame" x="0.0" y="178" width="419" height="60"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fork Icon" translatesAutoresizingMaskIntoConstraints="NO" id="mKh-Mg-sgS" userLabel="Fork Image">
-                                <rect key="frame" x="84" y="0.0" width="24" height="24"/>
+                                <rect key="frame" x="64" y="0.0" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="SkC-cV-SDj"/>
                                     <constraint firstAttribute="height" constant="24" id="VG3-to-Fei"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Eye Icon" translatesAutoresizingMaskIntoConstraints="NO" id="FBI-Mz-1jg" userLabel="Watching Image">
-                                <rect key="frame" x="148" y="0.0" width="24" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="W0X-Mv-LaR"/>
-                                    <constraint firstAttribute="height" constant="24" id="ahs-uj-vu8"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Fwe-fX-tat" userLabel="Star Image">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star 2" translatesAutoresizingMaskIntoConstraints="NO" id="Fwe-fX-tat" userLabel="Star Image">
                                 <rect key="frame" x="20" y="0.0" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="M1V-vi-xfS"/>
@@ -56,66 +49,64 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12,100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u63-10-8Yi" userLabel="Fork Number">
-                                <rect key="frame" x="76" y="29" width="40" height="15.5"/>
+                                <rect key="frame" x="56" y="31" width="40" height="16"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94e-YO-C3C" userLabel="Star Number">
-                                <rect key="frame" x="18" y="29" width="29" height="15.5"/>
+                                <rect key="frame" x="18" y="31" width="29" height="16"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="No4-TG-Scd" userLabel="Watching Number">
-                                <rect key="frame" x="146" y="29" width="29" height="15.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Github Contributon Placeholder Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Z4Z-EF-RPf" userLabel="Second Top Contributor">
+                                <rect key="frame" x="326" y="-4" width="29" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="29" id="fhv-ZW-LgZ"/>
+                                    <constraint firstAttribute="height" constant="29" id="hiO-Z0-57P"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Github Contributon Placeholder Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Q6C-fm-cgi" userLabel="First Top Contributor">
+                                <rect key="frame" x="289" y="-4" width="29" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="29" id="cxG-93-jNX"/>
+                                    <constraint firstAttribute="height" constant="29" id="wR5-9v-dvm"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOP CONTRIBUTORS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ci8-g6-uIr" userLabel="Top Contributors">
+                                <rect key="frame" x="284" y="32" width="115" height="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Github Contributon Placeholder Icon" translatesAutoresizingMaskIntoConstraints="NO" id="ckP-Ue-3bA" userLabel="Third Top Contributor">
-                                <rect key="frame" x="367" y="8" width="32" height="32"/>
+                                <rect key="frame" x="363" y="-4" width="29" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="7XL-gz-rje"/>
-                                    <constraint firstAttribute="height" constant="32" id="Ckf-op-exA"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Github Contributon Placeholder Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Z4Z-EF-RPf" userLabel="Second Top Contributor">
-                                <rect key="frame" x="330" y="8" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="fhv-ZW-LgZ"/>
-                                    <constraint firstAttribute="height" constant="32" id="hiO-Z0-57P"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Github Contributon Placeholder Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Q6C-fm-cgi" userLabel="First Top Contributor">
-                                <rect key="frame" x="293" y="8" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="cxG-93-jNX"/>
-                                    <constraint firstAttribute="height" constant="32" id="wR5-9v-dvm"/>
+                                    <constraint firstAttribute="width" constant="29" id="7XL-gz-rje"/>
+                                    <constraint firstAttribute="height" constant="29" id="Ckf-op-exA"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FBI-Mz-1jg" firstAttribute="leading" secondItem="mKh-Mg-sgS" secondAttribute="trailing" constant="40" id="0Wy-Io-ZBV"/>
-                            <constraint firstItem="Z4Z-EF-RPf" firstAttribute="leading" secondItem="Q6C-fm-cgi" secondAttribute="trailing" constant="5" id="2Nw-Nd-gLR"/>
+                            <constraint firstItem="Z4Z-EF-RPf" firstAttribute="leading" secondItem="Q6C-fm-cgi" secondAttribute="trailing" constant="8" id="2Nw-Nd-gLR"/>
                             <constraint firstAttribute="height" constant="60" id="4OT-jd-gvL"/>
-                            <constraint firstItem="No4-TG-Scd" firstAttribute="centerX" secondItem="FBI-Mz-1jg" secondAttribute="centerX" id="7Lt-6C-bVj"/>
-                            <constraint firstItem="mKh-Mg-sgS" firstAttribute="leading" secondItem="Fwe-fX-tat" secondAttribute="trailing" constant="40" id="7NC-ux-Ohg"/>
+                            <constraint firstItem="mKh-Mg-sgS" firstAttribute="leading" secondItem="Fwe-fX-tat" secondAttribute="trailing" constant="20" id="7NC-ux-Ohg"/>
+                            <constraint firstItem="Z4Z-EF-RPf" firstAttribute="centerY" secondItem="mKh-Mg-sgS" secondAttribute="centerY" constant="-2" id="Amv-JB-mTT"/>
                             <constraint firstItem="Q6C-fm-cgi" firstAttribute="centerY" secondItem="Z4Z-EF-RPf" secondAttribute="centerY" id="Jg7-Ke-94D"/>
                             <constraint firstItem="mKh-Mg-sgS" firstAttribute="top" secondItem="1ze-hk-L79" secondAttribute="top" id="JwU-es-gR0"/>
-                            <constraint firstAttribute="bottom" secondItem="u63-10-8Yi" secondAttribute="bottom" constant="15" id="PSI-8i-lvm"/>
+                            <constraint firstItem="94e-YO-C3C" firstAttribute="bottom" secondItem="u63-10-8Yi" secondAttribute="bottom" id="Npp-4G-FyW"/>
+                            <constraint firstAttribute="bottom" secondItem="u63-10-8Yi" secondAttribute="bottom" constant="13" id="PSI-8i-lvm"/>
                             <constraint firstItem="Fwe-fX-tat" firstAttribute="leading" secondItem="1ze-hk-L79" secondAttribute="leading" constant="20" id="Xtv-0b-Q7p"/>
-                            <constraint firstItem="ckP-Ue-3bA" firstAttribute="leading" secondItem="Z4Z-EF-RPf" secondAttribute="trailing" constant="5" id="bej-ZS-XL6"/>
+                            <constraint firstAttribute="trailing" secondItem="Ci8-g6-uIr" secondAttribute="trailing" constant="20" id="YuF-f7-sET"/>
+                            <constraint firstItem="ckP-Ue-3bA" firstAttribute="leading" secondItem="Z4Z-EF-RPf" secondAttribute="trailing" constant="8" id="bej-ZS-XL6"/>
+                            <constraint firstItem="Ci8-g6-uIr" firstAttribute="bottom" secondItem="u63-10-8Yi" secondAttribute="bottom" constant="-1" id="d35-Cx-5CZ"/>
                             <constraint firstAttribute="top" secondItem="Fwe-fX-tat" secondAttribute="top" id="d6V-vq-JwD"/>
-                            <constraint firstAttribute="bottom" secondItem="No4-TG-Scd" secondAttribute="bottom" constant="15" id="dlf-m6-odm"/>
                             <constraint firstItem="Z4Z-EF-RPf" firstAttribute="centerY" secondItem="ckP-Ue-3bA" secondAttribute="centerY" id="e10-OY-jk6"/>
-                            <constraint firstItem="FBI-Mz-1jg" firstAttribute="top" secondItem="1ze-hk-L79" secondAttribute="top" id="ha2-7T-LtH"/>
                             <constraint firstItem="u63-10-8Yi" firstAttribute="centerX" secondItem="mKh-Mg-sgS" secondAttribute="centerX" id="kDy-AX-k2y"/>
-                            <constraint firstAttribute="bottom" secondItem="ckP-Ue-3bA" secondAttribute="bottom" constant="20" id="oPP-Bz-zs2"/>
-                            <constraint firstAttribute="trailing" secondItem="ckP-Ue-3bA" secondAttribute="trailing" constant="20" id="sBK-DB-m6a"/>
                             <constraint firstItem="94e-YO-C3C" firstAttribute="centerX" secondItem="Fwe-fX-tat" secondAttribute="centerX" id="ukz-ZK-Z7F"/>
-                            <constraint firstAttribute="bottom" secondItem="94e-YO-C3C" secondAttribute="bottom" constant="15" id="xKJ-Bb-PnX"/>
+                            <constraint firstItem="Z4Z-EF-RPf" firstAttribute="centerX" secondItem="Ci8-g6-uIr" secondAttribute="centerX" constant="-1.5" id="w85-B7-iL9"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="751" text="Repository Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="LGG-3b-ZcC" userLabel="Repository Name">
@@ -158,16 +149,15 @@
                 <outlet property="lblProjectDescription" destination="5vz-9s-GlV" id="niH-Vq-uMN"/>
                 <outlet property="lblRepositoryName" destination="LGG-3b-ZcC" id="lTl-iq-DuN"/>
                 <outlet property="lblStarredCount" destination="94e-YO-C3C" id="GJY-E6-oLK"/>
-                <outlet property="lblWatchedCount" destination="No4-TG-Scd" id="UsQ-I1-upq"/>
+                <outlet property="lblTopContributors" destination="Ci8-g6-uIr" id="tEy-x5-Ohq"/>
             </connections>
             <point key="canvasLocation" x="252.5" y="155"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Eye Icon" width="240" height="240"/>
         <image name="Fork Icon" width="240" height="240"/>
         <image name="Github Contributon Placeholder Icon" width="256" height="256"/>
         <image name="Owner Placeholder Image" width="460" height="460"/>
-        <image name="Star Icon" width="240" height="240"/>
+        <image name="Star 2" width="240" height="240"/>
     </resources>
 </document>

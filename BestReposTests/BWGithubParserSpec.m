@@ -12,6 +12,7 @@
 #import "BWGithubRepositoryModel_Internal.h"
 #import "BWGithubContributorModel_Internal.h"
 #import "BWGithubBarebonesUserModel_Internal.h"
+#import "BWGithubUserModel_Internal.h"
 
 @interface BWGithubParserSpec : XCTestCase
 
@@ -51,13 +52,14 @@ static const NSTimeInterval kBWGithubParserSpecTimeout = 30.f;
         XCTAssertEqualObjects(repositoryModel.contributorsUrl, responseModel.contributorsUrl, @"unexpected repository contributors url in mock json");
         XCTAssertEqual(repositoryModel.forkCount, responseModel.forkCount, @"unexpected repository fork count in mock json");
         XCTAssertEqual(repositoryModel.starredCount, responseModel.starredCount, @"unexpected repository starred count in mock json");
-        XCTAssertEqual(repositoryModel.watchersCount, responseModel.watchersCount, @"unexpected repository watchers count in mock json");
+        XCTAssertEqualObjects(repositoryModel.language, responseModel.language, @"unexpected repository language in mock json");
 
         BWGithubBarebonesUserModel *expectedOwnerModel = [self getExpectedOwnerModel];
         BWGithubBarebonesUserModel *ownerReponseModel = responseModel.owner;
         XCTAssertEqual(expectedOwnerModel.identifier, ownerReponseModel.identifier, @"unexpected owner id in mock json");
         XCTAssertEqualObjects(expectedOwnerModel.login, ownerReponseModel.login, @"unexpected owner login in mock json");
         XCTAssertEqualObjects(expectedOwnerModel.avatarUrl, ownerReponseModel.avatarUrl, @"unexpected owner avatar url in mock json");
+        XCTAssertEqualObjects(expectedOwnerModel.profileUrl, ownerReponseModel.profileUrl, @"unexpected owner profile url in mock json");
 
         [expectation fulfill];
     }];
@@ -83,6 +85,31 @@ static const NSTimeInterval kBWGithubParserSpecTimeout = 30.f;
     [self waitForExpectationsWithTimeout:kBWGithubParserSpecTimeout handler:nil];
 }
 
+- (void)testHandleUserProfileFetch {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Successfully parsed user profile"];
+
+    BWGithubUserModel *expectedUserModel = [self getExpectedUserModel];
+    
+    [_mockProvider getUserProfileFromBarebonesUserModel:nil callback:^(NSError *error, BWGithubUserModel *user) {
+        XCTAssertEqual(expectedUserModel.identifier, user.identifier, @"unexpected user id in mock json");
+        XCTAssertEqualObjects(expectedUserModel.login, user.login, @"unexpected user login in mock json");
+        XCTAssertEqualObjects(expectedUserModel.avatarUrl, user.avatarUrl, @"unexpected user avatar url in mock json");
+        XCTAssertEqualObjects(expectedUserModel.profileUrl, user.profileUrl, @"unexpected user profile url in mock json");
+        XCTAssertEqualObjects(expectedUserModel.type, user.type, @"unexpected user type in mock json");
+        XCTAssertEqualObjects(expectedUserModel.name, user.name, @"unexpected user name in mock json");
+        XCTAssertEqual(expectedUserModel.numberOfPublicRepositories, user.numberOfPublicRepositories, @"unexpected user number of public repos in mock json");
+        XCTAssertEqual(expectedUserModel.followers, user.followers, @"unexpected user followers in mock json");
+        XCTAssertEqual(expectedUserModel.following, user.following, @"unexpected user following in mock json");
+        XCTAssertEqualObjects(expectedUserModel.location, user.location, @"unexpected user location in mock json");
+        XCTAssertEqualObjects(expectedUserModel.bio, user.bio, @"unexpected user bio in mock json");
+
+        [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:kBWGithubParserSpecTimeout handler:nil];
+    
+}
+
 #pragma mark - Expected Model Helpers
 
 - (BWGithubRepositoryModel *)getExpectedRepositoryModel {
@@ -95,7 +122,7 @@ static const NSTimeInterval kBWGithubParserSpecTimeout = 30.f;
     repositoryModel.contributorsUrl= @"https://api.github.com/repos/FreeCodeCamp/FreeCodeCamp/contributors";
     repositoryModel.forkCount = 4655;
     repositoryModel.starredCount = 131833;
-    repositoryModel.watchersCount = 131833;
+    repositoryModel.language = @"JavaScript";
     return repositoryModel;
 }
 
@@ -104,6 +131,7 @@ static const NSTimeInterval kBWGithubParserSpecTimeout = 30.f;
     ownerModel.login = @"FreeCodeCamp";
     ownerModel.identifier = 9892522;
     ownerModel.avatarUrl = @"https://avatars.githubusercontent.com/u/9892522?v=3";
+    ownerModel.profileUrl = @"https://api.github.com/users/FreeCodeCamp";
     return ownerModel;
 }
 
@@ -114,6 +142,23 @@ static const NSTimeInterval kBWGithubParserSpecTimeout = 30.f;
     contributorModel.avatarUrl = @"https://avatars.githubusercontent.com/u/985197?v=3";
     contributorModel.contributions = 2263;
     return contributorModel;
+}
+
+- (BWGithubUserModel *)getExpectedUserModel {
+    BWGithubUserModel *userModel = [[BWGithubUserModel alloc] init];
+    userModel.identifier = 985197;
+    userModel.login = @"QuincyLarson";
+    userModel.avatarUrl = @"https://avatars.githubusercontent.com/u/985197?v=3";
+    userModel.profileUrl = @"https://api.github.com/users/QuincyLarson";
+    userModel.type = @"User";
+    userModel.name = @"Quincy Larson";
+    userModel.numberOfPublicRepositories = 22;
+    userModel.followers = 932;
+    userModel.following = 13;
+    userModel.location = @"San Francisco, California, US";
+    userModel.bio = @"I'm a teacher at Free Code Camp. I write articles about technology at medium.com/@quincylarson and quora.com/profile/Quincy-Larson";
+
+    return userModel;
 }
 
 @end

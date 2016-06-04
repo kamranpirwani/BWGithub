@@ -17,15 +17,18 @@ PODS:
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
+  - XHAmazingLoading (0.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - SDWebImage (~> 3.7)
+  - XHAmazingLoading
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  XHAmazingLoading: 86da1c59191326ea63e6df7ba3886f3e6ddef032
 
-PODFILE CHECKSUM: 2b0b20d3a056df1dedb153d30ab77098a5cbf179
+PODFILE CHECKSUM: 53e8df967be135060b76ba7847aeffa5e434ecd3
 
 COCOAPODS: 1.0.0

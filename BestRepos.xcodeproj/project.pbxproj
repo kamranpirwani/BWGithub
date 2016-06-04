@@ -10,6 +10,22 @@
 		19770CD801922BE032CA0D24 /* libPods-BestReposUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 435B5633636409C5D3705721 /* libPods-BestReposUITests.a */; };
 		47FAC009D10EF49768FEE76C /* libPods-BestReposTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15372E6B2B53E43F1B1E879F /* libPods-BestReposTests.a */; };
 		B3522D2129881B2898030BB4 /* libPods-BestRepos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D23B0D1F849958323CF5749 /* libPods-BestRepos.a */; };
+		FE0847151D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847011D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.m */; };
+		FE0847161D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847021D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.xib */; };
+		FE0847171D0271F1006669AB /* BWSearchHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847051D0271F1006669AB /* BWSearchHeaderView.m */; };
+		FE0847181D0271F1006669AB /* BWRepositoryDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847081D0271F1006669AB /* BWRepositoryDetailTableViewCell.m */; };
+		FE0847191D0271F1006669AB /* BWRepositoryDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847091D0271F1006669AB /* BWRepositoryDetailTableViewCell.xib */; };
+		FE08471A1D0271F1006669AB /* BWRepositoryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08470C1D0271F1006669AB /* BWRepositoryHeaderView.m */; };
+		FE08471B1D0271F1006669AB /* BWRepositoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE08470D1D0271F1006669AB /* BWRepositoryHeaderView.xib */; };
+		FE08471C1D0271F1006669AB /* BWRepositoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847101D0271F1006669AB /* BWRepositoryDetailViewController.m */; };
+		FE08471D1D0271F1006669AB /* BWRepositoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847111D0271F1006669AB /* BWRepositoryDetailViewController.xib */; };
+		FE08471E1D0271F1006669AB /* BWRepositoryStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847131D0271F1006669AB /* BWRepositoryStreamViewController.m */; };
+		FE08471F1D0271F1006669AB /* BWRepositoryStreamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847141D0271F1006669AB /* BWRepositoryStreamViewController.xib */; };
+		FE0847271D02AE3E006669AB /* NSDictionary+BWTypeValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847261D02AE3E006669AB /* NSDictionary+BWTypeValidation.m */; };
+		FE08472B1D02B2BF006669AB /* BWProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847291D02B2BF006669AB /* BWProfileViewController.m */; };
+		FE08472C1D02B2BF006669AB /* BWProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE08472A1D02B2BF006669AB /* BWProfileViewController.xib */; };
+		FE08472F1D02B328006669AB /* BWGithubUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08472E1D02B328006669AB /* BWGithubUserModel.m */; };
+		FE0847321D02B567006669AB /* GET_user_profile.json in Resources */ = {isa = PBXBuildFile; fileRef = FE0847311D02B567006669AB /* GET_user_profile.json */; };
 		FE2B331A1CFD126A00E6CECD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE2B33191CFD126A00E6CECD /* Assets.xcassets */; };
 		FE2B331D1CFD126A00E6CECD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE2B331B1CFD126A00E6CECD /* LaunchScreen.storyboard */; };
 		FE2B33331CFD126A00E6CECD /* BestReposUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B33321CFD126A00E6CECD /* BestReposUITests.m */; };
@@ -42,10 +58,6 @@
 		FE6338771CFFAA29005DE1B5 /* BWServiceLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6338751CFFAA29005DE1B5 /* BWServiceLocator.m */; };
 		FE63387A1CFFAA35005DE1B5 /* BWGithubSearchQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6338791CFFAA35005DE1B5 /* BWGithubSearchQuery.m */; };
 		FE63387B1CFFB3E9005DE1B5 /* BWGithubSearchQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6338791CFFAA35005DE1B5 /* BWGithubSearchQuery.m */; };
-		FE6338871CFFC208005DE1B5 /* BWRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6338851CFFC208005DE1B5 /* BWRootViewController.m */; };
-		FE6338881CFFC208005DE1B5 /* BWRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE6338861CFFC208005DE1B5 /* BWRootViewController.xib */; };
-		FE63388C1CFFC25C005DE1B5 /* BWRepositoryStreamCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE63388A1CFFC25C005DE1B5 /* BWRepositoryStreamCollectionViewCell.m */; };
-		FE63388D1CFFC25C005DE1B5 /* BWRepositoryStreamCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE63388B1CFFC25C005DE1B5 /* BWRepositoryStreamCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +87,32 @@
 		766F1AFA6227806B53CC9591 /* Pods-BestReposUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestReposUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BestReposUITests/Pods-BestReposUITests.release.xcconfig"; sourceTree = "<group>"; };
 		78379834CD0C6121452F936B /* Pods-BestReposTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestReposTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BestReposTests/Pods-BestReposTests.release.xcconfig"; sourceTree = "<group>"; };
 		D7BF05DB4E2E4B3B7EB38FAF /* Pods-BestRepos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestRepos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BestRepos/Pods-BestRepos.debug.xcconfig"; sourceTree = "<group>"; };
+		FE0847001D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRepositoryStreamCollectionViewCell.h; sourceTree = "<group>"; };
+		FE0847011D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRepositoryStreamCollectionViewCell.m; sourceTree = "<group>"; };
+		FE0847021D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRepositoryStreamCollectionViewCell.xib; sourceTree = "<group>"; };
+		FE0847041D0271F1006669AB /* BWSearchHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWSearchHeaderView.h; sourceTree = "<group>"; };
+		FE0847051D0271F1006669AB /* BWSearchHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWSearchHeaderView.m; sourceTree = "<group>"; };
+		FE0847071D0271F1006669AB /* BWRepositoryDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRepositoryDetailTableViewCell.h; sourceTree = "<group>"; };
+		FE0847081D0271F1006669AB /* BWRepositoryDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRepositoryDetailTableViewCell.m; sourceTree = "<group>"; };
+		FE0847091D0271F1006669AB /* BWRepositoryDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRepositoryDetailTableViewCell.xib; sourceTree = "<group>"; };
+		FE08470B1D0271F1006669AB /* BWRepositoryHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRepositoryHeaderView.h; sourceTree = "<group>"; };
+		FE08470C1D0271F1006669AB /* BWRepositoryHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRepositoryHeaderView.m; sourceTree = "<group>"; };
+		FE08470D1D0271F1006669AB /* BWRepositoryHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRepositoryHeaderView.xib; sourceTree = "<group>"; };
+		FE08470F1D0271F1006669AB /* BWRepositoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRepositoryDetailViewController.h; sourceTree = "<group>"; };
+		FE0847101D0271F1006669AB /* BWRepositoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRepositoryDetailViewController.m; sourceTree = "<group>"; };
+		FE0847111D0271F1006669AB /* BWRepositoryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRepositoryDetailViewController.xib; sourceTree = "<group>"; };
+		FE0847121D0271F1006669AB /* BWRepositoryStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRepositoryStreamViewController.h; sourceTree = "<group>"; };
+		FE0847131D0271F1006669AB /* BWRepositoryStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRepositoryStreamViewController.m; sourceTree = "<group>"; };
+		FE0847141D0271F1006669AB /* BWRepositoryStreamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRepositoryStreamViewController.xib; sourceTree = "<group>"; };
+		FE0847251D02AE3E006669AB /* NSDictionary+BWTypeValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BWTypeValidation.h"; sourceTree = "<group>"; };
+		FE0847261D02AE3E006669AB /* NSDictionary+BWTypeValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BWTypeValidation.m"; sourceTree = "<group>"; };
+		FE0847281D02B2BF006669AB /* BWProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWProfileViewController.h; sourceTree = "<group>"; };
+		FE0847291D02B2BF006669AB /* BWProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWProfileViewController.m; sourceTree = "<group>"; };
+		FE08472A1D02B2BF006669AB /* BWProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWProfileViewController.xib; sourceTree = "<group>"; };
+		FE08472D1D02B328006669AB /* BWGithubUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubUserModel.h; sourceTree = "<group>"; };
+		FE08472E1D02B328006669AB /* BWGithubUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWGithubUserModel.m; sourceTree = "<group>"; };
+		FE0847301D02B3C7006669AB /* BWGithubUserModel_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubUserModel_Internal.h; sourceTree = "<group>"; };
+		FE0847311D02B567006669AB /* GET_user_profile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GET_user_profile.json; sourceTree = "<group>"; };
 		FE2B330A1CFD126A00E6CECD /* BestRepos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestRepos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2B33191CFD126A00E6CECD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE2B331C1CFD126A00E6CECD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -126,12 +164,6 @@
 		FE6338751CFFAA29005DE1B5 /* BWServiceLocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWServiceLocator.m; sourceTree = "<group>"; };
 		FE6338781CFFAA35005DE1B5 /* BWGithubSearchQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubSearchQuery.h; sourceTree = "<group>"; };
 		FE6338791CFFAA35005DE1B5 /* BWGithubSearchQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWGithubSearchQuery.m; sourceTree = "<group>"; };
-		FE6338841CFFC208005DE1B5 /* BWRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRootViewController.h; sourceTree = "<group>"; };
-		FE6338851CFFC208005DE1B5 /* BWRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRootViewController.m; sourceTree = "<group>"; };
-		FE6338861CFFC208005DE1B5 /* BWRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRootViewController.xib; sourceTree = "<group>"; };
-		FE6338891CFFC25C005DE1B5 /* BWRepositoryStreamCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRepositoryStreamCollectionViewCell.h; sourceTree = "<group>"; };
-		FE63388A1CFFC25C005DE1B5 /* BWRepositoryStreamCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRepositoryStreamCollectionViewCell.m; sourceTree = "<group>"; };
-		FE63388B1CFFC25C005DE1B5 /* BWRepositoryStreamCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRepositoryStreamCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +217,73 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FE0846FE1D0271F1006669AB /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FE0846FF1D0271F1006669AB /* Collection View Cells */,
+				FE0847031D0271F1006669AB /* Collection View Section Header */,
+				FE0847061D0271F1006669AB /* Table View Cells */,
+				FE08470A1D0271F1006669AB /* Table View Headers */,
+				FE08470E1D0271F1006669AB /* View Controllers */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		FE0846FF1D0271F1006669AB /* Collection View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FE0847001D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.h */,
+				FE0847011D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.m */,
+				FE0847021D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.xib */,
+			);
+			path = "Collection View Cells";
+			sourceTree = "<group>";
+		};
+		FE0847031D0271F1006669AB /* Collection View Section Header */ = {
+			isa = PBXGroup;
+			children = (
+				FE0847041D0271F1006669AB /* BWSearchHeaderView.h */,
+				FE0847051D0271F1006669AB /* BWSearchHeaderView.m */,
+			);
+			path = "Collection View Section Header";
+			sourceTree = "<group>";
+		};
+		FE0847061D0271F1006669AB /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FE0847071D0271F1006669AB /* BWRepositoryDetailTableViewCell.h */,
+				FE0847081D0271F1006669AB /* BWRepositoryDetailTableViewCell.m */,
+				FE0847091D0271F1006669AB /* BWRepositoryDetailTableViewCell.xib */,
+			);
+			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		FE08470A1D0271F1006669AB /* Table View Headers */ = {
+			isa = PBXGroup;
+			children = (
+				FE08470B1D0271F1006669AB /* BWRepositoryHeaderView.h */,
+				FE08470C1D0271F1006669AB /* BWRepositoryHeaderView.m */,
+				FE08470D1D0271F1006669AB /* BWRepositoryHeaderView.xib */,
+			);
+			path = "Table View Headers";
+			sourceTree = "<group>";
+		};
+		FE08470E1D0271F1006669AB /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE0847281D02B2BF006669AB /* BWProfileViewController.h */,
+				FE0847291D02B2BF006669AB /* BWProfileViewController.m */,
+				FE08472A1D02B2BF006669AB /* BWProfileViewController.xib */,
+				FE08470F1D0271F1006669AB /* BWRepositoryDetailViewController.h */,
+				FE0847101D0271F1006669AB /* BWRepositoryDetailViewController.m */,
+				FE0847111D0271F1006669AB /* BWRepositoryDetailViewController.xib */,
+				FE0847121D0271F1006669AB /* BWRepositoryStreamViewController.h */,
+				FE0847131D0271F1006669AB /* BWRepositoryStreamViewController.m */,
+				FE0847141D0271F1006669AB /* BWRepositoryStreamViewController.xib */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		FE2B33011CFD126A00E6CECD = {
 			isa = PBXGroup;
 			children = (
@@ -218,7 +317,7 @@
 				FE2B334D1CFD325A00E6CECD /* Service */,
 				FE2B334E1CFD325A00E6CECD /* Supporting Files */,
 				FE2B33721CFD47B500E6CECD /* Tech */,
-				FE6338811CFFC208005DE1B5 /* UI */,
+				FE0846FE1D0271F1006669AB /* UI */,
 				FE2B33791CFD57C700E6CECD /* Utils */,
 				FE2B33191CFD126A00E6CECD /* Assets.xcassets */,
 				FE2B331B1CFD126A00E6CECD /* LaunchScreen.storyboard */,
@@ -277,6 +376,9 @@
 				FE6338561CFEB064005DE1B5 /* BWGithubRepositoryModel_Internal.h */,
 				FE6338571CFEB082005DE1B5 /* BWGithubBarebonesUserModel_Internal.h */,
 				FE6338581CFEB096005DE1B5 /* BWGithubContributorModel_Internal.h */,
+				FE08472D1D02B328006669AB /* BWGithubUserModel.h */,
+				FE08472E1D02B328006669AB /* BWGithubUserModel.m */,
+				FE0847301D02B3C7006669AB /* BWGithubUserModel_Internal.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -340,6 +442,8 @@
 				FE2B337B1CFD584800E6CECD /* BWUtils.m */,
 				FE6338351CFE8954005DE1B5 /* BWProviderUtils.h */,
 				FE6338361CFE8954005DE1B5 /* BWProviderUtils.m */,
+				FE0847251D02AE3E006669AB /* NSDictionary+BWTypeValidation.h */,
+				FE0847261D02AE3E006669AB /* NSDictionary+BWTypeValidation.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -356,6 +460,7 @@
 		FE63384A1CFEACBB005DE1B5 /* Mock Data */ = {
 			isa = PBXGroup;
 			children = (
+				FE0847311D02B567006669AB /* GET_user_profile.json */,
 				FE63384B1CFEACBB005DE1B5 /* GET_most_starred_repositories.json */,
 				FE63384C1CFEACBB005DE1B5 /* GET_top_contributors.json */,
 			);
@@ -387,36 +492,6 @@
 				FE6338751CFFAA29005DE1B5 /* BWServiceLocator.m */,
 			);
 			path = "Service Locator";
-			sourceTree = "<group>";
-		};
-		FE6338811CFFC208005DE1B5 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				FE6338821CFFC208005DE1B5 /* Collection View Cells */,
-				FE6338831CFFC208005DE1B5 /* View Controllers */,
-			);
-			name = UI;
-			path = Tech/UI;
-			sourceTree = "<group>";
-		};
-		FE6338821CFFC208005DE1B5 /* Collection View Cells */ = {
-			isa = PBXGroup;
-			children = (
-				FE6338891CFFC25C005DE1B5 /* BWRepositoryStreamCollectionViewCell.h */,
-				FE63388A1CFFC25C005DE1B5 /* BWRepositoryStreamCollectionViewCell.m */,
-				FE63388B1CFFC25C005DE1B5 /* BWRepositoryStreamCollectionViewCell.xib */,
-			);
-			path = "Collection View Cells";
-			sourceTree = "<group>";
-		};
-		FE6338831CFFC208005DE1B5 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				FE6338841CFFC208005DE1B5 /* BWRootViewController.h */,
-				FE6338851CFFC208005DE1B5 /* BWRootViewController.m */,
-				FE6338861CFFC208005DE1B5 /* BWRootViewController.xib */,
-			);
-			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -530,15 +605,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE0847191D0271F1006669AB /* BWRepositoryDetailTableViewCell.xib in Resources */,
 				FE6338641CFF58B2005DE1B5 /* Credentials.plist in Resources */,
+				FE08472C1D02B2BF006669AB /* BWProfileViewController.xib in Resources */,
 				FE63384E1CFEACBB005DE1B5 /* GET_top_contributors.json in Resources */,
+				FE08471D1D0271F1006669AB /* BWRepositoryDetailViewController.xib in Resources */,
 				FE2B331D1CFD126A00E6CECD /* LaunchScreen.storyboard in Resources */,
+				FE08471F1D0271F1006669AB /* BWRepositoryStreamViewController.xib in Resources */,
 				FE2B331A1CFD126A00E6CECD /* Assets.xcassets in Resources */,
 				FE63384D1CFEACBB005DE1B5 /* GET_most_starred_repositories.json in Resources */,
-				FE6338881CFFC208005DE1B5 /* BWRootViewController.xib in Resources */,
-				FE63388D1CFFC25C005DE1B5 /* BWRepositoryStreamCollectionViewCell.xib in Resources */,
+				FE08471B1D0271F1006669AB /* BWRepositoryHeaderView.xib in Resources */,
+				FE0847161D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.xib in Resources */,
 				FE2B33561CFD325A00E6CECD /* LaunchScreen.storyboard in Resources */,
 				FE2B33581CFD325A00E6CECD /* Info.plist in Resources */,
+				FE0847321D02B567006669AB /* GET_user_profile.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,24 +766,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE08471A1D0271F1006669AB /* BWRepositoryHeaderView.m in Sources */,
+				FE0847271D02AE3E006669AB /* NSDictionary+BWTypeValidation.m in Sources */,
 				FE2B33661CFD46E200E6CECD /* BWGithubProvider.m in Sources */,
 				FE2B33691CFD46F100E6CECD /* BWGithubMockProvider.m in Sources */,
 				FE63383E1CFE981F005DE1B5 /* BWBaseProvider.m in Sources */,
+				FE08472B1D02B2BF006669AB /* BWProfileViewController.m in Sources */,
 				FE2B33711CFD474200E6CECD /* BWGithubParser.m in Sources */,
-				FE6338871CFFC208005DE1B5 /* BWRootViewController.m in Sources */,
 				FE2B33631CFD3A9500E6CECD /* BWGithubBarebonesUserModel.m in Sources */,
+				FE0847181D0271F1006669AB /* BWRepositoryDetailTableViewCell.m in Sources */,
+				FE08471E1D0271F1006669AB /* BWRepositoryStreamViewController.m in Sources */,
 				FE2B335D1CFD344900E6CECD /* BWGithubService.m in Sources */,
 				FE6338761CFFAA29005DE1B5 /* BWGithubAuthCredentials.m in Sources */,
 				FE63387A1CFFAA35005DE1B5 /* BWGithubSearchQuery.m in Sources */,
+				FE0847171D0271F1006669AB /* BWSearchHeaderView.m in Sources */,
 				FE2B33601CFD379400E6CECD /* BWGithubRepositoryModel.m in Sources */,
 				FE2B33591CFD325A00E6CECD /* main.m in Sources */,
+				FE08471C1D0271F1006669AB /* BWRepositoryDetailViewController.m in Sources */,
+				FE0847151D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.m in Sources */,
 				FE2B33781CFD483100E6CECD /* BWAppController.m in Sources */,
 				FE6338771CFFAA29005DE1B5 /* BWServiceLocator.m in Sources */,
+				FE08472F1D02B328006669AB /* BWGithubUserModel.m in Sources */,
 				FE2B337C1CFD584800E6CECD /* BWUtils.m in Sources */,
 				FE2B337F1CFE7D2500E6CECD /* BWGithubContributorModel.m in Sources */,
 				FE2B33541CFD325A00E6CECD /* BWAppDelegate.m in Sources */,
 				FE6338371CFE8954005DE1B5 /* BWProviderUtils.m in Sources */,
-				FE63388C1CFFC25C005DE1B5 /* BWRepositoryStreamCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

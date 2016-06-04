@@ -10,10 +10,12 @@
 
 @class BWGithubRepositoryModel;
 @class BWGithubContributorModel;
+@class BWGithubUserModel;
 
 @interface BWGithubParser : NSObject
 
-+ (NSArray<BWGithubRepositoryModel *> *)handleMostPopularRepositoriesFetch:(NSDictionary *)response;
-+ (NSArray<BWGithubContributorModel *> *)handleTopContributorsFromRepositoryFetch:(NSDictionary *)response;
++ (NSArray<BWGithubRepositoryModel *> *)handleGetMostPopularRepositories:(NSDictionary *)response;
++ (NSArray<BWGithubContributorModel *> *)handleGetTopContributorsFromRepository:(NSDictionary *)response;
++ (BWGithubUserModel *)handleGetUserProfileFromBarebonesUserModel:(NSDictionary *)response;
 
 @end

@@ -11,6 +11,8 @@
 @class BWGithubRepositoryModel;
 @class BWGithubContributorModel;
 @class BWGithubSearchQuery;
+@class BWGithubBarebonesUserModel;
+@class BWGithubUserModel;
 
 @protocol BWGithubProviderProtocol <NSObject>
 
@@ -21,5 +23,8 @@
 
 - (void)getTopContributorsFromRepository:(BWGithubRepositoryModel *)repository
                                 callback:(void(^)(NSError *error, NSArray<BWGithubContributorModel *> *contributors))callback;
+
+- (void)getUserProfileFromBarebonesUserModel:(BWGithubBarebonesUserModel *)user
+                                    callback:(void (^)(NSError *error, BWGithubUserModel *completeUser))callback;
 
 @end

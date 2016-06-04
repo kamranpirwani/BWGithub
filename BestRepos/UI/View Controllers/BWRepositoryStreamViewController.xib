@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BWRootViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BWRepositoryStreamViewController">
             <connections>
                 <outlet property="collectionView" destination="cOw-Hd-Anv" id="ncN-6o-geV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="r9I-cD-JEA"/>

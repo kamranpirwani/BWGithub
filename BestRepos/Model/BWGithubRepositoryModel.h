@@ -19,10 +19,10 @@
 @property(nonatomic, readonly) NSString *htmlUrl;
 @property(nonatomic, readonly) NSString *projectDescription;
 @property(nonatomic, readonly) NSString *contributorsUrl;
+@property(nonatomic, readonly) NSString *language;
 
 @property(nonatomic, readonly) NSUInteger forkCount;
 @property(nonatomic, readonly) NSUInteger starredCount;
-@property(nonatomic, readonly) NSUInteger watchersCount;
 
 @property(nonatomic, readonly) NSArray<BWGithubContributorModel *> *topContributors;
 

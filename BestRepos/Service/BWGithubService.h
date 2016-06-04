@@ -10,6 +10,7 @@
 #import "BWGithubRepositoryModel.h"
 #import "BWGithubContributorModel.h"
 #import "BWGithubSearchQuery.h"
+#import "BWGithubUserModel.h"
 
 @interface BWGithubService : NSObject
 
@@ -18,9 +19,7 @@
 - (void)searchForRepositoryWithQuery:(BWGithubSearchQuery *)searchQuery
                             callback:(void(^)(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories))callback;
 
-/**
- * A convenience method which returns the top 100 starred repositories, along with their top contributors
- */
-- (void)getMostPopularRepositoriesAndTheirTopContributors:(void(^)(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories))callback;
+- (void)getUserProfileFromBarebonesUserModel:(BWGithubBarebonesUserModel *)user
+                                    callback:(void (^)(NSError *error, BWGithubUserModel *completeUser))callback;
 
 @end

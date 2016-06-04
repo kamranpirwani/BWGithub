@@ -17,13 +17,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblProjectDescription;
 @property (weak, nonatomic) IBOutlet UILabel *lblStarredCount;
 @property (weak, nonatomic) IBOutlet UILabel *lblForkedCount;
-@property (weak, nonatomic) IBOutlet UILabel *lblWatchedCount;
-@property (weak, nonatomic) IBOutlet UILabel *lblOwner;
 @property (weak, nonatomic) IBOutlet UIImageView *ivFirstContributor;
 
 @property(nonatomic, assign) CGRect lastKnownRect;
 @property (weak, nonatomic) IBOutlet UIImageView *ivSecondContributor;
 @property (weak, nonatomic) IBOutlet UIImageView *ivThirdContributor;
+@property (weak, nonatomic) IBOutlet UILabel *lblTopContributors;
 
 @end
 
@@ -31,7 +30,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self addDropShadow];
     [self setupContibutorsImageViews];
 }
 
@@ -44,6 +42,12 @@
 
 - (NSArray *)getContributorImageViews {
     NSArray *imageViews = @[ _ivFirstContributor, _ivSecondContributor, _ivThirdContributor];
+    return imageViews;
+}
+
+- (NSArray *)getAllImageView {
+    NSMutableArray *imageViews = [[self getContributorImageViews] mutableCopy];
+    [imageViews addObject:_ivOrganizationImage];
     return imageViews;
 }
 
@@ -76,7 +80,6 @@
     _lblProjectDescription.text = repositoryModel.projectDescription;
     _lblStarredCount.text = [BWUtils abbreviateNumber:repositoryModel.starredCount];
     _lblForkedCount.text = [BWUtils abbreviateNumber:repositoryModel.forkCount];
-    _lblWatchedCount.text = [BWUtils abbreviateNumber:repositoryModel.watchersCount];
     
     if (repositoryModel.topContributors.count > 0) {
         NSArray *imageViews = [self getContributorImageViews];
@@ -86,16 +89,27 @@
                 [imageView sd_setImageWithURL:[NSURL URLWithString:contributor.avatarUrl] placeholderImage:[UIImage imageNamed:@"Github Contributon Placeholder Icon"]];
             }
         }];
+    } else {
+        _ivFirstContributor.hidden = YES;
+        _ivSecondContributor.hidden = YES;
+        _ivThirdContributor.hidden = YES;
+        _lblTopContributors.text = @"NO CONTRIBUTORS";
     }
     
 }
 
 - (void)prepareForReuse {
     [super prepareForReuse];
+    [[self getContributorImageViews] enumerateObjectsUsingBlock:^(UIImageView * _Nonnull imageView, NSUInteger idx, BOOL * _Nonnull stop) {
+        [imageView sd_cancelCurrentImageLoad];
+        imageView.image = [UIImage imageNamed:@"Github Contributon Placeholder Icon"];
+    }];
     [_ivOrganizationImage sd_cancelCurrentImageLoad];
-    [_ivFirstContributor sd_cancelCurrentImageLoad];
-    [_ivSecondContributor sd_cancelCurrentImageLoad];
-    [_ivThirdContributor sd_cancelCurrentImageLoad];
+    _ivOrganizationImage.image = [UIImage imageNamed:@"Owner Placeholder Image"];
+    _lblTopContributors.text = @"TOP CONTRIBUTORS";
+    _ivFirstContributor.hidden = NO;
+    _ivSecondContributor.hidden = NO;
+    _ivThirdContributor.hidden = NO;
 }
 
 + (NSString *)reuseIdentifier {

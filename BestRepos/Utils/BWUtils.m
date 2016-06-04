@@ -99,4 +99,22 @@ static NSString *BWUtilsJsonSuffix = @"json";
     return ret;
 }
 
++ (id)validateObject:(id)objectToValidate ofClass:(Class)clazz withDefaultValue:(id)defaultValue {
+    BOOL isCorrectClass = [objectToValidate isKindOfClass:clazz];
+    if (isCorrectClass) {
+        return objectToValidate;
+    } else {
+        return defaultValue;
+    }
+}
+
++ (NSString *)validateString:(NSString *)stringToValidate withDefaultValue:(NSString *)defaultValue {
+    return [self validateObject:stringToValidate ofClass:[NSString class] withDefaultValue:defaultValue];
+}
+
++ (NSNumber *)validateNumber:(NSNumber *)numberToValidate withDefaultValue:(NSNumber *)defaultValue {
+    return [self validateObject:numberToValidate ofClass:[NSNumber class] withDefaultValue:defaultValue];
+}
+
+
 @end

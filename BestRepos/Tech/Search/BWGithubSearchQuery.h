@@ -28,6 +28,11 @@ typedef NS_ENUM(NSInteger, BWGithubSortOrder) {
                              sortField:(BWGithubSearchQuerySortField)sortField
                              sortOrder:(BWGithubSortOrder)sortOrder;
 
++ (NSArray <NSString *> *)allPrettySortFieldStrings;
+
++ (NSString *)prettyStringFromSortField:(BWGithubSearchQuerySortField)sortField;
++ (BWGithubSearchQuerySortField)sortFieldFromPrettyString:(NSString *)prettyString;
+
 @property(nonatomic, readonly) NSString *keywords;
 @property(nonatomic, readonly) NSString *sortFieldString;
 @property(nonatomic, readonly) NSString *sortOrderString;

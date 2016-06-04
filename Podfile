@@ -6,6 +6,7 @@ target 'BestRepos' do
   # use_frameworks!
 pod 'SDWebImage', '~>3.7'
 pod 'AFNetworking', '~> 3.0'
+pod 'XHAmazingLoading'
   # Pods for BestRepos
 
   target 'BestReposTests' do

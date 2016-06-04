@@ -58,9 +58,9 @@ static BWGithubService *_singleton = nil;
     }];
 }
 
-- (void)getMostPopularRepositoriesAndTheirTopContributors:(void(^)(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories))callback {
-    BWGithubSearchQuery *searchQuery = [BWGithubSearchQuery mostPopularRepositoriesSearchQuery];
-    [self searchForRepositoryWithQuery:searchQuery callback:callback];
+- (void)getUserProfileFromBarebonesUserModel:(BWGithubBarebonesUserModel *)user
+                                    callback:(void (^)(NSError *error, BWGithubUserModel *completeUser))callback {
+    [_provider getUserProfileFromBarebonesUserModel:user callback:callback];
 }
 
 #pragma mark - Private API

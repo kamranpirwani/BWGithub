@@ -24,7 +24,7 @@
     NSDictionary *jsonDictionary = [BWUtils dictionaryFromJSONFileNamed:@"GET_most_starred_repositories"];
     NSArray<BWGithubRepositoryModel *> *repositories = nil;
     if (jsonDictionary) {
-        repositories = [BWGithubParser handleMostPopularRepositoriesFetch:jsonDictionary];
+        repositories = [BWGithubParser handleGetMostPopularRepositories:jsonDictionary];
     }
     
     if (callback) {
@@ -42,11 +42,29 @@
     NSDictionary *jsonDictionary = [BWUtils dictionaryFromJSONFileNamed:@"GET_top_contributors"];
     NSArray<BWGithubContributorModel *> *contributors = nil;
     if (jsonDictionary) {
-        contributors = [BWGithubParser handleTopContributorsFromRepositoryFetch:jsonDictionary];
+        contributors = [BWGithubParser handleGetTopContributorsFromRepository:jsonDictionary];
     }
     
     if (callback) {
         callback(nil, contributors);
+    }
+}
+
+- (void)getUserProfileFromBarebonesUserModel:(BWGithubBarebonesUserModel *)user
+                                    callback:(void (^)(NSError *error, BWGithubUserModel *completeUser))callback; {
+    
+    [BWUtils assertCondition:(callback != nil)
+                     message:@"The callback must be non-nil"
+                       class:[self class] method:_cmd];
+    
+    NSDictionary *jsonDictionary = [BWUtils dictionaryFromJSONFileNamed:@"GET_user_profile"];
+    BWGithubUserModel *completeUser;
+    if (jsonDictionary) {
+        completeUser = [BWGithubParser handleGetUserProfileFromBarebonesUserModel:jsonDictionary];
+    }
+    
+    if (callback) {
+        callback(nil, completeUser);
     }
 }
 

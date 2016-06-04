@@ -10,70 +10,79 @@
 #import "BWGitHubRepositoryModel_Internal.h"
 #import "BWGithubBarebonesUserModel_Internal.h"
 #import "BWGithubContributorModel_Internal.h"
+#import "NSDictionary+BWTypeValidation.h"
+#import "BWGithubUserModel_Internal.h"
 
 @implementation BWGithubParser
 
 static NSString *const kBWGithubParserCommonIdKey = @"id";
 static NSString *const kBWGithubParserCommonLoginKey = @"login";
 static NSString *const kBWGithubParserCommonAvatarUrlKey = @"avatar_url";
+static NSString *const kBWGithubParserCommonUrlKey = @"url";
+static NSString *const kBWGithubParserCommonNameKey = @"name";
 
 static NSString *const kBWGithubParserRepositoryItemKey = @"items";
 static NSString *const kBWGithubParserRepositoryOwnerKey = @"owner";
-static NSString *const kBWGithubParserRepositoryNameKey = @"name";
 static NSString *const kBWGithubParserRepositoryFullNameKey = @"full_name";
 static NSString *const kBWGithubParserRepositoryHtmlUrlKey = @"html_url";
 static NSString *const kBWGithubParserRepositoryProjectDescriptionKey = @"description";
 static NSString *const kBWGithubParserRepositoryContributorsUrlKey = @"contributors_url";
 static NSString *const kBWGithubParserRepositoryForkCountKey = @"forks";
 static NSString *const kBWGithubParserRepositoryStarredCountKey = @"stargazers_count";
-static NSString *const kBWGithubParserRepositoryWatchedCountKey = @"watchers_count";
+static NSString *const kBWGithubParserRepositoryLanguageKey = @"language";
 
 static NSString *const kBWGithubParserContributorContributionsKey = @"contributions";
 
+static NSString *const kBWGithubParserUserTypeKey = @"type";
+static NSString *const kBWGithubParserUserPublicRepositoriesKey = @"public_repos";
+static NSString *const kBWGithubParserUserFollowersKey = @"followers";
+static NSString *const kBWGithubParserUserFollowingKey = @"following";
+static NSString *const kBWGithubParserUserLocationKey = @"location";
+static NSString *const kBWGithubParserUserBioKey = @"bio";
 
-+ (NSArray<BWGithubRepositoryModel *> *)handleMostPopularRepositoriesFetch:(NSDictionary *)response {
+
++ (NSArray<BWGithubRepositoryModel *> *)handleGetMostPopularRepositories:(NSDictionary *)response {
     if (!response) {
         return nil;
     }
-    //TODO: Add type checking
 
     NSMutableArray<BWGithubRepositoryModel *> *repositoriesArray = [NSMutableArray array];
     
-    NSArray *repositories = [response objectForKey:kBWGithubParserRepositoryItemKey];
+    NSArray *repositories = [response getArrayForKey:kBWGithubParserRepositoryItemKey defaultValue:nil];
     for (NSDictionary *repositoryDictionary in repositories) {
         BWGithubRepositoryModel *repositoryModel = [[BWGithubRepositoryModel alloc] init];
 
-        NSUInteger identifier = [[repositoryDictionary objectForKey:kBWGithubParserCommonIdKey] integerValue];
+        NSUInteger identifier = [[repositoryDictionary getNumberForKey:kBWGithubParserCommonIdKey defaultValue:nil] integerValue];
         repositoryModel.identifier = identifier;
         
         BWGithubBarebonesUserModel *owner = [[BWGithubBarebonesUserModel alloc] init];
-        NSDictionary *ownerDictionary = [repositoryDictionary objectForKey:kBWGithubParserRepositoryOwnerKey];
+        NSDictionary *ownerDictionary = [repositoryDictionary getDictionaryForKey:kBWGithubParserRepositoryOwnerKey defaultValue:nil];
         [self hydrateUserModel:owner fromResponse:ownerDictionary];
         repositoryModel.owner = owner;
         
-        NSString *name = [repositoryDictionary objectForKey:kBWGithubParserRepositoryNameKey];
+        NSString *name = [repositoryDictionary getStringForKey:kBWGithubParserCommonNameKey defaultValue:nil];
         repositoryModel.name = name;
         
-        NSString *fullName = [repositoryDictionary objectForKey:kBWGithubParserRepositoryFullNameKey];
+        NSString *fullName = [repositoryDictionary getStringForKey:kBWGithubParserRepositoryFullNameKey defaultValue:nil];
         repositoryModel.fullName = fullName;
         
-        NSString *htmlUrl = [repositoryDictionary objectForKey:kBWGithubParserRepositoryHtmlUrlKey];
+        NSString *htmlUrl = [repositoryDictionary getStringForKey:kBWGithubParserRepositoryHtmlUrlKey defaultValue:nil];
         repositoryModel.htmlUrl = htmlUrl;
         
-        NSString *projectDescription = [repositoryDictionary objectForKey:kBWGithubParserRepositoryProjectDescriptionKey];
+        NSString *projectDescription = [repositoryDictionary getStringForKey:kBWGithubParserRepositoryProjectDescriptionKey defaultValue:nil];
         repositoryModel.projectDescription = projectDescription;
         
-        NSString *contributorsUrl = [repositoryDictionary objectForKey:kBWGithubParserRepositoryContributorsUrlKey];
+        NSString *contributorsUrl = [repositoryDictionary getStringForKey:kBWGithubParserRepositoryContributorsUrlKey defaultValue:nil];
         repositoryModel.contributorsUrl = contributorsUrl;
         
-        NSUInteger forkCount = [[repositoryDictionary objectForKey:kBWGithubParserRepositoryForkCountKey] integerValue];
+        NSUInteger forkCount = [[repositoryDictionary getNumberForKey:kBWGithubParserRepositoryForkCountKey defaultValue:nil] integerValue];
         repositoryModel.forkCount = forkCount;
         
-        NSUInteger starredCount = [[repositoryDictionary objectForKey:kBWGithubParserRepositoryStarredCountKey] integerValue];
+        NSUInteger starredCount = [[repositoryDictionary getNumberForKey:kBWGithubParserRepositoryStarredCountKey defaultValue:nil] integerValue];
         repositoryModel.starredCount = starredCount;
         
-        NSUInteger watchersCount = [[repositoryDictionary objectForKey:kBWGithubParserRepositoryWatchedCountKey] integerValue];
-        repositoryModel.watchersCount = watchersCount;
+        NSString *language = [repositoryDictionary getStringForKey:kBWGithubParserRepositoryLanguageKey defaultValue:nil];
+        repositoryModel.language = language;
         
         [repositoriesArray addObject:repositoryModel];
     }
@@ -81,19 +90,17 @@ static NSString *const kBWGithubParserContributorContributionsKey = @"contributi
     return repositoriesArray;
 }
 
-+ (NSArray<BWGithubContributorModel *> *)handleTopContributorsFromRepositoryFetch:(NSArray *)response {
++ (NSArray<BWGithubContributorModel *> *)handleGetTopContributorsFromRepository:(NSArray *)response {
     if (!response) {
         return nil;
     }
-    
-    //TODO: Add type checking
     
     NSMutableArray<BWGithubContributorModel *> *contributorsArray = [NSMutableArray array];
 
     for (NSDictionary *contributorDictionary in response) {
         BWGithubContributorModel *contributorModel = [[BWGithubContributorModel alloc] init];
         [self hydrateUserModel:contributorModel fromResponse:contributorDictionary];
-        NSUInteger contributions = [[contributorDictionary objectForKey:kBWGithubParserContributorContributionsKey] integerValue];
+        NSUInteger contributions = [[contributorDictionary getNumberForKey:kBWGithubParserContributorContributionsKey defaultValue:nil] integerValue];
         contributorModel.contributions = contributions;
         [contributorsArray addObject:contributorModel];
     }
@@ -102,17 +109,50 @@ static NSString *const kBWGithubParserContributorContributionsKey = @"contributi
 }
 
 + (void)hydrateUserModel:(BWGithubBarebonesUserModel *)userModel fromResponse:(NSDictionary *)ownerDictionary {
-    //TODO: Add type checking
-    NSUInteger identifier = [[ownerDictionary objectForKey:kBWGithubParserCommonIdKey] integerValue];
+    NSUInteger identifier = [[ownerDictionary getNumberForKey:kBWGithubParserCommonIdKey defaultValue:nil] integerValue];
     userModel.identifier = identifier;
 
-    NSString *login = [ownerDictionary objectForKey:kBWGithubParserCommonLoginKey];
+    NSString *login = [ownerDictionary getStringForKey:kBWGithubParserCommonLoginKey defaultValue:nil];
     userModel.login = login;
 
-    NSString *avatarUrl = [ownerDictionary objectForKey:kBWGithubParserCommonAvatarUrlKey];
+    NSString *avatarUrl = [ownerDictionary getStringForKey:kBWGithubParserCommonAvatarUrlKey defaultValue:nil];
     userModel.avatarUrl = avatarUrl;
     
+    NSString *profileUrl = [ownerDictionary getStringForKey:kBWGithubParserCommonUrlKey defaultValue:nil];
+    userModel.profileUrl = profileUrl;
 }
 
++ (BWGithubUserModel *)handleGetUserProfileFromBarebonesUserModel:(NSDictionary *)response {
+    if (!response) {
+        return nil;
+    }
+    
+    BWGithubUserModel *userModel = [[BWGithubUserModel alloc] init];
+    [self hydrateUserModel:userModel fromResponse:response];
+    
+    NSString *type = [response getStringForKey:kBWGithubParserUserTypeKey defaultValue:nil];
+    userModel.type = type;
+    
+    NSString *name = [response getStringForKey:kBWGithubParserCommonNameKey defaultValue:nil];
+    userModel.name = name;
+    
+    NSUInteger numberOfPublicRepositories = [[response getNumberForKey:kBWGithubParserUserPublicRepositoriesKey defaultValue:nil] integerValue];
+    userModel.numberOfPublicRepositories = numberOfPublicRepositories;
+    
+    NSUInteger followers = [[response getNumberForKey:kBWGithubParserUserFollowersKey defaultValue:nil] integerValue];
+    userModel.followers = followers;
+    
+    NSUInteger following = [[response getNumberForKey:kBWGithubParserUserFollowingKey defaultValue:nil] integerValue];
+    userModel.following = following;
+    
+    NSString *location = [response getStringForKey:kBWGithubParserUserLocationKey defaultValue:nil];
+    userModel.location = location;
+    
+    NSString *bio = [response getStringForKey:kBWGithubParserUserBioKey defaultValue:nil];
+    userModel.bio = bio;
+    
+    
+    return userModel;
+}
 
 @end

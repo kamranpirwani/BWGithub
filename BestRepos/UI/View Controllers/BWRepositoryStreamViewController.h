@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BWRootViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface BWRepositoryStreamViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @end

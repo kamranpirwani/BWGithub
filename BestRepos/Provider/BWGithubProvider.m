@@ -36,17 +36,17 @@ static NSInteger const kBWGithubProviderPerPageCount = 100;
     NSString *requestMethod = @"GET";
     NSString *path = @"https://api.github.com/search/repositories";
     
-    NSString *defaultSearchQuery = @"stars:>1";
-    NSString *combinedSearchQuery = nil;
+    NSString *defaultSearchQuery = @"stars:>=0";
+    NSString *searchQueryString = nil;
     
     if (searchQuery.keywords.length > 0) {
-        combinedSearchQuery = [NSString stringWithFormat:@"%@+%@", searchQuery.keywords, defaultSearchQuery];
+        searchQueryString = searchQuery.keywords;
     } else {
-        combinedSearchQuery = defaultSearchQuery;
+        searchQueryString = defaultSearchQuery;
     }
     
     NSDictionary *params = @{
-                             BWGithubProviderQueryKey : combinedSearchQuery,
+                             BWGithubProviderQueryKey : searchQueryString,
                              BWGithubProviderSortKey : searchQuery.sortFieldString,
                              BWGithubProviderOrderKey : searchQuery.sortOrderString,
                              BWGithubProviderPerPageKey :  @(kBWGithubProviderPerPageCount)
@@ -58,7 +58,7 @@ static NSInteger const kBWGithubProviderPerPageCount = 100;
                    callback:^(id response, NSError *error) {
                        NSArray<BWGithubRepositoryModel *> *repositories = nil;
                        if (!error) {
-                           repositories = [BWGithubParser handleMostPopularRepositoriesFetch:response];
+                           repositories = [BWGithubParser handleGetMostPopularRepositories:response];
                        }
                        if (callback) {
                            callback(error, repositories);
@@ -83,7 +83,7 @@ static NSInteger const kBWGithubProviderPerPageCount = 100;
                    callback:^(id response, NSError *error) {
                        NSArray<BWGithubContributorModel *> *contributors = nil;
                        if (!error) {
-                           contributors = [BWGithubParser handleTopContributorsFromRepositoryFetch:response];
+                           contributors = [BWGithubParser handleGetTopContributorsFromRepository:response];
                        }
                        if (callback) {
                            callback(error, contributors);
@@ -91,5 +91,28 @@ static NSInteger const kBWGithubProviderPerPageCount = 100;
                    }];
 }
 
+- (void)getUserProfileFromBarebonesUserModel:(BWGithubBarebonesUserModel *)user
+                                    callback:(void (^)(NSError *error, BWGithubUserModel *completeUser))callback {
+    [BWUtils assertCondition:(callback != nil)
+                     message:@"The callback must be non-nil"
+                       class:[self class] method:_cmd];
+    
+    NSString *requestMethod = @"GET";
+    NSString *path = user.profileUrl;
+    NSDictionary *params = nil;
+    
+    [self requestWithMethod:requestMethod
+                       path:path
+                 parameters:params
+                   callback:^(id response, NSError *error) {
+                       BWGithubUserModel *completeUser = nil;
+                       if (!error) {
+                           completeUser = [BWGithubParser handleGetUserProfileFromBarebonesUserModel:response];
+                       }
+                       if (callback) {
+                           callback(error, completeUser);
+                       }
+                   }];
+}
 
 @end
