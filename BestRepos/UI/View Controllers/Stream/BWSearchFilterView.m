@@ -17,8 +17,8 @@
  * Maintain a collection of search filter and buttons, so adding/removing ui elements will be as simple
  * as modifying their tags
  */
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *searchFilterButtons;
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *searchOrderButtons;
+@property(nonatomic, strong) IBOutletCollection(UIButton) NSArray *searchFilterButtons;
+@property(nonatomic, strong) IBOutletCollection(UIButton) NSArray *searchOrderButtons;
 
 @end
 

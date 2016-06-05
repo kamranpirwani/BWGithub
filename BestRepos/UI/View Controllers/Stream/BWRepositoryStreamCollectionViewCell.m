@@ -12,17 +12,16 @@
 
 @interface BWRepositoryStreamCollectionViewCell()
 
-@property (weak, nonatomic) IBOutlet UIImageView *ivOrganizationImage;
-@property (weak, nonatomic) IBOutlet UILabel *lblRepositoryName;
-@property (weak, nonatomic) IBOutlet UILabel *lblProjectDescription;
-@property (weak, nonatomic) IBOutlet UILabel *lblStarredCount;
-@property (weak, nonatomic) IBOutlet UILabel *lblForkedCount;
-@property (weak, nonatomic) IBOutlet UIImageView *ivFirstContributor;
+@property(nonatomic, weak) IBOutlet UIImageView *ivOrganizationImage;
+@property(nonatomic, weak) IBOutlet UILabel *lblRepositoryName;
+@property(nonatomic, weak) IBOutlet UILabel *lblProjectDescription;
+@property(nonatomic, weak) IBOutlet UILabel *lblStarredCount;
+@property(nonatomic, weak) IBOutlet UILabel *lblForkedCount;
+@property(nonatomic, weak) IBOutlet UIImageView *ivFirstContributor;
 
-@property(nonatomic, assign) CGRect lastKnownRect;
-@property (weak, nonatomic) IBOutlet UIImageView *ivSecondContributor;
-@property (weak, nonatomic) IBOutlet UIImageView *ivThirdContributor;
-@property (weak, nonatomic) IBOutlet UILabel *lblTopContributors;
+@property(nonatomic, weak) IBOutlet UIImageView *ivSecondContributor;
+@property(nonatomic, weak) IBOutlet UIImageView *ivThirdContributor;
+@property(nonatomic, weak) IBOutlet UILabel *lblTopContributors;
 
 @end
 

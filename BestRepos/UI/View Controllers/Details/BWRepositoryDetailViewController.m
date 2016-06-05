@@ -17,7 +17,7 @@
 
 @interface BWRepositoryDetailViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property(nonatomic, weak) IBOutlet UITableView *tableView;
 
 @property(nonatomic, strong) BWGithubRepositoryModel *repositoryModel;
 @property(nonatomic, strong) BWLoadingOverlayView *loadingOverlayView;

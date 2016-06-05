@@ -59,18 +59,18 @@ static NSString *kBWRepositoryStreamViewControllerSearchBarPlaceholderText = @"S
 /**
  * The filter view used to retrieve the current search filters when querying for new data
  */
-@property (weak, nonatomic) IBOutlet BWSearchFilterView *searchFilterView;
+@property(nonatomic, weak) IBOutlet BWSearchFilterView *searchFilterView;
 
 /**
  * The height constraint for our filter view
  * Used to hide and show the filters view based on user interaction
  */
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchFilterViewHeightContraint;
+@property(nonatomic, weak) IBOutlet NSLayoutConstraint *searchFilterViewHeightContraint;
 
 /**
  * The container view we add our search bar to
  */
-@property (weak, nonatomic) IBOutlet UIView *searchBarContainerView;
+@property(nonatomic, weak) IBOutlet UIView *searchBarContainerView;
 
 /**
  * The current display state for our filters
@@ -81,12 +81,12 @@ static NSString *kBWRepositoryStreamViewControllerSearchBarPlaceholderText = @"S
 /**
  * The view which gives more information to the user when no searh results are found
  */
-@property (weak, nonatomic) IBOutlet UIView *nullStateView;
+@property(nonatomic, weak) IBOutlet UIView *nullStateView;
 
 /**
  * The label which gives more information to the user when no searh results are found
  */
-@property (weak, nonatomic) IBOutlet UILabel *nullStateLabel;
+@property(nonatomic, weak) IBOutlet UILabel *nullStateLabel;
 
 @end
 

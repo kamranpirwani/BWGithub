@@ -11,10 +11,10 @@
 
 @interface BWRepositoryHeaderView()
 
-@property (weak, nonatomic) IBOutlet UIImageView *ivRepositoryImage;
-@property (weak, nonatomic) IBOutlet UILabel *lblRepositoryName;
-@property (weak, nonatomic) IBOutlet UILabel *lblProgrammingLanguage;
-@property (weak, nonatomic) IBOutlet UILabel *lblDescription;
+@property(nonatomic, weak) IBOutlet UIImageView *ivRepositoryImage;
+@property(nonatomic, weak) IBOutlet UILabel *lblRepositoryName;
+@property(nonatomic, weak) IBOutlet UILabel *lblProgrammingLanguage;
+@property(nonatomic, weak) IBOutlet UILabel *lblDescription;
 
 @end
 

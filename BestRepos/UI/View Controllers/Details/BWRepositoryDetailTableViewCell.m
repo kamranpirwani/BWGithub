@@ -11,9 +11,9 @@
 
 @interface BWRepositoryDetailTableViewCell()
 
-@property (weak, nonatomic) IBOutlet UIImageView *ivAvatar;
-@property (weak, nonatomic) IBOutlet UILabel *lblUsername;
-@property (weak, nonatomic) IBOutlet UILabel *lblNumberOfCommits;
+@property(nonatomic, weak) IBOutlet UIImageView *ivAvatar;
+@property(nonatomic, weak) IBOutlet UILabel *lblUsername;
+@property(nonatomic, weak) IBOutlet UILabel *lblNumberOfCommits;
 
 @end
 

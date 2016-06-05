@@ -12,13 +12,13 @@
 
 @interface BWProfileViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *ivProfilePicture;
-@property (weak, nonatomic) IBOutlet UILabel *lblName;
-@property (weak, nonatomic) IBOutlet UILabel *lblFollowingCount;
-@property (weak, nonatomic) IBOutlet UILabel *lblPublicRepositoryCount;
-@property (weak, nonatomic) IBOutlet UILabel *lblFollowersCount;
-@property (weak, nonatomic) IBOutlet UILabel *lblType;
-@property (weak, nonatomic) IBOutlet UILabel *lblLocation;
+@property(nonatomic, weak) IBOutlet UIImageView *ivProfilePicture;
+@property(nonatomic, weak) IBOutlet UILabel *lblName;
+@property(nonatomic, weak) IBOutlet UILabel *lblFollowingCount;
+@property(nonatomic, weak) IBOutlet UILabel *lblPublicRepositoryCount;
+@property(nonatomic, weak) IBOutlet UILabel *lblFollowersCount;
+@property(nonatomic, weak) IBOutlet UILabel *lblType;
+@property(nonatomic, weak) IBOutlet UILabel *lblLocation;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblBiography;
 @property(nonatomic, strong) BWGithubUserModel *userModel;

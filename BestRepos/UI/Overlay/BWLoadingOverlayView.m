@@ -11,7 +11,9 @@
 #import "BWUIUtils.h"
 
 @interface BWOverlayView ()
+
 @property (nonatomic, readwrite, assign) CGFloat finalAlpha;
+
 @end
 
 @implementation BWLoadingOverlayView {
