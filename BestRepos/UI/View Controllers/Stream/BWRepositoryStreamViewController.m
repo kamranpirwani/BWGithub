@@ -115,6 +115,9 @@ typedef NS_ENUM(NSInteger, BWFilterState) {
     [_overlayView setTapCallback:^{
         [weakSelf toggleFilters];
     }];
+    //In the event that the user is scrolling when tapping filter, immediately stop scrolling
+    //to the current content offset so we don't experience any ui weirdness
+    [self.collectionView setContentOffset:self.collectionView.contentOffset animated:NO];
     [_overlayView showWithCallback:^{
         [_collectionView setScrollEnabled:NO];
         _searchHeaderViewHeightContraint.constant = 125;
