@@ -210,8 +210,10 @@ static NSString *kBWRepositoryStreamViewControllerSearchBarPlaceholderText = @"S
 }
 
 - (void)handleErrorFromFetch:(NSString *)errorString {
+    //reset the search query since the user should be allowed to search for this again
+    _currentSearchQuery = nil;
     SCLAlertView *alert = [[SCLAlertView alloc] init];
-    [alert showError:self title:@"Authentication Error"
+    [alert showError:self title:@"Error"
             subTitle:errorString
     closeButtonTitle:@"Okay"
             duration:0.0f];

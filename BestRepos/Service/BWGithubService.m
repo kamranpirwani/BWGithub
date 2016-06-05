@@ -14,8 +14,11 @@
 #import "BWGithubContributorModel.h"
 
 typedef NS_ENUM(NSInteger, BWGithubServiceErrorCode) {
+    kBWGithubServiceErrorCodeUserIsOffline = -1009,
     kBWGithubServiceErrorCodeUnauthorized = -1011
 };
+
+static NSString *kBWGithubServiceNetworkUnavailable = @"You must be connected to the internet in order to make requests";
 
 @implementation BWGithubService {
     id<BWGithubProviderProtocol> _provider;
@@ -41,7 +44,7 @@ static BWGithubService *_singleton = nil;
     return self;
 }
 
-#pragma mark - Pubic API
+#pragma mark - Public API
 
 - (void)searchForRepositoryWithQuery:(BWGithubSearchQuery *)searchQuery
                             callback:(void(^)(NSString *errorString, NSArray<BWGithubRepositoryModel *> *repositories))callback {
@@ -115,7 +118,8 @@ static BWGithubService *_singleton = nil;
         case kBWGithubServiceErrorCodeUnauthorized:
             errorReason = @"The credentials contained in Credentials.plist are not valid. Please follow the instructions on the repository README for more information";
             break;
-            
+        case kBWGithubServiceErrorCodeUserIsOffline:
+            errorReason = @"You must have a valid internet connection to perform this query. Please connect to the internet and try again";
         default:
             break;
     }
