@@ -33,13 +33,6 @@
     [self setupContibutorsImageViews];
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    if ([self shouldAddDropShadow]) {
-        [self addDropShadow];
-    }
-}
-
 - (NSArray *)getContributorImageViews {
     NSArray *imageViews = @[ _ivFirstContributor, _ivSecondContributor, _ivThirdContributor];
     return imageViews;
@@ -56,22 +49,6 @@
     [imageViews enumerateObjectsUsingBlock:^(UIImageView  *_Nonnull imageView, NSUInteger idx, BOOL * _Nonnull stop) {
         imageView.layer.cornerRadius = imageView.frame.size.width / 2;
     }];
-}
-
-- (BOOL)shouldAddDropShadow {
-    BOOL containsShadow = self.layer.shadowPath != nil;
-    BOOL hasBoundsChanged = !CGRectEqualToRect(_lastKnownRect, self.bounds);
-    return !containsShadow || hasBoundsChanged;
-}
-
-- (void)addDropShadow {
-    _lastKnownRect = self.bounds;
-    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:self.bounds];
-    self.layer.masksToBounds = NO;
-    self.layer.shadowColor = [UIColor blackColor].CGColor;
-    self.layer.shadowOffset = CGSizeMake(0.0f, 2.0f);
-    self.layer.shadowOpacity = 0.5f;
-    self.layer.shadowPath = shadowPath.CGPath;
 }
 
 - (void)configureWithModel:(BWGithubRepositoryModel *)repositoryModel {

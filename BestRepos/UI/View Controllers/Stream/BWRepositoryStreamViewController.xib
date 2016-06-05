@@ -8,6 +8,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BWRepositoryStreamViewController">
             <connections>
                 <outlet property="collectionView" destination="cOw-Hd-Anv" id="ncN-6o-geV"/>
+                <outlet property="searchBarContainerView" destination="FpI-gc-aCG" id="3wY-AC-lvO"/>
+                <outlet property="searchHeaderView" destination="TgN-RS-isi" id="7yL-EC-6vQ"/>
+                <outlet property="searchHeaderViewHeightContraint" destination="Orq-6M-Ttq" id="7CY-Ou-p0W"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="r9I-cD-JEA"/>
             </connections>
         </placeholder>
@@ -17,8 +20,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cOw-Hd-Anv">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <color key="backgroundColor" red="0.70196078429999997" green="0.8980392157" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RHd-gp-ZAr">
                         <size key="itemSize" width="250" height="350"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -30,12 +33,32 @@
                         <outlet property="delegate" destination="-1" id="Psf-0W-yKr"/>
                     </connections>
                 </collectionView>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TgN-RS-isi" userLabel="Search Header View" customClass="BWSearchHeaderView">
+                    <rect key="frame" x="0.0" y="108" width="600" height="0.0"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="Orq-6M-Ttq"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FpI-gc-aCG" userLabel="Search Bar Container View">
+                    <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="jf5-U0-Oah"/>
+                    </constraints>
+                </view>
             </subviews>
             <constraints>
+                <constraint firstItem="FpI-gc-aCG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="6kj-I0-Skf"/>
                 <constraint firstAttribute="trailing" secondItem="cOw-Hd-Anv" secondAttribute="trailing" id="N57-hF-6JR"/>
-                <constraint firstItem="cOw-Hd-Anv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="clr-hT-cPI"/>
+                <constraint firstItem="FpI-gc-aCG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WYh-ub-Qld"/>
+                <constraint firstAttribute="trailing" secondItem="FpI-gc-aCG" secondAttribute="trailing" id="Zs1-fS-ir2"/>
+                <constraint firstItem="TgN-RS-isi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hH0-PZ-LBd"/>
                 <constraint firstItem="cOw-Hd-Anv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hcn-NA-Qk4"/>
                 <constraint firstAttribute="bottom" secondItem="cOw-Hd-Anv" secondAttribute="bottom" id="hkW-c0-6di"/>
+                <constraint firstItem="TgN-RS-isi" firstAttribute="top" secondItem="FpI-gc-aCG" secondAttribute="bottom" id="oo3-4a-51V"/>
+                <constraint firstItem="cOw-Hd-Anv" firstAttribute="top" secondItem="TgN-RS-isi" secondAttribute="bottom" id="qgo-xp-X3U"/>
+                <constraint firstAttribute="trailing" secondItem="TgN-RS-isi" secondAttribute="trailing" id="zBT-t6-4iC"/>
             </constraints>
             <point key="canvasLocation" x="-15" y="171"/>
         </view>

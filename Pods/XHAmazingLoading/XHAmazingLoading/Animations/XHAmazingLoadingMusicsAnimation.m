@@ -12,14 +12,21 @@
 
 @implementation XHAmazingLoadingMusicsAnimation
 
-- (void)configureAnimationInLayer:(CALayer *)layer withSize:(CGSize)size tintColor:(UIColor *)tintColor {
+- (void)configureAnimationInLayer:(CALayer *)layer withSize:(CGSize)size tintColor:(UIColor *)tintColor inFrame:(CGRect)parentFrame {
     // 1.我们先初始化CAReplicatorLayer，添加到View的layer上
     // 2.再给CAReplicatorLayer添加一个上下移动的矩形layer
     // 3.然后根据CAReplicatorLayer的特性，可以进行复制、延迟动画、以什么形式进行复制
     
     
     // 这个动画的来源：http://www.ios-animations-by-emails.com/posts/2015-march#tutorial
-    CGRect replicatorLayerFrame = [XHLayerHelper initializerFrameWithSize:size];
+    CGRect replicatorLayerFrame = ({
+        CGFloat mainHeight = CGRectGetHeight(parentFrame);
+        CGFloat mainWdiht = CGRectGetWidth(parentFrame);
+        CGRect frame = CGRectMake((mainWdiht - size.width) / 2.0,
+                                  (mainHeight - size.height) / 2.0,
+                                  size.width, size.height);
+        frame;
+    });
     CAReplicatorLayer *replicatorLayer = [XHLayerHelper addReplicatorLayerWithFrame:replicatorLayerFrame atLayer:layer];
     
     // 核心代码
@@ -28,6 +35,10 @@
     replicatorLayer.instanceTransform = CATransform3DMakeTranslation(20.0, 0.0, .0);
     replicatorLayer.instanceDelay = 0.2;
     replicatorLayer.masksToBounds = YES;
+}
+
+- (void)configureAnimationInLayer:(CALayer *)layer withSize:(CGSize)size tintColor:(UIColor *)tintColor {
+    [self configureAnimationInLayer:layer withSize:size tintColor:tintColor inFrame:[UIScreen mainScreen].bounds];
 }
 
 - (void)addAnimationRectangleLayerAtLayer:(CALayer *)layer withSize:(CGSize)size tintColor:(UIColor *)tintColor {

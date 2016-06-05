@@ -15,9 +15,9 @@ typedef NS_ENUM(NSInteger, BWGithubSearchQuerySortField) {
     kBWGithubSearchQuerySortUpdated
 };
 
-typedef NS_ENUM(NSInteger, BWGithubSortOrder) {
-    kBWGithubSortOrderDescending,
-    kBWGithubSortOrderAscending
+typedef NS_ENUM(NSInteger, BWGithubSearchQuerySortOrder) {
+    kBWGithubSearchQuerySortOrderDescending,
+    kBWGithubSearchQuerySortOrderAscending
 };
 
 @interface BWGithubSearchQuery : NSObject
@@ -26,12 +26,7 @@ typedef NS_ENUM(NSInteger, BWGithubSortOrder) {
 
 - (instancetype)initWithSearchKeywords:(NSString *)keywords
                              sortField:(BWGithubSearchQuerySortField)sortField
-                             sortOrder:(BWGithubSortOrder)sortOrder;
-
-+ (NSArray <NSString *> *)allPrettySortFieldStrings;
-
-+ (NSString *)prettyStringFromSortField:(BWGithubSearchQuerySortField)sortField;
-+ (BWGithubSearchQuerySortField)sortFieldFromPrettyString:(NSString *)prettyString;
+                             sortOrder:(BWGithubSearchQuerySortOrder)sortOrder;
 
 @property(nonatomic, readonly) NSString *keywords;
 @property(nonatomic, readonly) NSString *sortFieldString;

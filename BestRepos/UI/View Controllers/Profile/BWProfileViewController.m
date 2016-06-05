@@ -7,6 +7,7 @@
 //
 
 #import "BWProfileViewController.h"
+#import "BWUtils.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface BWProfileViewController ()
@@ -31,18 +32,19 @@
 }
 
 - (void)configureWithModel:(BWGithubUserModel *)userModel {
-    _lblName.text = userModel.name;
-    _lblBiography.text = userModel.bio;
-    _lblPublicRepositoryCount.text = [@(userModel.numberOfPublicRepositories) stringValue];
-    _lblFollowersCount.text = [@(userModel.followers) stringValue];
-    _lblFollowingCount.text = [@(userModel.following) stringValue];
+    NSString *displayName = (userModel.name != nil) ? userModel.name : userModel.login;
+    _lblName.text = displayName;
+    NSString *biography = (userModel.bio != nil) ? userModel.bio : [NSString stringWithFormat:@"%@ has no biography included", displayName];
+    _lblBiography.text = biography;
+    
+    _lblPublicRepositoryCount.text = [BWUtils abbreviateNumber:userModel.numberOfPublicRepositories];
+    _lblFollowersCount.text = [BWUtils abbreviateNumber:userModel.followers];
+    _lblFollowingCount.text = [BWUtils abbreviateNumber:userModel.following];
     [_ivProfilePicture sd_setImageWithURL:[NSURL URLWithString:userModel.avatarUrl] placeholderImage:[UIImage imageNamed:@"Owner Placeholder Image"]];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    self.edgesForExtendedLayout = UIRectEdgeNone;
     _ivProfilePicture.layer.cornerRadius = CGRectGetWidth(_ivProfilePicture.bounds) / 2;
     [self configureWithModel:_userModel];
 }

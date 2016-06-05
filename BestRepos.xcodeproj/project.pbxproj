@@ -10,22 +10,26 @@
 		19770CD801922BE032CA0D24 /* libPods-BestReposUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 435B5633636409C5D3705721 /* libPods-BestReposUITests.a */; };
 		47FAC009D10EF49768FEE76C /* libPods-BestReposTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15372E6B2B53E43F1B1E879F /* libPods-BestReposTests.a */; };
 		B3522D2129881B2898030BB4 /* libPods-BestRepos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D23B0D1F849958323CF5749 /* libPods-BestRepos.a */; };
-		FE0847151D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847011D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.m */; };
-		FE0847161D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847021D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.xib */; };
-		FE0847171D0271F1006669AB /* BWSearchHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847051D0271F1006669AB /* BWSearchHeaderView.m */; };
-		FE0847181D0271F1006669AB /* BWRepositoryDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847081D0271F1006669AB /* BWRepositoryDetailTableViewCell.m */; };
-		FE0847191D0271F1006669AB /* BWRepositoryDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847091D0271F1006669AB /* BWRepositoryDetailTableViewCell.xib */; };
-		FE08471A1D0271F1006669AB /* BWRepositoryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08470C1D0271F1006669AB /* BWRepositoryHeaderView.m */; };
-		FE08471B1D0271F1006669AB /* BWRepositoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE08470D1D0271F1006669AB /* BWRepositoryHeaderView.xib */; };
-		FE08471C1D0271F1006669AB /* BWRepositoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847101D0271F1006669AB /* BWRepositoryDetailViewController.m */; };
-		FE08471D1D0271F1006669AB /* BWRepositoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847111D0271F1006669AB /* BWRepositoryDetailViewController.xib */; };
-		FE08471E1D0271F1006669AB /* BWRepositoryStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847131D0271F1006669AB /* BWRepositoryStreamViewController.m */; };
-		FE08471F1D0271F1006669AB /* BWRepositoryStreamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847141D0271F1006669AB /* BWRepositoryStreamViewController.xib */; };
 		FE0847271D02AE3E006669AB /* NSDictionary+BWTypeValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847261D02AE3E006669AB /* NSDictionary+BWTypeValidation.m */; };
-		FE08472B1D02B2BF006669AB /* BWProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847291D02B2BF006669AB /* BWProfileViewController.m */; };
-		FE08472C1D02B2BF006669AB /* BWProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE08472A1D02B2BF006669AB /* BWProfileViewController.xib */; };
 		FE08472F1D02B328006669AB /* BWGithubUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08472E1D02B328006669AB /* BWGithubUserModel.m */; };
 		FE0847321D02B567006669AB /* GET_user_profile.json in Resources */ = {isa = PBXBuildFile; fileRef = FE0847311D02B567006669AB /* GET_user_profile.json */; };
+		FE0847571D038CE0006669AB /* BWOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08473E1D038CE0006669AB /* BWOverlayView.m */; };
+		FE0847581D038CE0006669AB /* BWRepositoryDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847421D038CE0006669AB /* BWRepositoryDetailTableViewCell.m */; };
+		FE0847591D038CE0006669AB /* BWRepositoryDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847431D038CE0006669AB /* BWRepositoryDetailTableViewCell.xib */; };
+		FE08475A1D038CE0006669AB /* BWRepositoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847451D038CE0006669AB /* BWRepositoryDetailViewController.m */; };
+		FE08475B1D038CE0006669AB /* BWRepositoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847461D038CE0006669AB /* BWRepositoryDetailViewController.xib */; };
+		FE08475C1D038CE0006669AB /* BWRepositoryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847481D038CE0006669AB /* BWRepositoryHeaderView.m */; };
+		FE08475D1D038CE0006669AB /* BWRepositoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847491D038CE0006669AB /* BWRepositoryHeaderView.xib */; };
+		FE08475E1D038CE0006669AB /* BWProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08474C1D038CE0006669AB /* BWProfileViewController.m */; };
+		FE08475F1D038CE0006669AB /* BWProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE08474D1D038CE0006669AB /* BWProfileViewController.xib */; };
+		FE0847601D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847501D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.m */; };
+		FE0847611D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847511D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.xib */; };
+		FE0847621D038CE0006669AB /* BWRepositoryStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847531D038CE0006669AB /* BWRepositoryStreamViewController.m */; };
+		FE0847631D038CE0006669AB /* BWRepositoryStreamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847541D038CE0006669AB /* BWRepositoryStreamViewController.xib */; };
+		FE0847641D038CE0006669AB /* BWSearchHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847561D038CE0006669AB /* BWSearchHeaderView.m */; };
+		FE0847661D038D3B006669AB /* BWSearchHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847651D038D3B006669AB /* BWSearchHeaderView.xib */; };
+		FE08476C1D03AF43006669AB /* BWLoadingOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08476B1D03AF43006669AB /* BWLoadingOverlayView.m */; };
+		FE08476F1D03B7FC006669AB /* BWUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08476E1D03B7FC006669AB /* BWUIUtils.m */; };
 		FE2B331A1CFD126A00E6CECD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE2B33191CFD126A00E6CECD /* Assets.xcassets */; };
 		FE2B331D1CFD126A00E6CECD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE2B331B1CFD126A00E6CECD /* LaunchScreen.storyboard */; };
 		FE2B33331CFD126A00E6CECD /* BestReposUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B33321CFD126A00E6CECD /* BestReposUITests.m */; };
@@ -87,32 +91,39 @@
 		766F1AFA6227806B53CC9591 /* Pods-BestReposUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestReposUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BestReposUITests/Pods-BestReposUITests.release.xcconfig"; sourceTree = "<group>"; };
 		78379834CD0C6121452F936B /* Pods-BestReposTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestReposTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BestReposTests/Pods-BestReposTests.release.xcconfig"; sourceTree = "<group>"; };
 		D7BF05DB4E2E4B3B7EB38FAF /* Pods-BestRepos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestRepos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BestRepos/Pods-BestRepos.debug.xcconfig"; sourceTree = "<group>"; };
-		FE0847001D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRepositoryStreamCollectionViewCell.h; sourceTree = "<group>"; };
-		FE0847011D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRepositoryStreamCollectionViewCell.m; sourceTree = "<group>"; };
-		FE0847021D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRepositoryStreamCollectionViewCell.xib; sourceTree = "<group>"; };
-		FE0847041D0271F1006669AB /* BWSearchHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWSearchHeaderView.h; sourceTree = "<group>"; };
-		FE0847051D0271F1006669AB /* BWSearchHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWSearchHeaderView.m; sourceTree = "<group>"; };
-		FE0847071D0271F1006669AB /* BWRepositoryDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRepositoryDetailTableViewCell.h; sourceTree = "<group>"; };
-		FE0847081D0271F1006669AB /* BWRepositoryDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRepositoryDetailTableViewCell.m; sourceTree = "<group>"; };
-		FE0847091D0271F1006669AB /* BWRepositoryDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRepositoryDetailTableViewCell.xib; sourceTree = "<group>"; };
-		FE08470B1D0271F1006669AB /* BWRepositoryHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRepositoryHeaderView.h; sourceTree = "<group>"; };
-		FE08470C1D0271F1006669AB /* BWRepositoryHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRepositoryHeaderView.m; sourceTree = "<group>"; };
-		FE08470D1D0271F1006669AB /* BWRepositoryHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRepositoryHeaderView.xib; sourceTree = "<group>"; };
-		FE08470F1D0271F1006669AB /* BWRepositoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRepositoryDetailViewController.h; sourceTree = "<group>"; };
-		FE0847101D0271F1006669AB /* BWRepositoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRepositoryDetailViewController.m; sourceTree = "<group>"; };
-		FE0847111D0271F1006669AB /* BWRepositoryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRepositoryDetailViewController.xib; sourceTree = "<group>"; };
-		FE0847121D0271F1006669AB /* BWRepositoryStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRepositoryStreamViewController.h; sourceTree = "<group>"; };
-		FE0847131D0271F1006669AB /* BWRepositoryStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRepositoryStreamViewController.m; sourceTree = "<group>"; };
-		FE0847141D0271F1006669AB /* BWRepositoryStreamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRepositoryStreamViewController.xib; sourceTree = "<group>"; };
 		FE0847251D02AE3E006669AB /* NSDictionary+BWTypeValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BWTypeValidation.h"; sourceTree = "<group>"; };
 		FE0847261D02AE3E006669AB /* NSDictionary+BWTypeValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BWTypeValidation.m"; sourceTree = "<group>"; };
-		FE0847281D02B2BF006669AB /* BWProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWProfileViewController.h; sourceTree = "<group>"; };
-		FE0847291D02B2BF006669AB /* BWProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWProfileViewController.m; sourceTree = "<group>"; };
-		FE08472A1D02B2BF006669AB /* BWProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWProfileViewController.xib; sourceTree = "<group>"; };
 		FE08472D1D02B328006669AB /* BWGithubUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubUserModel.h; sourceTree = "<group>"; };
 		FE08472E1D02B328006669AB /* BWGithubUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWGithubUserModel.m; sourceTree = "<group>"; };
 		FE0847301D02B3C7006669AB /* BWGithubUserModel_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubUserModel_Internal.h; sourceTree = "<group>"; };
 		FE0847311D02B567006669AB /* GET_user_profile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GET_user_profile.json; sourceTree = "<group>"; };
+		FE08473D1D038CE0006669AB /* BWOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWOverlayView.h; sourceTree = "<group>"; };
+		FE08473E1D038CE0006669AB /* BWOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWOverlayView.m; sourceTree = "<group>"; };
+		FE0847411D038CE0006669AB /* BWRepositoryDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRepositoryDetailTableViewCell.h; sourceTree = "<group>"; };
+		FE0847421D038CE0006669AB /* BWRepositoryDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRepositoryDetailTableViewCell.m; sourceTree = "<group>"; };
+		FE0847431D038CE0006669AB /* BWRepositoryDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRepositoryDetailTableViewCell.xib; sourceTree = "<group>"; };
+		FE0847441D038CE0006669AB /* BWRepositoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRepositoryDetailViewController.h; sourceTree = "<group>"; };
+		FE0847451D038CE0006669AB /* BWRepositoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRepositoryDetailViewController.m; sourceTree = "<group>"; };
+		FE0847461D038CE0006669AB /* BWRepositoryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRepositoryDetailViewController.xib; sourceTree = "<group>"; };
+		FE0847471D038CE0006669AB /* BWRepositoryHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRepositoryHeaderView.h; sourceTree = "<group>"; };
+		FE0847481D038CE0006669AB /* BWRepositoryHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRepositoryHeaderView.m; sourceTree = "<group>"; };
+		FE0847491D038CE0006669AB /* BWRepositoryHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRepositoryHeaderView.xib; sourceTree = "<group>"; };
+		FE08474B1D038CE0006669AB /* BWProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWProfileViewController.h; sourceTree = "<group>"; };
+		FE08474C1D038CE0006669AB /* BWProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWProfileViewController.m; sourceTree = "<group>"; };
+		FE08474D1D038CE0006669AB /* BWProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWProfileViewController.xib; sourceTree = "<group>"; };
+		FE08474F1D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRepositoryStreamCollectionViewCell.h; sourceTree = "<group>"; };
+		FE0847501D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRepositoryStreamCollectionViewCell.m; sourceTree = "<group>"; };
+		FE0847511D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRepositoryStreamCollectionViewCell.xib; sourceTree = "<group>"; };
+		FE0847521D038CE0006669AB /* BWRepositoryStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRepositoryStreamViewController.h; sourceTree = "<group>"; };
+		FE0847531D038CE0006669AB /* BWRepositoryStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRepositoryStreamViewController.m; sourceTree = "<group>"; };
+		FE0847541D038CE0006669AB /* BWRepositoryStreamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRepositoryStreamViewController.xib; sourceTree = "<group>"; };
+		FE0847551D038CE0006669AB /* BWSearchHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWSearchHeaderView.h; sourceTree = "<group>"; };
+		FE0847561D038CE0006669AB /* BWSearchHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWSearchHeaderView.m; sourceTree = "<group>"; };
+		FE0847651D038D3B006669AB /* BWSearchHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWSearchHeaderView.xib; sourceTree = "<group>"; };
+		FE08476A1D03AF43006669AB /* BWLoadingOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWLoadingOverlayView.h; sourceTree = "<group>"; };
+		FE08476B1D03AF43006669AB /* BWLoadingOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWLoadingOverlayView.m; sourceTree = "<group>"; };
+		FE08476D1D03B7FC006669AB /* BWUIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWUIUtils.h; sourceTree = "<group>"; };
+		FE08476E1D03B7FC006669AB /* BWUIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWUIUtils.m; sourceTree = "<group>"; };
 		FE2B330A1CFD126A00E6CECD /* BestRepos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestRepos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2B33191CFD126A00E6CECD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE2B331C1CFD126A00E6CECD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -217,71 +228,76 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FE0846FE1D0271F1006669AB /* UI */ = {
+		FE08473B1D038CE0006669AB /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				FE0846FF1D0271F1006669AB /* Collection View Cells */,
-				FE0847031D0271F1006669AB /* Collection View Section Header */,
-				FE0847061D0271F1006669AB /* Table View Cells */,
-				FE08470A1D0271F1006669AB /* Table View Headers */,
-				FE08470E1D0271F1006669AB /* View Controllers */,
+				FE08473C1D038CE0006669AB /* Overlay */,
+				FE08473F1D038CE0006669AB /* View Controllers */,
 			);
 			path = UI;
 			sourceTree = "<group>";
 		};
-		FE0846FF1D0271F1006669AB /* Collection View Cells */ = {
+		FE08473C1D038CE0006669AB /* Overlay */ = {
 			isa = PBXGroup;
 			children = (
-				FE0847001D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.h */,
-				FE0847011D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.m */,
-				FE0847021D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.xib */,
+				FE08473D1D038CE0006669AB /* BWOverlayView.h */,
+				FE08473E1D038CE0006669AB /* BWOverlayView.m */,
+				FE08476A1D03AF43006669AB /* BWLoadingOverlayView.h */,
+				FE08476B1D03AF43006669AB /* BWLoadingOverlayView.m */,
 			);
-			path = "Collection View Cells";
+			path = Overlay;
 			sourceTree = "<group>";
 		};
-		FE0847031D0271F1006669AB /* Collection View Section Header */ = {
+		FE08473F1D038CE0006669AB /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FE0847041D0271F1006669AB /* BWSearchHeaderView.h */,
-				FE0847051D0271F1006669AB /* BWSearchHeaderView.m */,
-			);
-			path = "Collection View Section Header";
-			sourceTree = "<group>";
-		};
-		FE0847061D0271F1006669AB /* Table View Cells */ = {
-			isa = PBXGroup;
-			children = (
-				FE0847071D0271F1006669AB /* BWRepositoryDetailTableViewCell.h */,
-				FE0847081D0271F1006669AB /* BWRepositoryDetailTableViewCell.m */,
-				FE0847091D0271F1006669AB /* BWRepositoryDetailTableViewCell.xib */,
-			);
-			path = "Table View Cells";
-			sourceTree = "<group>";
-		};
-		FE08470A1D0271F1006669AB /* Table View Headers */ = {
-			isa = PBXGroup;
-			children = (
-				FE08470B1D0271F1006669AB /* BWRepositoryHeaderView.h */,
-				FE08470C1D0271F1006669AB /* BWRepositoryHeaderView.m */,
-				FE08470D1D0271F1006669AB /* BWRepositoryHeaderView.xib */,
-			);
-			path = "Table View Headers";
-			sourceTree = "<group>";
-		};
-		FE08470E1D0271F1006669AB /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				FE0847281D02B2BF006669AB /* BWProfileViewController.h */,
-				FE0847291D02B2BF006669AB /* BWProfileViewController.m */,
-				FE08472A1D02B2BF006669AB /* BWProfileViewController.xib */,
-				FE08470F1D0271F1006669AB /* BWRepositoryDetailViewController.h */,
-				FE0847101D0271F1006669AB /* BWRepositoryDetailViewController.m */,
-				FE0847111D0271F1006669AB /* BWRepositoryDetailViewController.xib */,
-				FE0847121D0271F1006669AB /* BWRepositoryStreamViewController.h */,
-				FE0847131D0271F1006669AB /* BWRepositoryStreamViewController.m */,
-				FE0847141D0271F1006669AB /* BWRepositoryStreamViewController.xib */,
+				FE0847401D038CE0006669AB /* Details */,
+				FE08474A1D038CE0006669AB /* Profile */,
+				FE08474E1D038CE0006669AB /* Stream */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FE0847401D038CE0006669AB /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				FE0847411D038CE0006669AB /* BWRepositoryDetailTableViewCell.h */,
+				FE0847421D038CE0006669AB /* BWRepositoryDetailTableViewCell.m */,
+				FE0847431D038CE0006669AB /* BWRepositoryDetailTableViewCell.xib */,
+				FE0847441D038CE0006669AB /* BWRepositoryDetailViewController.h */,
+				FE0847451D038CE0006669AB /* BWRepositoryDetailViewController.m */,
+				FE0847461D038CE0006669AB /* BWRepositoryDetailViewController.xib */,
+				FE0847471D038CE0006669AB /* BWRepositoryHeaderView.h */,
+				FE0847481D038CE0006669AB /* BWRepositoryHeaderView.m */,
+				FE0847491D038CE0006669AB /* BWRepositoryHeaderView.xib */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		FE08474A1D038CE0006669AB /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FE08474B1D038CE0006669AB /* BWProfileViewController.h */,
+				FE08474C1D038CE0006669AB /* BWProfileViewController.m */,
+				FE08474D1D038CE0006669AB /* BWProfileViewController.xib */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		FE08474E1D038CE0006669AB /* Stream */ = {
+			isa = PBXGroup;
+			children = (
+				FE08474F1D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.h */,
+				FE0847501D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.m */,
+				FE0847511D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.xib */,
+				FE0847521D038CE0006669AB /* BWRepositoryStreamViewController.h */,
+				FE0847531D038CE0006669AB /* BWRepositoryStreamViewController.m */,
+				FE0847541D038CE0006669AB /* BWRepositoryStreamViewController.xib */,
+				FE0847551D038CE0006669AB /* BWSearchHeaderView.h */,
+				FE0847561D038CE0006669AB /* BWSearchHeaderView.m */,
+				FE0847651D038D3B006669AB /* BWSearchHeaderView.xib */,
+			);
+			path = Stream;
 			sourceTree = "<group>";
 		};
 		FE2B33011CFD126A00E6CECD = {
@@ -317,7 +333,7 @@
 				FE2B334D1CFD325A00E6CECD /* Service */,
 				FE2B334E1CFD325A00E6CECD /* Supporting Files */,
 				FE2B33721CFD47B500E6CECD /* Tech */,
-				FE0846FE1D0271F1006669AB /* UI */,
+				FE08473B1D038CE0006669AB /* UI */,
 				FE2B33791CFD57C700E6CECD /* Utils */,
 				FE2B33191CFD126A00E6CECD /* Assets.xcassets */,
 				FE2B331B1CFD126A00E6CECD /* LaunchScreen.storyboard */,
@@ -444,6 +460,8 @@
 				FE6338361CFE8954005DE1B5 /* BWProviderUtils.m */,
 				FE0847251D02AE3E006669AB /* NSDictionary+BWTypeValidation.h */,
 				FE0847261D02AE3E006669AB /* NSDictionary+BWTypeValidation.m */,
+				FE08476D1D03B7FC006669AB /* BWUIUtils.h */,
+				FE08476E1D03B7FC006669AB /* BWUIUtils.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -605,19 +623,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE0847191D0271F1006669AB /* BWRepositoryDetailTableViewCell.xib in Resources */,
+				FE0847591D038CE0006669AB /* BWRepositoryDetailTableViewCell.xib in Resources */,
 				FE6338641CFF58B2005DE1B5 /* Credentials.plist in Resources */,
-				FE08472C1D02B2BF006669AB /* BWProfileViewController.xib in Resources */,
 				FE63384E1CFEACBB005DE1B5 /* GET_top_contributors.json in Resources */,
-				FE08471D1D0271F1006669AB /* BWRepositoryDetailViewController.xib in Resources */,
+				FE0847631D038CE0006669AB /* BWRepositoryStreamViewController.xib in Resources */,
 				FE2B331D1CFD126A00E6CECD /* LaunchScreen.storyboard in Resources */,
-				FE08471F1D0271F1006669AB /* BWRepositoryStreamViewController.xib in Resources */,
 				FE2B331A1CFD126A00E6CECD /* Assets.xcassets in Resources */,
 				FE63384D1CFEACBB005DE1B5 /* GET_most_starred_repositories.json in Resources */,
-				FE08471B1D0271F1006669AB /* BWRepositoryHeaderView.xib in Resources */,
-				FE0847161D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.xib in Resources */,
+				FE08475B1D038CE0006669AB /* BWRepositoryDetailViewController.xib in Resources */,
 				FE2B33561CFD325A00E6CECD /* LaunchScreen.storyboard in Resources */,
+				FE0847661D038D3B006669AB /* BWSearchHeaderView.xib in Resources */,
 				FE2B33581CFD325A00E6CECD /* Info.plist in Resources */,
+				FE0847611D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.xib in Resources */,
+				FE08475F1D038CE0006669AB /* BWProfileViewController.xib in Resources */,
+				FE08475D1D038CE0006669AB /* BWRepositoryHeaderView.xib in Resources */,
 				FE0847321D02B567006669AB /* GET_user_profile.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -766,30 +785,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE08471A1D0271F1006669AB /* BWRepositoryHeaderView.m in Sources */,
 				FE0847271D02AE3E006669AB /* NSDictionary+BWTypeValidation.m in Sources */,
 				FE2B33661CFD46E200E6CECD /* BWGithubProvider.m in Sources */,
 				FE2B33691CFD46F100E6CECD /* BWGithubMockProvider.m in Sources */,
 				FE63383E1CFE981F005DE1B5 /* BWBaseProvider.m in Sources */,
-				FE08472B1D02B2BF006669AB /* BWProfileViewController.m in Sources */,
+				FE08475C1D038CE0006669AB /* BWRepositoryHeaderView.m in Sources */,
+				FE0847601D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.m in Sources */,
 				FE2B33711CFD474200E6CECD /* BWGithubParser.m in Sources */,
+				FE0847581D038CE0006669AB /* BWRepositoryDetailTableViewCell.m in Sources */,
+				FE08475E1D038CE0006669AB /* BWProfileViewController.m in Sources */,
+				FE0847621D038CE0006669AB /* BWRepositoryStreamViewController.m in Sources */,
 				FE2B33631CFD3A9500E6CECD /* BWGithubBarebonesUserModel.m in Sources */,
-				FE0847181D0271F1006669AB /* BWRepositoryDetailTableViewCell.m in Sources */,
-				FE08471E1D0271F1006669AB /* BWRepositoryStreamViewController.m in Sources */,
+				FE08476F1D03B7FC006669AB /* BWUIUtils.m in Sources */,
 				FE2B335D1CFD344900E6CECD /* BWGithubService.m in Sources */,
 				FE6338761CFFAA29005DE1B5 /* BWGithubAuthCredentials.m in Sources */,
 				FE63387A1CFFAA35005DE1B5 /* BWGithubSearchQuery.m in Sources */,
-				FE0847171D0271F1006669AB /* BWSearchHeaderView.m in Sources */,
 				FE2B33601CFD379400E6CECD /* BWGithubRepositoryModel.m in Sources */,
 				FE2B33591CFD325A00E6CECD /* main.m in Sources */,
-				FE08471C1D0271F1006669AB /* BWRepositoryDetailViewController.m in Sources */,
-				FE0847151D0271F1006669AB /* BWRepositoryStreamCollectionViewCell.m in Sources */,
 				FE2B33781CFD483100E6CECD /* BWAppController.m in Sources */,
+				FE08475A1D038CE0006669AB /* BWRepositoryDetailViewController.m in Sources */,
 				FE6338771CFFAA29005DE1B5 /* BWServiceLocator.m in Sources */,
 				FE08472F1D02B328006669AB /* BWGithubUserModel.m in Sources */,
 				FE2B337C1CFD584800E6CECD /* BWUtils.m in Sources */,
+				FE08476C1D03AF43006669AB /* BWLoadingOverlayView.m in Sources */,
 				FE2B337F1CFE7D2500E6CECD /* BWGithubContributorModel.m in Sources */,
 				FE2B33541CFD325A00E6CECD /* BWAppDelegate.m in Sources */,
+				FE0847571D038CE0006669AB /* BWOverlayView.m in Sources */,
+				FE0847641D038CE0006669AB /* BWSearchHeaderView.m in Sources */,
 				FE6338371CFE8954005DE1B5 /* BWProviderUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

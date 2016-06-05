@@ -32,6 +32,8 @@ typedef NS_ENUM(NSUInteger, XHAmazingLoadingAnimationType) {
   loadingTintColor:(UIColor *)tintColor
               size:(CGFloat)size;
 
+- (id)initWithType:(XHAmazingLoadingAnimationType)type loadingTintColor:(UIColor *)loadingTintColor size:(CGFloat)size parentFrame:(CGRect)parentFrame;
+
 - (void)startAnimating;
 - (void)stopAnimating;
 

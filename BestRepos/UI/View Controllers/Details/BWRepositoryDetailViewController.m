@@ -10,15 +10,16 @@
 #import "BWRepositoryDetailTableViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "BWRepositoryHeaderView.h"
-#import "XHAmazingLoadingView.h"
 #import "BWGithubService.h"
 #import "BWProfileViewController.h"
+#import "BWLoadingOverlayView.h"
 
 @interface BWRepositoryDetailViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property(nonatomic, strong) BWGithubRepositoryModel *repositoryModel;
+@property(nonatomic, strong) BWLoadingOverlayView *loadingOverlayView;
 
 @end
 
@@ -54,7 +55,7 @@
                                                                           toItem:nil
                                                                        attribute:NSLayoutAttributeNotAnAttribute
                                                                       multiplier:1.f
-                                                                        constant:CGRectGetHeight(headerView.bounds)];
+                                                                         constant:headerView.bounds.size.height];
     NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:headerView
                                                                         attribute:NSLayoutAttributeTop
                                                                         relatedBy:NSLayoutRelationEqual
@@ -69,6 +70,7 @@
                                                                         attribute:NSLayoutAttributeLeft
                                                                        multiplier:1.f
                                                                          constant:0];
+        
     self.tableView.tableHeaderView = headerView;
     [self.tableView addConstraint:widthConstraint];
     [self.tableView addConstraint:heightConstraint];
@@ -82,21 +84,17 @@
 }
 
 - (void)loadUserProfileForBarebonesUser:(BWGithubContributorModel *)userModel {
-    XHAmazingLoadingView *loadingView = [[XHAmazingLoadingView alloc] initWithType:XHAmazingLoadingAnimationTypeStar];
-    loadingView.backgroundTintColor = [UIColor whiteColor];
-    loadingView.loadingTintColor = [UIColor redColor];
-    loadingView.frame = self.view.bounds;
-    [self.view addSubview:loadingView];
-    [loadingView startAnimating];
-    [[BWGithubService sharedInstance] getUserProfileFromBarebonesUserModel:userModel callback:^(NSError *error, BWGithubUserModel *completeUser) {
-        if (!error) {
-            BWProfileViewController *profileViewController = [[BWProfileViewController alloc] initWithModel:completeUser];
-            [loadingView stopAnimating];
-            [loadingView removeFromSuperview];
-            [self.navigationController pushViewController:profileViewController animated:YES];
-        }
+    _loadingOverlayView = [[BWLoadingOverlayView alloc] initWithParentView:self.view backgroundColor:[UIColor blackColor] alpha:1.f];
+    [_loadingOverlayView showWithCallback:^{
+        [[BWGithubService sharedInstance] getUserProfileFromBarebonesUserModel:userModel callback:^(NSError *error, BWGithubUserModel *completeUser) {
+            if (!error) {
+                BWProfileViewController *profileViewController = [[BWProfileViewController alloc] initWithModel:completeUser];
+                [_loadingOverlayView dismissWithCallback:^{
+                    [self.navigationController pushViewController:profileViewController animated:YES];
+                }];
+            }
+        }];
     }];
-    
 }
 
 #pragma mark - UITableViewDelegate Methods
@@ -105,6 +103,18 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     BWGithubContributorModel *contributorModel = [_repositoryModel.topContributors objectAtIndex:indexPath.row];
     [self loadUserProfileForBarebonesUser:contributorModel];
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
+    // Background color
+    UIColor *accent = [UIColor colorWithRed:182/255.0 green:182/255.0 blue:182/255.0 alpha:1.0];
+    view.tintColor = accent;
+    
+    // Text Color
+    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+    UIColor *primaryText = [UIColor colorWithRed:33/255.0 green:33/255.0 blue:33/255.0 alpha:1.0];
+    [header.textLabel setTextColor:primaryText];
+    
 }
 
 #pragma mark - UITableViewDataSource Methods

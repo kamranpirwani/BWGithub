@@ -19,12 +19,14 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="52" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nPh-YD-0Lg">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="I4o-Cu-Fus"/>
                         <outlet property="delegate" destination="-1" id="fZD-td-g8j"/>
                     </connections>
                 </tableView>
             </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="nPh-YD-0Lg" secondAttribute="bottom" id="8in-uj-3fX"/>
                 <constraint firstItem="nPh-YD-0Lg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="NAE-uA-QvB"/>

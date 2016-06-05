@@ -8,16 +8,11 @@
 
 #import "BWGithubSearchQuery.h"
 
-static NSString *const kBWGithubSearchQueryPrettySortFieldBestMatch = @"Best Match";
-static NSString *const kBWGithubSearchQueryPrettySortFieldStars = @"Stars";
-static NSString *const kBWGithubSearchQueryPrettySortFieldForks = @"Forks";
-static NSString *const kBWGithubSearchQueryPrettySortFieldUpdated = @"Updated";
-
 @implementation BWGithubSearchQuery
 
 - (instancetype)initWithSearchKeywords:(NSString *)keywords
                              sortField:(BWGithubSearchQuerySortField)sortField
-                             sortOrder:(BWGithubSortOrder)sortOrder {
+                             sortOrder:(BWGithubSearchQuerySortOrder)sortOrder {
     self = [super init];
     if (self) {
         _keywords = keywords;
@@ -31,42 +26,8 @@ static NSString *const kBWGithubSearchQueryPrettySortFieldUpdated = @"Updated";
 + (instancetype)mostPopularRepositoriesSearchQuery {
     BWGithubSearchQuery *searchQuery = [[BWGithubSearchQuery alloc] initWithSearchKeywords:@""
                                                                                  sortField:kBWGithubSearchQuerySortStars
-                                                                                 sortOrder:kBWGithubSortOrderDescending];
+                                                                                 sortOrder:kBWGithubSearchQuerySortOrderDescending];
     return searchQuery;
-}
-
-+ (NSArray <NSString *> *)allPrettySortFieldStrings {
-    return @[kBWGithubSearchQueryPrettySortFieldStars,
-             kBWGithubSearchQueryPrettySortFieldBestMatch,
-             kBWGithubSearchQueryPrettySortFieldForks,
-             kBWGithubSearchQueryPrettySortFieldUpdated
-             ];
-}
-
-+ (NSString *)prettyStringFromSortField:(BWGithubSearchQuerySortField)sortField {
-    switch (sortField) {
-        case kBWGithubSearchQuerySortForks:
-            return kBWGithubSearchQueryPrettySortFieldForks;
-        case kBWGithubSearchQuerySortStars:
-            return kBWGithubSearchQueryPrettySortFieldStars;
-        case kBWGithubSearchQuerySortUpdated:
-            return kBWGithubSearchQueryPrettySortFieldUpdated;
-        case kBWGithubSearchQuerySortBestMatch:
-        default:
-            return kBWGithubSearchQueryPrettySortFieldBestMatch;
-    }
-}
-
-+ (BWGithubSearchQuerySortField)sortFieldFromPrettyString:(NSString *)prettyString {
-    if ([prettyString isEqualToString:kBWGithubSearchQueryPrettySortFieldForks]) {
-        return kBWGithubSearchQuerySortForks;
-    } else if ([prettyString isEqualToString:kBWGithubSearchQueryPrettySortFieldStars]) {
-        return kBWGithubSearchQuerySortStars;
-    } else if ([prettyString isEqualToString:kBWGithubSearchQueryPrettySortFieldUpdated]) {
-        return kBWGithubSearchQuerySortUpdated;
-    } else {
-        return kBWGithubSearchQuerySortBestMatch;
-    }
 }
 
 - (void)setupSortFieldStringWithSortFieldEnum:(BWGithubSearchQuerySortField)sortField {
@@ -89,12 +50,12 @@ static NSString *const kBWGithubSearchQueryPrettySortFieldUpdated = @"Updated";
     }
 }
 
-- (void)setupSortOrderStringWithSortOrderEnum:(BWGithubSortOrder)sortOrder {
+- (void)setupSortOrderStringWithSortOrderEnum:(BWGithubSearchQuerySortOrder)sortOrder {
     switch (sortOrder) {
-        case kBWGithubSortOrderAscending:
+        case kBWGithubSearchQuerySortOrderAscending:
             _sortOrderString = @"asc";
             break;
-        case kBWGithubSortOrderDescending:
+        case kBWGithubSearchQuerySortOrderDescending:
         //default behavior for GitHub
         default:
             _sortOrderString = @"desc";

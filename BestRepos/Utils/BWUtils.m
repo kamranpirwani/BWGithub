@@ -50,14 +50,6 @@ static NSString *BWUtilsJsonSuffix = @"json";
     return plistDictionary;
 }
 
-+ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
-    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
-    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return newImage;
-}
-
 + (NSString *)abbreviateNumber:(long)number {
     NSString *abbreviatedNumber;
     if (number >= 1000) {

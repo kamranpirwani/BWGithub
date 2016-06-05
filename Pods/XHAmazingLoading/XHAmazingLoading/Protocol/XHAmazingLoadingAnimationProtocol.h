@@ -14,4 +14,7 @@
 // 抽象协议
 - (void)configureAnimationInLayer:(CALayer *)layer withSize:(CGSize)size tintColor:(UIColor *)tintColor;
 
+@optional
+- (void)configureAnimationInLayer:(CALayer *)layer withSize:(CGSize)size tintColor:(UIColor *)tintColor inFrame:(CGRect)parentFrame;
+
 @end

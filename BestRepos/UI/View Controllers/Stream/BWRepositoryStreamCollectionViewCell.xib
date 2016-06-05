@@ -8,10 +8,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BWRepositoryStreamCollectionViewCell" id="gTV-IL-0wX" userLabel="BWRepositoryStreamCollectionViewCell" customClass="BWRepositoryStreamCollectionViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="419" height="238"/>
+            <rect key="frame" x="0.0" y="0.0" width="419" height="215"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="419" height="238"/>
+                <rect key="frame" x="0.0" y="0.0" width="419" height="215"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Owner Placeholder Image" translatesAutoresizingMaskIntoConstraints="NO" id="SDK-m6-7Ma" userLabel="Organization Image">
                         <rect key="frame" x="20" y="15" width="60" height="60"/>
@@ -25,14 +25,17 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="This repositorty was created in 1979 when I was still in my diapers" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5vz-9s-GlV" userLabel="Repository Description">
-                        <rect key="frame" x="15" y="90" width="389" height="73"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="This repositorty was created in 1979 when I was still in my diapers" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vz-9s-GlV" userLabel="Repository Description">
+                        <rect key="frame" x="15" y="90" width="389" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="45" id="lTW-g2-6RW"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ze-hk-L79" userLabel="Footer View">
-                        <rect key="frame" x="0.0" y="178" width="419" height="60"/>
+                        <rect key="frame" x="0.0" y="155" width="419" height="60"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fork Icon" translatesAutoresizingMaskIntoConstraints="NO" id="mKh-Mg-sgS" userLabel="Fork Image">
                                 <rect key="frame" x="64" y="0.0" width="24" height="24"/>
@@ -49,13 +52,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12,100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u63-10-8Yi" userLabel="Fork Number">
-                                <rect key="frame" x="56" y="31" width="40" height="16"/>
+                                <rect key="frame" x="56" y="31.5" width="40" height="15.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94e-YO-C3C" userLabel="Star Number">
-                                <rect key="frame" x="18" y="31" width="29" height="16"/>
+                                <rect key="frame" x="18" y="31.5" width="29" height="15.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -75,7 +78,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOP CONTRIBUTORS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ci8-g6-uIr" userLabel="Top Contributors">
-                                <rect key="frame" x="284" y="32" width="115" height="14"/>
+                                <rect key="frame" x="284" y="32.5" width="115" height="13.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -124,22 +127,16 @@
                 <constraint firstItem="SDK-m6-7Ma" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="2bp-kM-HmT"/>
                 <constraint firstItem="5vz-9s-GlV" firstAttribute="top" secondItem="LGG-3b-ZcC" secondAttribute="bottom" constant="20" id="I0E-SO-wSp"/>
                 <constraint firstItem="LGG-3b-ZcC" firstAttribute="centerY" secondItem="SDK-m6-7Ma" secondAttribute="centerY" id="Lzo-af-ZCN"/>
+                <constraint firstItem="1ze-hk-L79" firstAttribute="top" secondItem="5vz-9s-GlV" secondAttribute="bottom" constant="20" id="NR7-OM-1Uw"/>
                 <constraint firstItem="5vz-9s-GlV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="UXR-cM-Zdq"/>
                 <constraint firstAttribute="trailing" secondItem="1ze-hk-L79" secondAttribute="trailing" id="X9V-86-7Nb"/>
                 <constraint firstItem="LGG-3b-ZcC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="YVi-rJ-vJk"/>
-                <constraint firstAttribute="bottom" secondItem="1ze-hk-L79" secondAttribute="bottom" id="ave-4J-kH6"/>
-                <constraint firstItem="1ze-hk-L79" firstAttribute="top" secondItem="5vz-9s-GlV" secondAttribute="bottom" constant="15" id="ibh-cE-kHq"/>
                 <constraint firstItem="SDK-m6-7Ma" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="j1X-rQ-ug3"/>
                 <constraint firstItem="1ze-hk-L79" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pJA-vL-Mpt"/>
                 <constraint firstAttribute="trailing" secondItem="5vz-9s-GlV" secondAttribute="trailing" constant="15" id="yBR-ci-QSe"/>
                 <constraint firstAttribute="trailing" secondItem="LGG-3b-ZcC" secondAttribute="trailing" constant="20" id="yE0-Y6-ZGe"/>
             </constraints>
-            <size key="customSize" width="419" height="238"/>
-            <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                    <integer key="value" value="6"/>
-                </userDefinedRuntimeAttribute>
-            </userDefinedRuntimeAttributes>
+            <size key="customSize" width="419" height="215"/>
             <connections>
                 <outlet property="ivFirstContributor" destination="Q6C-fm-cgi" id="wzI-C8-DLz"/>
                 <outlet property="ivOrganizationImage" destination="SDK-m6-7Ma" id="a7h-2Y-TMg"/>
@@ -151,7 +148,7 @@
                 <outlet property="lblStarredCount" destination="94e-YO-C3C" id="GJY-E6-oLK"/>
                 <outlet property="lblTopContributors" destination="Ci8-g6-uIr" id="tEy-x5-Ohq"/>
             </connections>
-            <point key="canvasLocation" x="252.5" y="155"/>
+            <point key="canvasLocation" x="108.5" y="195.5"/>
         </collectionViewCell>
     </objects>
     <resources>

@@ -11,12 +11,13 @@
 #import "XHAmazingLoadingStarAnimation.h"
 #import "XHAmazingLoadingSkypeAnimation.h"
 
-#define kXHAmazingLoadingDefaultSize 60.0f
+#define kXHAmazingLoadingDefaultSize 175.f
 #define kXHAmazingLoadingDefaultTintColor [UIColor colorWithRed:0.049 green:0.849 blue:1.000 alpha:1.000]
 
 @interface XHAmazingLoadingView ()
 
 @property (nonatomic, strong) CABasicAnimation *fadeOutAnimation;
+@property (nonatomic, assign) CGRect parentFrame;
 
 @end
 
@@ -33,12 +34,17 @@
 }
 
 - (id)initWithType:(XHAmazingLoadingAnimationType)type loadingTintColor:(UIColor *)loadingTintColor size:(CGFloat)size {
+    return [self initWithType:type loadingTintColor:loadingTintColor size:kXHAmazingLoadingDefaultSize parentFrame:[UIScreen mainScreen].bounds];
+}
+
+- (id)initWithType:(XHAmazingLoadingAnimationType)type loadingTintColor:(UIColor *)loadingTintColor size:(CGFloat)size parentFrame:(CGRect)parentFrame{
     self = [super init];
     if (self) {
         _type = type;
         _size = size;
         _loadingTintColor = loadingTintColor;
         _backgroundTintColor = [UIColor whiteColor];
+        _parentFrame = parentFrame;
     }
     return self;
 }
@@ -53,7 +59,10 @@
     [self setupAmazingLoadingSizeWithAnimationType:self.type];
     
     // 检验遵守协议的对象是否实现了协议方法
-    if ([animation respondsToSelector:@selector(configureAnimationInLayer:withSize:tintColor:)]) {
+    if ([animation respondsToSelector:@selector(configureAnimationInLayer:withSize:tintColor:inFrame:)]) {
+        [self setupFadeOutState];
+        [animation configureAnimationInLayer:self.layer withSize:CGSizeMake(self.size, self.size) tintColor:self.loadingTintColor inFrame:self.parentFrame];
+    } else if ([animation respondsToSelector:@selector(configureAnimationInLayer:withSize:tintColor:)]) {
         [self setupFadeOutState];
         [animation configureAnimationInLayer:self.layer withSize:CGSizeMake(self.size, self.size) tintColor:self.loadingTintColor];
     }
