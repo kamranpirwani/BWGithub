@@ -118,6 +118,7 @@ static NSString *kBWRepositoryStreamViewControllerSearchBarPlaceholderText = @"S
 #pragma mark - Setup
 
 - (void)setupNavigationBarAndFilterState {
+    self.edgesForExtendedLayout = UIRectEdgeAll;
     self.navigationItem.title = kBWRepositoryStreamViewControllerTitle;
 
     UIBarButtonItem *filterButton = [[UIBarButtonItem alloc] initWithTitle:@"Filter"

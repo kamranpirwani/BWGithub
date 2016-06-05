@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BWRepositoryDetailViewController">
             <connections>
+                <outlet property="headerViewContainer" destination="TK9-49-Mkj" id="TBC-qq-Wpl"/>
+                <outlet property="repositoryHeaderViewContainerHeightConstraint" destination="gdC-mA-EcS" id="tQe-6g-T0c"/>
                 <outlet property="tableView" destination="nPh-YD-0Lg" id="wK5-Sz-YxH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -16,8 +18,15 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TK9-49-Mkj" userLabel="Repository Header View">
+                    <rect key="frame" x="0.0" y="64" width="600" height="0.0"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="gdC-mA-EcS"/>
+                    </constraints>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="52" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nPh-YD-0Lg">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="0.0" y="64" width="600" height="606"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                     <connections>
@@ -28,10 +37,13 @@
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="nPh-YD-0Lg" secondAttribute="bottom" id="8in-uj-3fX"/>
+                <constraint firstItem="TK9-49-Mkj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="BpX-h5-0aR"/>
                 <constraint firstItem="nPh-YD-0Lg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="NAE-uA-QvB"/>
                 <constraint firstAttribute="trailing" secondItem="nPh-YD-0Lg" secondAttribute="trailing" id="QtJ-05-CGX"/>
-                <constraint firstItem="nPh-YD-0Lg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ld7-IY-A4d"/>
+                <constraint firstItem="TK9-49-Mkj" firstAttribute="bottom" secondItem="nPh-YD-0Lg" secondAttribute="top" id="WvF-WU-Gey"/>
+                <constraint firstItem="TK9-49-Mkj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Z7V-fb-Q6f"/>
+                <constraint firstAttribute="bottom" secondItem="nPh-YD-0Lg" secondAttribute="bottom" constant="-70" id="lYZ-00-AUf"/>
+                <constraint firstAttribute="trailing" secondItem="TK9-49-Mkj" secondAttribute="trailing" id="ozF-5k-Vbd"/>
             </constraints>
             <point key="canvasLocation" x="360" y="437"/>
         </view>

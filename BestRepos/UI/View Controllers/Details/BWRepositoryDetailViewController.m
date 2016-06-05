@@ -22,6 +22,10 @@
 @property(nonatomic, strong) BWGithubRepositoryModel *repositoryModel;
 @property(nonatomic, strong) BWLoadingOverlayView *loadingOverlayView;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *repositoryHeaderViewContainerHeightConstraint;
+@property (weak, nonatomic) IBOutlet UIView *headerViewContainer;
+
+@property(nonatomic, strong) BWRepositoryHeaderView *headerView;
 @end
 
 static NSString *const kBWRepositoryDetailViewControllerTitle = @"Repository";
@@ -38,64 +42,8 @@ static NSString *const kBWRepositoryDetailViewControllerInvalidHeaderTitle = @"N
     return self;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self styleView];
-    [self createHeaderView];
-    [self registerCellWithTableView];
-}
-
 - (void)styleView {
     self.navigationItem.title = kBWRepositoryDetailViewControllerTitle;
-}
-
-- (void)createHeaderView {
-    BWRepositoryHeaderView *headerView = [[BWRepositoryHeaderView alloc] initWithModel:_repositoryModel];
-
-    /**
-     * TODO: Fix hardcoded height here
-     * Some funkiness going on with inferred simulator metrics and size classes
-     * I have to set the height programmatically and in constraints
-     * Getting the view's height showing up entirely accurately wasn't the highest priority so I will leave this here for now
-     *
-     */
-    CGFloat height = 200;
-    [headerView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:headerView
-                                                                       attribute:NSLayoutAttributeWidth
-                                                                       relatedBy:NSLayoutRelationEqual
-                                                                          toItem:self.tableView
-                                                                       attribute:NSLayoutAttributeWidth
-                                                                      multiplier:1.f
-                                                                        constant:0.f];
-    NSLayoutConstraint *heightConstraint = [NSLayoutConstraint constraintWithItem:headerView
-                                                                       attribute:NSLayoutAttributeHeight
-                                                                       relatedBy:NSLayoutRelationEqual
-                                                                          toItem:nil
-                                                                       attribute:NSLayoutAttributeNotAnAttribute
-                                                                      multiplier:1.f
-                                                                         constant:height];
-    NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:headerView
-                                                                        attribute:NSLayoutAttributeTop
-                                                                        relatedBy:NSLayoutRelationEqual
-                                                                           toItem:self.tableView
-                                                                        attribute:NSLayoutAttributeTop
-                                                                       multiplier:1.f
-                                                                         constant:0];
-    NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:headerView
-                                                                        attribute:NSLayoutAttributeLeft
-                                                                        relatedBy:NSLayoutRelationEqual
-                                                                           toItem:self.tableView
-                                                                        attribute:NSLayoutAttributeLeft
-                                                                       multiplier:1.f
-                                                                         constant:0];
-    
-    headerView.frame = CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame), height);
-    self.tableView.tableHeaderView = headerView;
-    [self.tableView addConstraint:widthConstraint];
-    [self.tableView addConstraint:heightConstraint];
-    [self.tableView addConstraint:topConstraint];
-    [self.tableView addConstraint:leftConstraint];
 }
 
 - (void)registerCellWithTableView {
@@ -103,9 +51,58 @@ static NSString *const kBWRepositoryDetailViewControllerInvalidHeaderTitle = @"N
     [self.tableView registerNib:nib forCellReuseIdentifier:[BWRepositoryDetailTableViewCell reuseIdentifier]];
 }
 
+/**
+ * Displaying this view from a size class was a bit tricky, as it gets unarchived at 600x600, but it's actual height is unknown
+ * until it is fully laid out, as we are dispaying data in a multiline label. We need to readjust our height once we know it using viewWillLayoutSubviews
+ */
+- (void)createHeaderView {
+    _headerView = [[BWRepositoryHeaderView alloc] initWithModel:_repositoryModel];
+    /**
+     * When using inferred sized with size classes, the view will be unarchived with (600x600) dimensions
+     * We need to set the actual frame here
+     */
+    _headerView.frame = ({
+        CGRect actualWidthFrame = _headerView.frame;
+        actualWidthFrame.size.width = CGRectGetWidth(self.view.bounds);
+        actualWidthFrame;
+    });
+    //flexible top and bottom margins so we can grow to our parent view
+    UIViewAutoresizing resizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+    [_headerView setAutoresizingMask:resizingMask];
+    [self.headerViewContainer addSubview:_headerView];
+}
+
+
+#pragma mark - View Controller Lifecycle Methods
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self styleView];
+    [self registerCellWithTableView];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (!_headerView) {
+        [self createHeaderView];
+    }
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    if (_repositoryHeaderViewContainerHeightConstraint.constant != _headerView.bounds.size.height) {
+        _repositoryHeaderViewContainerHeightConstraint.constant = _headerView.bounds.size.height;
+        [UIView animateWithDuration:0.35 delay:0.f usingSpringWithDamping:0.9 initialSpringVelocity:0.8 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            [self.view layoutIfNeeded];
+        } completion:nil];
+    }
+}
+
+#pragma mark - Profile Fetch and Displaying
+
 - (void)loadUserProfileForBarebonesUser:(BWGithubContributorModel *)userModel {
     _loadingOverlayView = [[BWLoadingOverlayView alloc] initWithParentView:self.view
-                                                           backgroundColor:[UIColor blackColor]
+                                                           backgroundColor:[BWUIUtils primaryTextColor]
                                                                      alpha:1.f];
     __weak typeof(self) weakSelf = self;
     [_loadingOverlayView showWithCallback:^{

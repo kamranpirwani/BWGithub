@@ -36,6 +36,21 @@
     _lblDescription.text = model.projectDescription;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    _lblDescription.frame= ({
+        CGRect newFrame = _lblDescription.frame;
+        [_lblDescription sizeToFit];
+        newFrame.size.height = _lblDescription.bounds.size.height;
+        newFrame;
+    });
+    self.frame = ({
+        CGRect newFrame = self.frame;
+        newFrame.size.height = CGRectGetMaxY(_lblDescription.frame) + 10;
+        newFrame;
+    });
+}
+
 - (void)styleView {
     _ivRepositoryImage.layer.cornerRadius = 9.f;
 }
