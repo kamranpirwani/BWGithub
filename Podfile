@@ -4,7 +4,6 @@
 target 'BestRepos' do
   # Uncomment this line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
-pod 'SDWebImage', '~>3.7'
 pod 'AFNetworking', '~> 3.0'
 pod 'XHAmazingLoading'
 pod 'Haneke', '~> 1.0'

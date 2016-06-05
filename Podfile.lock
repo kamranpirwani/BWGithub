@@ -15,23 +15,18 @@ PODS:
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
   - Haneke (1.0.2)
-  - SDWebImage (3.7.5):
-    - SDWebImage/Core (= 3.7.5)
-  - SDWebImage/Core (3.7.5)
   - XHAmazingLoading (0.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - Haneke (~> 1.0)
-  - SDWebImage (~> 3.7)
   - XHAmazingLoading
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   Haneke: 01454a67322faa0dd9d81fc0f447885044e71521
-  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   XHAmazingLoading: 86da1c59191326ea63e6df7ba3886f3e6ddef032
 
-PODFILE CHECKSUM: 76530a3a007d9764619b0982f9861e34bfc2fe5f
+PODFILE CHECKSUM: 551cde6639e9a20830e4fdf4cdb86276bc663c76
 
 COCOAPODS: 1.0.0
