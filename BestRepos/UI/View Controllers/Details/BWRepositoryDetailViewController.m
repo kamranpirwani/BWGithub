@@ -34,6 +34,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"Repository";
     [self createHeaderView];
     [self registerCellWithTableView];
 }

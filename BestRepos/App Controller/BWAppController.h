@@ -17,7 +17,7 @@
 @interface BWAppController : NSObject
 
 /**
- * Initialize any core dependencies in the app
+ * Initialize any core dependencies in the app and ui for our app
  */
 + (void)initializeApplication;
 

@@ -12,13 +12,14 @@
 #import "BWGithubMockProvider.h"
 #import "BWServiceLocator.h"
 #import "BWProviderUtils.h"
-#import <AFNetworking.h>
+#import "BWUIUtils.h"
 
 #define ENABLE_MOCK_PROVIDER 0
 
 @implementation BWAppController
 
 + (void)initializeApplication {
+    [BWUIUtils setupAppearance];
     [self initalizeProviders];
 }
 

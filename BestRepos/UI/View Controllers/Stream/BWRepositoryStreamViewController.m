@@ -139,6 +139,9 @@ typedef NS_ENUM(NSInteger, BWFilterState) {
 - (void)showLoadingSpinner:(BOOL)showSpinner {
     if (showSpinner) {
         _nullStateView.alpha = 0.f;
+        if (_loadingOverlayView) {
+            [_loadingOverlayView dismissWithCallback:nil];
+        }
         _loadingOverlayView = [[BWLoadingOverlayView alloc] initWithParentView:self.collectionView backgroundColor:[UIColor blackColor] alpha:1.f];
         [_loadingOverlayView showWithCallback:nil];
     } else {
