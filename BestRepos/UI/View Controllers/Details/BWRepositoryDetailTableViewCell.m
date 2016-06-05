@@ -7,7 +7,7 @@
 //
 
 #import "BWRepositoryDetailTableViewCell.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+#import <Haneke.h>
 
 @interface BWRepositoryDetailTableViewCell()
 
@@ -25,13 +25,13 @@
 }
 
 - (void)configureWithModel:(BWGithubContributorModel *)model {
-    [_ivAvatar sd_setImageWithURL:[NSURL URLWithString:model.avatarUrl] placeholderImage:[UIImage imageNamed:@"Owner Placeholder Image"]];
+    [_ivAvatar hnk_setImageFromURL:[NSURL URLWithString:model.avatarUrl] placeholder:[UIImage imageNamed:@"Owner Placeholder Image"]];
     [_lblUsername setText:model.login];
     [_lblNumberOfCommits setText:[@(model.contributions) stringValue]];
 }
 
 - (void)prepareForReuse {
-    [_ivAvatar sd_cancelCurrentImageLoad];
+    [_ivAvatar hnk_cancelSetImage];
     _ivAvatar.image = [UIImage imageNamed:@"Github Contributon Placeholder Icon"];
 }
 

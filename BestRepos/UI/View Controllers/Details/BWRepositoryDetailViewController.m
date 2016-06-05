@@ -8,7 +8,6 @@
 
 #import "BWRepositoryDetailViewController.h"
 #import "BWRepositoryDetailTableViewCell.h"
-#import <SDWebImage/UIImageView+WebCache.h>
 #import "BWRepositoryHeaderView.h"
 #import "BWGithubService.h"
 #import "BWProfileViewController.h"

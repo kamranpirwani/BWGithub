@@ -7,7 +7,7 @@
 //
 
 #import "BWRepositoryStreamCollectionViewCell.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+#import <Haneke.h>
 #import "BWUtils.h"
 
 @interface BWRepositoryStreamCollectionViewCell()
@@ -52,7 +52,7 @@
 }
 
 - (void)configureWithModel:(BWGithubRepositoryModel *)repositoryModel {
-    [_ivOrganizationImage sd_setImageWithURL:[NSURL URLWithString:repositoryModel.owner.avatarUrl] placeholderImage:[UIImage imageNamed:@"Owner Placeholder Image"]];
+    [_ivOrganizationImage hnk_setImageFromURL:[NSURL URLWithString:repositoryModel.owner.avatarUrl] placeholder:[UIImage imageNamed:@"Owner Placeholder Image"]];
     _lblRepositoryName.text = repositoryModel.name;
     _lblProjectDescription.text = repositoryModel.projectDescription;
     _lblStarredCount.text = [BWUtils abbreviateNumber:repositoryModel.starredCount];
@@ -63,7 +63,7 @@
         [imageViews enumerateObjectsUsingBlock:^(UIImageView  *_Nonnull imageView, NSUInteger idx, BOOL * _Nonnull stop) {
             if (repositoryModel.topContributors.count > idx) {
                 BWGithubContributorModel *contributor = [repositoryModel.topContributors objectAtIndex:idx];
-                [imageView sd_setImageWithURL:[NSURL URLWithString:contributor.avatarUrl] placeholderImage:[UIImage imageNamed:@"Github Contributon Placeholder Icon"]];
+                [imageView hnk_setImageFromURL:[NSURL URLWithString:contributor.avatarUrl] placeholder:[UIImage imageNamed:@"Github Contributon Placeholder Icon"]];
             }
         }];
     } else {
@@ -78,10 +78,10 @@
 - (void)prepareForReuse {
     [super prepareForReuse];
     [[self getContributorImageViews] enumerateObjectsUsingBlock:^(UIImageView * _Nonnull imageView, NSUInteger idx, BOOL * _Nonnull stop) {
-        [imageView sd_cancelCurrentImageLoad];
+        [imageView hnk_cancelSetImage];
         imageView.image = [UIImage imageNamed:@"Github Contributon Placeholder Icon"];
     }];
-    [_ivOrganizationImage sd_cancelCurrentImageLoad];
+    [_ivOrganizationImage hnk_cancelSetImage];
     _ivOrganizationImage.image = [UIImage imageNamed:@"Owner Placeholder Image"];
     _lblTopContributors.text = @"TOP CONTRIBUTORS";
     _ivFirstContributor.hidden = NO;

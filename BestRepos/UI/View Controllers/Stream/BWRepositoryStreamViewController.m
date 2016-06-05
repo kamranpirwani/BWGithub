@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, BWFilterState) {
     kBWFilterStateShowFilters = 2,
 };
 
-@interface BWRepositoryStreamViewController () <SDWebImageManagerDelegate, UISearchControllerDelegate, UISearchBarDelegate>
+@interface BWRepositoryStreamViewController () <UISearchControllerDelegate, UISearchBarDelegate>
 
 @property(nonatomic, strong) IBOutlet UICollectionView *collectionView;
 @property(nonatomic, strong) NSArray<BWGithubRepositoryModel *> *repositories;
@@ -55,7 +55,6 @@ typedef NS_ENUM(NSInteger, BWFilterState) {
     self.navigationItem.title = @"BestRepos";
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     [self setupNavigationBar];
-    [self setupImageDownloader];
     [self registerElementsWithCollectionView];
     [self setupSearchController];
 
@@ -87,12 +86,6 @@ typedef NS_ENUM(NSInteger, BWFilterState) {
         _currentFilterState = kBWFilterStateHideFilters;
         [self hideFilters];
     }
-}
-
-- (void)setupImageDownloader {
-    [[SDWebImageManager sharedManager] setDelegate:self];
-    [[[SDWebImageManager sharedManager] imageCache] setShouldDecompressImages:NO];
-    [[[SDWebImageManager sharedManager] imageCache] setShouldCacheImagesInMemory:NO];
 }
 
 - (void)setupSearchController {
@@ -227,13 +220,6 @@ typedef NS_ENUM(NSInteger, BWFilterState) {
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(0, 0, 0, 0);
-}
-
-#pragma mark - SDWebImageManagerDelegate Methods
-
-- (UIImage *)imageManager:(SDWebImageManager *)imageManager transformDownloadedImage:(UIImage *)image withURL:(NSURL *)imageURL {
-    UIImage *resizedImage = [BWUIUtils imageWithImage:image scaledToSize:CGSizeMake(60, 60)];
-    return resizedImage;
 }
 
 #pragma mark - UISearchControllerDelegate Methods    

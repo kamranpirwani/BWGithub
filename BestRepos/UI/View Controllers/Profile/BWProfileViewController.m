@@ -8,7 +8,7 @@
 
 #import "BWProfileViewController.h"
 #import "BWUtils.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+#import <Haneke.h>
 
 @interface BWProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *ivProfilePicture;
@@ -40,7 +40,7 @@
     _lblPublicRepositoryCount.text = [BWUtils abbreviateNumber:userModel.numberOfPublicRepositories];
     _lblFollowersCount.text = [BWUtils abbreviateNumber:userModel.followers];
     _lblFollowingCount.text = [BWUtils abbreviateNumber:userModel.following];
-    [_ivProfilePicture sd_setImageWithURL:[NSURL URLWithString:userModel.avatarUrl] placeholderImage:[UIImage imageNamed:@"Owner Placeholder Image"]];
+    [_ivProfilePicture hnk_setImageFromURL:[NSURL URLWithString:userModel.avatarUrl] placeholder:[UIImage imageNamed:@"Owner Placeholder Image"]];
 }
 
 - (void)viewDidLoad {

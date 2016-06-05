@@ -7,7 +7,7 @@
 //
 
 #import "BWRepositoryHeaderView.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+#import <Haneke.h>
 
 @interface BWRepositoryHeaderView()
 
@@ -30,8 +30,8 @@
     [self.lblRepositoryName setText:model.name];
     [self.lblProgrammingLanguage setText:model.language];
     NSURL *imageUrl = [NSURL URLWithString:model.owner.avatarUrl];
-    [self.ivRepositoryImage sd_setImageWithURL:imageUrl
-                              placeholderImage:[UIImage imageNamed:@"Owner Placeholder Image"]];
+    [_ivRepositoryImage hnk_setImageFromURL:imageUrl
+                       placeholder:[UIImage imageNamed:@"Owner Placeholder Image"]];
     _ivRepositoryImage.layer.cornerRadius = 9.f;
     _lblDescription.text = model.projectDescription;
     CGRect textRect = [_lblDescription.text boundingRectWithSize:CGSizeMake(self.bounds.size.height, 1000)

@@ -7,6 +7,7 @@ target 'BestRepos' do
 pod 'SDWebImage', '~>3.7'
 pod 'AFNetworking', '~> 3.0'
 pod 'XHAmazingLoading'
+pod 'Haneke', '~> 1.0'
   # Pods for BestRepos
 
   target 'BestReposTests' do
