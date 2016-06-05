@@ -142,7 +142,29 @@ static NSString *kBWRepositoryStreamViewControllerSearchBarPlaceholderText = @"S
     _searchController.searchBar.delegate = self;
     _searchController.hidesNavigationBarDuringPresentation = NO;
     _searchController.searchBar.placeholder = kBWRepositoryStreamViewControllerSearchBarPlaceholderText;
+    /**
+     * Ensure the user can search for empty queries, as this is what we use to
+     * display the top 100 repositories. It is a bit annoying we have to do this to enable searching for
+     * empty strings. Perhaps consider using a plain uitextfield in the future
+     */
+    UITextField *searchBarTextField = [self getTextFieldFromSearchBar];
+    if (searchBarTextField) {
+        searchBarTextField.enablesReturnKeyAutomatically = NO;
+    }
     [_searchBarContainerView addSubview:_searchController.searchBar];
+}
+
+- (UITextField *)getTextFieldFromSearchBar {
+    UITextField *searchBarTextField = nil;
+    UISearchBar *searchBar = _searchController.searchBar;
+    NSArray *views = ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0f) ? searchBar.subviews : [[searchBar.subviews objectAtIndex:0] subviews];
+    for (UIView *subview in views) {
+        if ([subview isKindOfClass:[UITextField class]]) {
+            searchBarTextField = (UITextField *)subview;
+            break;
+        }
+    }
+    return searchBarTextField;
 }
 
 #pragma mark - Fetch
@@ -173,7 +195,10 @@ static NSString *kBWRepositoryStreamViewControllerSearchBarPlaceholderText = @"S
 
 - (void)handleRepositoriesFromFetch:(NSArray<BWGithubRepositoryModel *> *)repositories {
     _repositories = repositories;
-    [self.collectionView reloadData];
+    //animate data change
+    [self.collectionView performBatchUpdates:^{
+        [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
+    } completion:nil];
     
     if (_repositories.count > 0) {
         _nullStateView.alpha = 0.f;
