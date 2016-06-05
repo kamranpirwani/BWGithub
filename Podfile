@@ -7,6 +7,7 @@ target 'BestRepos' do
 pod 'AFNetworking', '~> 3.0'
 pod 'XHAmazingLoading'
 pod 'Haneke', '~> 1.0'
+pod 'SCLAlertView-Objective-C'
   # Pods for BestRepos
 
   target 'BestReposTests' do

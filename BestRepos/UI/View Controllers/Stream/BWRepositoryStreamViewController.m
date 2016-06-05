@@ -14,6 +14,8 @@
 #import "BWSearchFilterView.h"
 #import "BWLoadingOverlayView.h"
 #import "BWOverlayView.h"
+#import "BWUIUtils.h"
+#import "SCLAlertView.h"
 
 /**
  * @enum
@@ -159,12 +161,12 @@ static NSString *kBWRepositoryStreamViewControllerSearchBarPlaceholderText = @"S
     [self showLoadingSpinner:YES];
     _currentSearchQuery = searchQuery;
     __weak typeof(self) weakSelf = self;
-    [[BWGithubService sharedInstance] searchForRepositoryWithQuery:searchQuery callback:^(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories) {
+    [[BWGithubService sharedInstance] searchForRepositoryWithQuery:searchQuery callback:^(NSString *errorString, NSArray<BWGithubRepositoryModel *> *repositories) {
         [weakSelf showLoadingSpinner:NO];
-        if (!error) {
+        if (!errorString) {
             [weakSelf handleRepositoriesFromFetch:repositories];
         } else {
-            [weakSelf handleErrorFromFetch:error];
+            [weakSelf handleErrorFromFetch:errorString];
         }
     }];
 }
@@ -181,8 +183,12 @@ static NSString *kBWRepositoryStreamViewControllerSearchBarPlaceholderText = @"S
     }
 }
 
-- (void)handleErrorFromFetch:(NSError *)error {
-    //TODO handle error
+- (void)handleErrorFromFetch:(NSString *)errorString {
+    SCLAlertView *alert = [[SCLAlertView alloc] init];
+    [alert showError:self title:@"Authentication Error"
+            subTitle:errorString
+    closeButtonTitle:@"Okay"
+            duration:0.0f];
 }
 
 #pragma mark - Filters
@@ -249,7 +255,7 @@ static NSString *kBWRepositoryStreamViewControllerSearchBarPlaceholderText = @"S
         if (_loadingOverlayView) {
             [_loadingOverlayView dismissWithCallback:nil];
         }
-        _loadingOverlayView = [[BWLoadingOverlayView alloc] initWithParentView:self.collectionView backgroundColor:[UIColor blackColor] alpha:1.f];
+        _loadingOverlayView = [[BWLoadingOverlayView alloc] initWithParentView:self.collectionView backgroundColor:[BWUIUtils primaryTextColor] alpha:1.f];
         [_loadingOverlayView showWithCallback:nil];
     } else {
         [_loadingOverlayView dismissWithCallback:nil];

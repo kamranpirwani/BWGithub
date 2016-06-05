@@ -28,17 +28,17 @@
 /**
  * A method used to perform a search on the GitHub API for repositories matching the search query
  * @param searchQuery the search query we will use to search GitHub
- * @param callback The response for this request, provifing an error and repositories array(if applicable)
+ * @param callback The response for this request, provifing an error message and repositories array(if applicable)
  */
 - (void)searchForRepositoryWithQuery:(BWGithubSearchQuery *)searchQuery
-                            callback:(void(^)(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories))callback;
+                            callback:(void(^)(NSString *errorString, NSArray<BWGithubRepositoryModel *> *repositories))callback;
 
 /**
  * A method used to query for a users profile information
  * @param user A slim user model, typically retrieved from a repository search
- * @param callback The response for this request, provifing an error and complete user model(if applicable)
+ * @param callback The response for this request, providing an error message and complete user model(if applicable)
  */
 - (void)getUserProfileFromBarebonesUserModel:(BWGithubBarebonesUserModel *)user
-                                    callback:(void (^)(NSError *error, BWGithubUserModel *completeUser))callback;
+                                    callback:(void (^)(NSString *errorString, BWGithubUserModel *completeUser))callback;
 
 @end

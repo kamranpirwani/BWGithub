@@ -14,7 +14,7 @@
 #import "BWGithubContributorModel.h"
 
 typedef NS_ENUM(NSInteger, BWGithubServiceErrorCode) {
-    kBWGithubServiceErrorCodeUnauthorized = -1101
+    kBWGithubServiceErrorCodeUnauthorized = -1011
 };
 
 @implementation BWGithubService {
@@ -44,13 +44,13 @@ static BWGithubService *_singleton = nil;
 #pragma mark - Pubic API
 
 - (void)searchForRepositoryWithQuery:(BWGithubSearchQuery *)searchQuery
-                            callback:(void(^)(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories))callback {
+                            callback:(void(^)(NSString *errorString, NSArray<BWGithubRepositoryModel *> *repositories))callback {
     __weak typeof(self) weakSelf = self;
     [_provider searchForRepositoryWithQuery:searchQuery callback:^(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories) {
         //exit out early if there's an error
         if (error) {
             if (callback) {
-                callback(error, nil);
+                callback([self getStringFromErrorCode:error.code], nil);
                 return;
             }
         }
@@ -59,8 +59,11 @@ static BWGithubService *_singleton = nil;
 }
 
 - (void)getUserProfileFromBarebonesUserModel:(BWGithubBarebonesUserModel *)user
-                                    callback:(void (^)(NSError *error, BWGithubUserModel *completeUser))callback {
-    [_provider getUserProfileFromBarebonesUserModel:user callback:callback];
+                                    callback:(void (^)(NSString *errorString, BWGithubUserModel *completeUser))callback {
+    [_provider getUserProfileFromBarebonesUserModel:user callback:^(NSError *error, BWGithubUserModel *completeUser) {
+        NSString *errorString = (error != nil) ? [self getStringFromErrorCode:error.code] : nil;
+        callback(errorString, completeUser);
+    }];
 }
 
 #pragma mark - Private API
@@ -110,7 +113,7 @@ static BWGithubService *_singleton = nil;
     NSString *errorReason = nil;
     switch (errorCode) {
         case kBWGithubServiceErrorCodeUnauthorized:
-            errorReason = @"You must provide a valid username and password in ";
+            errorReason = @"The credentials contained in Credentials.plist are not valid. Please follow the instructions on the repository README for more information";
             break;
             
         default:

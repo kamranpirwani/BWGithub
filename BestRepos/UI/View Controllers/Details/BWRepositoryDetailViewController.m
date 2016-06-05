@@ -13,6 +13,7 @@
 #import "BWProfileViewController.h"
 #import "BWUIUtils.h"
 #import "BWLoadingOverlayView.h"
+#import "SCLAlertView.h"
 
 @interface BWRepositoryDetailViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -51,6 +52,13 @@ static NSString *const kBWRepositoryDetailViewControllerInvalidHeaderTitle = @"N
 - (void)createHeaderView {
     BWRepositoryHeaderView *headerView = [[BWRepositoryHeaderView alloc] initWithModel:_repositoryModel];
 
+    /**
+     * TODO: Fix hardcoded height here
+     * Some funkiness going on with inferred simulator metrics and size classes
+     * I have to set the height programmatically and in constraints
+     * Getting the view's height showing up entirely accurately wasn't the highest priority so I will leave this here for now
+     *
+     */
     CGFloat height = 200;
     [headerView setTranslatesAutoresizingMaskIntoConstraints:NO];
     NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:headerView
@@ -101,19 +109,23 @@ static NSString *const kBWRepositoryDetailViewControllerInvalidHeaderTitle = @"N
                                                                      alpha:1.f];
     __weak typeof(self) weakSelf = self;
     [_loadingOverlayView showWithCallback:^{
-        [[BWGithubService sharedInstance] getUserProfileFromBarebonesUserModel:userModel callback:^(NSError *error, BWGithubUserModel *completeUser) {
-            [weakSelf handleUserProfileFetch:error withCompleteUser:completeUser];
+        [[BWGithubService sharedInstance] getUserProfileFromBarebonesUserModel:userModel callback:^(NSString *errorString, BWGithubUserModel *completeUser) {
+            [weakSelf handleUserProfileFetch:errorString withCompleteUser:completeUser];
         }];
     }];
 }
 
-- (void)handleUserProfileFetch:(NSError *)error withCompleteUser:(BWGithubUserModel *)completeUser {
+- (void)handleUserProfileFetch:(NSString *)errorString withCompleteUser:(BWGithubUserModel *)completeUser {
     void (^actionBlock)() = ^{
-        if (!error) {
+        if (!errorString) {
             BWProfileViewController *profileViewController = [[BWProfileViewController alloc] initWithModel:completeUser];
             [self.navigationController pushViewController:profileViewController animated:YES];
         } else {
-            //TODO handle error here
+            SCLAlertView *alert = [[SCLAlertView alloc] init];
+            [alert showError:self title:@"Error"
+                    subTitle:errorString
+            closeButtonTitle:@"Okay"
+                    duration:0.0f];
         }
     };
     
@@ -132,7 +144,7 @@ static NSString *const kBWRepositoryDetailViewControllerInvalidHeaderTitle = @"N
     view.tintColor = [BWUIUtils dividerColor];
     
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
-    [header.textLabel setTextColor:[BWUIUtils primaryColor]];
+    [header.textLabel setTextColor:[BWUIUtils primaryTextColor]];
 }
 
 #pragma mark - UITableViewDataSource Methods
