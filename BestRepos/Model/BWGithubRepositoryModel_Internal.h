@@ -8,6 +8,12 @@
 
 #import "BWGithubRepositoryModel.h"
 
+/**
+ * The purpose of this class is to serve as an extension, providing readwrite access only to
+ * classes that create instances of this model. For example, the parser and unit tests classes
+ * need these headers to set these attributes. The consumers of this model will only have read only
+ * access to all of the attributes
+ */
 @interface BWGithubRepositoryModel ()
 
 @property(nonatomic, readwrite) NSUInteger identifier;

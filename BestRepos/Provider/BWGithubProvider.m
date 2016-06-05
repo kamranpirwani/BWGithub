@@ -36,9 +36,12 @@ static NSInteger const kBWGithubProviderPerPageCount = 100;
     NSString *requestMethod = @"GET";
     NSString *path = @"https://api.github.com/search/repositories";
     
+    //There must be at least some sort of query(if the user does not specify anything in search),
+    //otherwise we get an API error
     NSString *defaultSearchQuery = @"stars:>=0";
     NSString *searchQueryString = nil;
     
+    //Use the users specified keywords if given, otherwise fall back to the default string
     if (searchQuery.keywords.length > 0) {
         searchQueryString = searchQuery.keywords;
     } else {

@@ -14,6 +14,11 @@
 @class BWGithubBarebonesUserModel;
 @class BWGithubUserModel;
 
+/**
+ * @protocol BWGithubProviderProtocol
+ * @brief Adds a layer of abstraction over our providers, so we can swap out the mock/real providers
+ *        without forming any strong dependencies on the class type
+ */
 @protocol BWGithubProviderProtocol <NSObject>
 
 @required

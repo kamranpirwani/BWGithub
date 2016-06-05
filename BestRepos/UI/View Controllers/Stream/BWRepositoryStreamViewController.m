@@ -43,6 +43,8 @@ typedef NS_ENUM(NSInteger, BWFilterState) {
 @property (weak, nonatomic) IBOutlet UIView *searchBarContainerView;
 
 @property(nonatomic, assign) BWFilterState currentFilterState;
+@property (weak, nonatomic) IBOutlet UIView *nullStateView;
+@property (weak, nonatomic) IBOutlet UILabel *nullStateLabel;
 
 @end
 
@@ -136,6 +138,7 @@ typedef NS_ENUM(NSInteger, BWFilterState) {
 
 - (void)showLoadingSpinner:(BOOL)showSpinner {
     if (showSpinner) {
+        _nullStateView.alpha = 0.f;
         _loadingOverlayView = [[BWLoadingOverlayView alloc] initWithParentView:self.collectionView backgroundColor:[UIColor blackColor] alpha:1.f];
         [_loadingOverlayView showWithCallback:nil];
     } else {
@@ -170,6 +173,13 @@ typedef NS_ENUM(NSInteger, BWFilterState) {
 - (void)handleRepositoriesFromFetch:(NSArray<BWGithubRepositoryModel *> *)repositories {
     _repositories = repositories;
     [self.collectionView reloadData];
+    
+    if (_repositories.count > 0) {
+        _nullStateView.alpha = 0.f;
+    } else {
+        _nullStateView.alpha = 1.f;
+        _nullStateLabel.text = [NSString stringWithFormat:@"No search results found for:\n%@", _lastSearchString];
+    }
 }
 
 - (void)handleErrorFromFetch:(NSError *)error {

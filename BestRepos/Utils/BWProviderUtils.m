@@ -29,6 +29,7 @@
         sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:nil];
         BWGithubAuthCredentials *authCredentials = [[BWGithubAuthCredentials alloc] init];
         [sessionManager.requestSerializer setAuthorizationHeaderFieldWithUsername:authCredentials.username password:authCredentials.password];
+        //We specify to use the GitHub v3 API in the event they change the API in the future
         [sessionManager.requestSerializer setValue:@"application/vnd.github.v3+json" forHTTPHeaderField:@"Accept"];
     });
     return sessionManager;

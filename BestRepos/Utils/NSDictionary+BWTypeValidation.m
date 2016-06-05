@@ -11,27 +11,37 @@
 @implementation NSDictionary (BWTypeValidation)
 
 - (NSString *)getStringForKey:(NSString *)key defaultValue:(NSString *)defaultValue {
-    NSString *stringValue = [self getObjectForKey:key forClass:[NSString class] defaultValue:defaultValue];
+    NSString *stringValue = [self getObjectForKey:key
+                                         forClass:[NSString class]
+                                     defaultValue:defaultValue];
     return stringValue;
 }
 
 - (NSNumber *)getNumberForKey:(NSString *)key defaultValue:(NSNumber *)defaultValue {
-    NSNumber *numberValue = [self getObjectForKey:key forClass:[NSNumber class] defaultValue:defaultValue];
+    NSNumber *numberValue = [self getObjectForKey:key
+                                         forClass:[NSNumber class]
+                                     defaultValue:defaultValue];
     return numberValue;
 }
 
 - (NSArray *)getArrayForKey:(NSString *)key defaultValue:(NSArray *)defaultValue {
-    NSArray *arrayValue = [self getObjectForKey:key forClass:[NSArray class] defaultValue:defaultValue];
+    NSArray *arrayValue = [self getObjectForKey:key
+                                       forClass:[NSArray class]
+                                   defaultValue:defaultValue];
     return arrayValue;
 }
 
 - (NSDictionary *)getDictionaryForKey:(NSString *)key defaultValue:(NSDictionary *)defaultValue {
-    NSDictionary *dictionaryValue = [self getObjectForKey:key forClass:[NSDictionary class] defaultValue:defaultValue];
+    NSDictionary *dictionaryValue = [self getObjectForKey:key
+                                                 forClass:[NSDictionary class]
+                                             defaultValue:defaultValue];
     return dictionaryValue;
 }
 
 - (BOOL)getBoolForKey:(NSString *)key defaultValue:(BOOL)defaultValue {
-    NSNumber *numberValue = [self getObjectForKey:key forClass:[NSNumber class] defaultValue:@(defaultValue)];
+    NSNumber *numberValue = [self getObjectForKey:key
+                                         forClass:[NSNumber class]
+                                     defaultValue:@(defaultValue)];
     return [numberValue boolValue];
 }
 

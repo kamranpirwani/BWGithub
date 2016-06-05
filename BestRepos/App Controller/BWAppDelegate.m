@@ -10,40 +10,17 @@
 #import "BWAppController.h"
 #import "BWRepositoryStreamViewController.h"
 
-@interface BWAppDelegate ()
-
-@end
-
 @implementation BWAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [BWAppController initializeApplication];
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor whiteColor];
     BWRepositoryStreamViewController *rootViewController = [[BWRepositoryStreamViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
-
-    UIColor *darkPrimary = [UIColor colorWithRed:0/255.0 green:150/255.0 blue:136/255.0 alpha:1.0];
-    UIColor *primay = [UIColor colorWithRed:0/255.0 green:121/255.0 blue:107/255.0 alpha:1.0];
-    UIColor *accent = [UIColor colorWithRed:255/255.0 green:82/255.0 blue:82/255.0 alpha:1.0];
-    UIColor *grey = [UIColor colorWithRed:114/255.0 green:114/255.0 blue:114/255.0 alpha:1.0];
-
-    NSShadow *shadow = [[NSShadow alloc] init];
-    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
-    shadow.shadowOffset = CGSizeMake(0, 1);
-    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                           [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
-                                                           shadow, NSShadowAttributeName,
-                                                           [UIFont fontWithName:@"HelveticaNeue" size:21.0], NSFontAttributeName, nil]];
-
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UINavigationBar appearance] setBarTintColor:primay];
-    
-    [[UISearchBar appearance] setTintColor:accent];
-//    [[UISearchBar appearance] setBarTintColor:grey];
     
     return YES;
 }

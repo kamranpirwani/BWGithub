@@ -13,6 +13,11 @@
 #import "BWProviderUtils.h"
 #import "BWGithubSearchQuery.h"
 
+/**
+ * @class BWGithubProviderSpec
+ * @brief The purpose of this class is to hit the real GitHub endpoint and ensure we are getting valid data back
+ * @note In this spec, we are indepentenally testing the endpoints
+ */
 @interface BWGithubProviderSpec : XCTestCase
 
 @end

@@ -8,8 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * @class BWAppController
+ * @brief The app controller is responsible for initialzing the app and managing any
+ *        relevant lifecycle state. Additionally, we can toggle between providers/mock providers
+ *        here
+ */
 @interface BWAppController : NSObject
 
+/**
+ * Initialize any core dependencies in the app
+ */
 + (void)initializeApplication;
 
 @end

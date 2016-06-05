@@ -40,6 +40,8 @@
 
 - (void)createHeaderView {
     BWRepositoryHeaderView *headerView = [[BWRepositoryHeaderView alloc] initWithModel:_repositoryModel];
+
+    CGFloat height = 200;
     [headerView setTranslatesAutoresizingMaskIntoConstraints:NO];
     NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:headerView
                                                                        attribute:NSLayoutAttributeWidth
@@ -54,7 +56,7 @@
                                                                           toItem:nil
                                                                        attribute:NSLayoutAttributeNotAnAttribute
                                                                       multiplier:1.f
-                                                                         constant:headerView.bounds.size.height];
+                                                                         constant:height];
     NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:headerView
                                                                         attribute:NSLayoutAttributeTop
                                                                         relatedBy:NSLayoutRelationEqual
@@ -69,7 +71,8 @@
                                                                         attribute:NSLayoutAttributeLeft
                                                                        multiplier:1.f
                                                                          constant:0];
-        
+    
+    headerView.frame = CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame), height);
     self.tableView.tableHeaderView = headerView;
     [self.tableView addConstraint:widthConstraint];
     [self.tableView addConstraint:heightConstraint];
@@ -132,7 +135,11 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"Top Contributors";
+    if (_repositoryModel.topContributors.count > 0) {
+        return @"Top Contributors";
+    } else {
+        return @"No Contributors";
+    }
 }
 
 

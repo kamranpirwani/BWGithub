@@ -11,6 +11,13 @@
 #import "BWGithubRepositoryModel.h"
 #import "BWGithubContributorModel.h"
 
+/**
+ * @class BWGithubServiceSpec
+ * @brief The purpose of this class is to test our service by hitting the real provider endpoints
+ * @note  Although the calls to retrieve the top repositories AND the top contributors are two seperate calls,
+ *        we abstract this away from our users - so we want to make sure this modicifation doesn't break anything
+ *        In this spec, we are grouping the calls together and testing this functionality
+ */
 @interface BWGithubServiceSpec : XCTestCase
 
 @end

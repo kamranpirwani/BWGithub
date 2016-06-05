@@ -10,6 +10,8 @@
 
 @implementation BWGithubSearchQuery
 
+#pragma mark - Initializers
+
 - (instancetype)initWithSearchKeywords:(NSString *)keywords
                              sortField:(BWGithubSearchQuerySortField)sortField
                              sortOrder:(BWGithubSearchQuerySortOrder)sortOrder {
@@ -29,6 +31,8 @@
                                                                                  sortOrder:kBWGithubSearchQuerySortOrderDescending];
     return searchQuery;
 }
+
+#pragma mark - Helpers
 
 - (void)setupSortFieldStringWithSortFieldEnum:(BWGithubSearchQuerySortField)sortField {
     switch (sortField) {

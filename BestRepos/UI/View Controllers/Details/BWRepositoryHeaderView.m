@@ -34,20 +34,6 @@
                        placeholder:[UIImage imageNamed:@"Owner Placeholder Image"]];
     _ivRepositoryImage.layer.cornerRadius = 9.f;
     _lblDescription.text = model.projectDescription;
-    CGRect textRect = [_lblDescription.text boundingRectWithSize:CGSizeMake(self.bounds.size.height, 1000)
-                                                         options:NSStringDrawingUsesLineFragmentOrigin| NSStringDrawingUsesFontLeading
-                                                      attributes:@{NSFontAttributeName:_lblDescription.font}
-                                                         context:nil];
-    textRect = CGRectIntegral(textRect);
-    _lblDescription.frame = CGRectMake(CGRectGetMinX(_lblDescription.frame), CGRectGetMinY(_lblDescription.frame), textRect.size.width, textRect.size.height);
-    
-}
-
-- (CGSize)intrinsicContentSize {
-
-    CGFloat maxYPointOfLastElement = CGRectGetMaxY(_lblDescription.frame);
-    CGFloat padding = 10;
-    return CGSizeMake(self.bounds.size.width, maxYPointOfLastElement + padding);
 }
 
 @end

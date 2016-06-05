@@ -8,12 +8,14 @@
 
 #import "BWLoadingOverlayView.h"
 #import "XHAmazingLoadingView.h"
+#import "BWUIUtils.h"
 
 @interface BWOverlayView ()
 @property (nonatomic, readwrite, assign) CGFloat finalAlpha;
 @end
 
 @implementation BWLoadingOverlayView {
+    //We will leverage an open source loading view
     XHAmazingLoadingView *_loadingView;
 }
 
@@ -26,8 +28,10 @@
 }
 
 - (void)setupLoadingView {
-    UIColor *primay = [UIColor colorWithRed:0/255.0 green:121/255.0 blue:107/255.0 alpha:1.0];
-    _loadingView = [[XHAmazingLoadingView alloc] initWithType:XHAmazingLoadingAnimationTypeMusic loadingTintColor:primay size:200 parentFrame:self.bounds];
+    _loadingView = [[XHAmazingLoadingView alloc] initWithType:XHAmazingLoadingAnimationTypeMusic
+                                             loadingTintColor:[BWUIUtils primaryColor]
+                                                         size:200
+                                                  parentFrame:self.bounds];
     _loadingView.alpha = self.finalAlpha;
     _loadingView.backgroundTintColor = [UIColor clearColor];
     _loadingView.frame = self.bounds;

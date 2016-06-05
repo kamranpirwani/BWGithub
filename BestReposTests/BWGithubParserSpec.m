@@ -14,6 +14,12 @@
 #import "BWGithubBarebonesUserModel_Internal.h"
 #import "BWGithubUserModel_Internal.h"
 
+/**
+ * @class BWGithubParserSpec
+ * @brief The purpose of this class is to test whether our parser logic is working correctly
+ *        by checking the well formed model objects from our mock providers against models we have
+ *        created by matching what is in the mock json
+ */
 @interface BWGithubParserSpec : XCTestCase
 
 @end

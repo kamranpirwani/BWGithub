@@ -11,6 +11,11 @@
 #import "BWGithubProviderProtocol.h"
 #import "BWGithubSearchQuery.h"
 
+/**
+ * @class BWGithubProvider
+ * @brief The responsibility of this class is to perform all of our network related tasks
+ *        with GitHub, and provide a response to the consumer
+ */
 @interface BWGithubProvider : BWBaseProvider <BWGithubProviderProtocol>
 
 @end
