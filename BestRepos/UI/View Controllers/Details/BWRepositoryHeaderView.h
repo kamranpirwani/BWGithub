@@ -9,8 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "BWGithubRepositoryModel.h"
 
+/**
+ * @class BWRepositoryHeaderView
+ * @brief The header view which shows the image of the owner of the repository,
+ *        the programming language used, name and description
+ */
 @interface BWRepositoryHeaderView : UIView
 
+/**
+ * The designated initializer for our view
+ * @param repositoryModel The model to fetch pertinent information from to display to the user, for a given repository
+ */
 - (instancetype)initWithModel:(BWGithubRepositoryModel *)model;
 
 @end

@@ -26,8 +26,8 @@
 		FE0847611D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847511D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.xib */; };
 		FE0847621D038CE0006669AB /* BWRepositoryStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847531D038CE0006669AB /* BWRepositoryStreamViewController.m */; };
 		FE0847631D038CE0006669AB /* BWRepositoryStreamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847541D038CE0006669AB /* BWRepositoryStreamViewController.xib */; };
-		FE0847641D038CE0006669AB /* BWSearchHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847561D038CE0006669AB /* BWSearchHeaderView.m */; };
-		FE0847661D038D3B006669AB /* BWSearchHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847651D038D3B006669AB /* BWSearchHeaderView.xib */; };
+		FE0847641D038CE0006669AB /* BWSearchFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847561D038CE0006669AB /* BWSearchFilterView.m */; };
+		FE0847661D038D3B006669AB /* BWSearchFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847651D038D3B006669AB /* BWSearchFilterView.xib */; };
 		FE08476C1D03AF43006669AB /* BWLoadingOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08476B1D03AF43006669AB /* BWLoadingOverlayView.m */; };
 		FE08476F1D03B7FC006669AB /* BWUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08476E1D03B7FC006669AB /* BWUIUtils.m */; };
 		FE2B331A1CFD126A00E6CECD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE2B33191CFD126A00E6CECD /* Assets.xcassets */; };
@@ -35,7 +35,6 @@
 		FE2B33331CFD126A00E6CECD /* BestReposUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B33321CFD126A00E6CECD /* BestReposUITests.m */; };
 		FE2B33541CFD325A00E6CECD /* BWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B33431CFD325A00E6CECD /* BWAppDelegate.m */; };
 		FE2B33561CFD325A00E6CECD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE2B33461CFD325A00E6CECD /* LaunchScreen.storyboard */; };
-		FE2B33581CFD325A00E6CECD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE2B334F1CFD325A00E6CECD /* Info.plist */; };
 		FE2B33591CFD325A00E6CECD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B33501CFD325A00E6CECD /* main.m */; };
 		FE2B335D1CFD344900E6CECD /* BWGithubService.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B335C1CFD344900E6CECD /* BWGithubService.m */; };
 		FE2B33601CFD379400E6CECD /* BWGithubRepositoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B335F1CFD379400E6CECD /* BWGithubRepositoryModel.m */; };
@@ -117,9 +116,9 @@
 		FE0847521D038CE0006669AB /* BWRepositoryStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRepositoryStreamViewController.h; sourceTree = "<group>"; };
 		FE0847531D038CE0006669AB /* BWRepositoryStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRepositoryStreamViewController.m; sourceTree = "<group>"; };
 		FE0847541D038CE0006669AB /* BWRepositoryStreamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRepositoryStreamViewController.xib; sourceTree = "<group>"; };
-		FE0847551D038CE0006669AB /* BWSearchHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWSearchHeaderView.h; sourceTree = "<group>"; };
-		FE0847561D038CE0006669AB /* BWSearchHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWSearchHeaderView.m; sourceTree = "<group>"; };
-		FE0847651D038D3B006669AB /* BWSearchHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWSearchHeaderView.xib; sourceTree = "<group>"; };
+		FE0847551D038CE0006669AB /* BWSearchFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWSearchFilterView.h; sourceTree = "<group>"; };
+		FE0847561D038CE0006669AB /* BWSearchFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWSearchFilterView.m; sourceTree = "<group>"; };
+		FE0847651D038D3B006669AB /* BWSearchFilterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWSearchFilterView.xib; sourceTree = "<group>"; };
 		FE08476A1D03AF43006669AB /* BWLoadingOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWLoadingOverlayView.h; sourceTree = "<group>"; };
 		FE08476B1D03AF43006669AB /* BWLoadingOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWLoadingOverlayView.m; sourceTree = "<group>"; };
 		FE08476D1D03B7FC006669AB /* BWUIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWUIUtils.h; sourceTree = "<group>"; };
@@ -293,9 +292,9 @@
 				FE0847521D038CE0006669AB /* BWRepositoryStreamViewController.h */,
 				FE0847531D038CE0006669AB /* BWRepositoryStreamViewController.m */,
 				FE0847541D038CE0006669AB /* BWRepositoryStreamViewController.xib */,
-				FE0847551D038CE0006669AB /* BWSearchHeaderView.h */,
-				FE0847561D038CE0006669AB /* BWSearchHeaderView.m */,
-				FE0847651D038D3B006669AB /* BWSearchHeaderView.xib */,
+				FE0847551D038CE0006669AB /* BWSearchFilterView.h */,
+				FE0847561D038CE0006669AB /* BWSearchFilterView.m */,
+				FE0847651D038D3B006669AB /* BWSearchFilterView.xib */,
 			);
 			path = Stream;
 			sourceTree = "<group>";
@@ -632,8 +631,7 @@
 				FE63384D1CFEACBB005DE1B5 /* GET_most_starred_repositories.json in Resources */,
 				FE08475B1D038CE0006669AB /* BWRepositoryDetailViewController.xib in Resources */,
 				FE2B33561CFD325A00E6CECD /* LaunchScreen.storyboard in Resources */,
-				FE0847661D038D3B006669AB /* BWSearchHeaderView.xib in Resources */,
-				FE2B33581CFD325A00E6CECD /* Info.plist in Resources */,
+				FE0847661D038D3B006669AB /* BWSearchFilterView.xib in Resources */,
 				FE0847611D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.xib in Resources */,
 				FE08475F1D038CE0006669AB /* BWProfileViewController.xib in Resources */,
 				FE08475D1D038CE0006669AB /* BWRepositoryHeaderView.xib in Resources */,
@@ -811,7 +809,7 @@
 				FE2B337F1CFE7D2500E6CECD /* BWGithubContributorModel.m in Sources */,
 				FE2B33541CFD325A00E6CECD /* BWAppDelegate.m in Sources */,
 				FE0847571D038CE0006669AB /* BWOverlayView.m in Sources */,
-				FE0847641D038CE0006669AB /* BWSearchHeaderView.m in Sources */,
+				FE0847641D038CE0006669AB /* BWSearchFilterView.m in Sources */,
 				FE6338371CFE8954005DE1B5 /* BWProviderUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

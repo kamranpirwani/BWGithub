@@ -6,17 +6,19 @@
 //  Copyright © 2016 Kamran Pirwani. All rights reserved.
 //
 
-#import "BWSearchHeaderView.h"
+#import "BWSearchFilterView.h"
 
-@interface BWSearchHeaderView()
+@interface BWSearchFilterView()
 
 @property(nonatomic, assign, readwrite) BWGithubSearchQuerySortField currentSortField;
 @property(nonatomic, assign, readwrite) BWGithubSearchQuerySortOrder currentSortOrder;
 
+/**
+ * Maintain a collection of search filter and buttons, so adding/removing ui elements will be as simple
+ * as modifying their tags
+ */
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *searchFilterButtons;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *searchOrderButtons;
-
-@property (weak, nonatomic) IBOutlet UIView *searchBarContainerView;
 
 @end
 
@@ -32,14 +34,10 @@ typedef NS_ENUM(NSInteger, BWSearchOrderButtonTag) {
     kBWSearchOrderButtonTagAscending
 };
 
+static CGFloat kBWSearchFilterViewOpacityOfSelectedButton = 1.f;
+static CGFloat kBWSearchFilterViewOpacityOfUnselectedButton = 0.45f;
 
-@implementation BWSearchHeaderView
-
-- (instancetype)init {
-    self = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil][0];
-    [self setupInitialState];
-    return self;
-}
+@implementation BWSearchFilterView
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -91,9 +89,9 @@ typedef NS_ENUM(NSInteger, BWSearchOrderButtonTag) {
 - (void)updateSortFilterButtonStatesWithTag:(BWSearchFilterButtonTag)tag {
     [_searchFilterButtons enumerateObjectsUsingBlock:^(UIButton  *_Nonnull button, NSUInteger idx, BOOL * _Nonnull stop) {
         if (button.tag == tag) {
-            button.alpha = 1.f;
+            button.alpha = kBWSearchFilterViewOpacityOfSelectedButton;
         } else {
-            button.alpha = 0.45f;
+            button.alpha = kBWSearchFilterViewOpacityOfUnselectedButton;
         }
     }];
 }
@@ -122,9 +120,9 @@ typedef NS_ENUM(NSInteger, BWSearchOrderButtonTag) {
 - (void)updateSortOrderButtonStatesWithTag:(BWSearchOrderButtonTag)tag {
     [_searchOrderButtons enumerateObjectsUsingBlock:^(UIButton  *_Nonnull button, NSUInteger idx, BOOL * _Nonnull stop) {
         if (button.tag == tag) {
-            button.alpha = 1.f;
+            button.alpha = kBWSearchFilterViewOpacityOfSelectedButton;
         } else {
-            button.alpha = 0.45f;
+            button.alpha = kBWSearchFilterViewOpacityOfUnselectedButton;
         }
     }];
 }

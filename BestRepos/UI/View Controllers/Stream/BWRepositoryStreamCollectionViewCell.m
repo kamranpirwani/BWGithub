@@ -26,6 +26,9 @@
 
 @end
 
+static NSString *BWRepositoryStreamCollectionViewCellValidContributorText = @"TOP CONTRIBUTORS";
+static NSString *BWRepositoryStreamCollectionViewCellInvalidContributorText =  @"NO CONTRIBUTORS";;
+
 @implementation BWRepositoryStreamCollectionViewCell
 
 - (void)awakeFromNib {
@@ -33,16 +36,7 @@
     [self setupContibutorsImageViews];
 }
 
-- (NSArray *)getContributorImageViews {
-    NSArray *imageViews = @[ _ivFirstContributor, _ivSecondContributor, _ivThirdContributor];
-    return imageViews;
-}
-
-- (NSArray *)getAllImageView {
-    NSMutableArray *imageViews = [[self getContributorImageViews] mutableCopy];
-    [imageViews addObject:_ivOrganizationImage];
-    return imageViews;
-}
+#pragma mark - Setup
 
 - (void)setupContibutorsImageViews {
     NSArray *imageViews = [self getContributorImageViews];
@@ -52,7 +46,8 @@
 }
 
 - (void)configureWithModel:(BWGithubRepositoryModel *)repositoryModel {
-    [_ivOrganizationImage hnk_setImageFromURL:[NSURL URLWithString:repositoryModel.owner.avatarUrl] placeholder:[UIImage imageNamed:@"Owner Placeholder Image"]];
+    [_ivOrganizationImage hnk_setImageFromURL:[NSURL URLWithString:repositoryModel.owner.avatarUrl]
+                                  placeholder:[UIImage imageNamed:@"Owner Placeholder Image"]];
     _lblRepositoryName.text = repositoryModel.name;
     _lblProjectDescription.text = repositoryModel.projectDescription;
     _lblStarredCount.text = [BWUtils abbreviateNumber:repositoryModel.starredCount];
@@ -63,16 +58,29 @@
         [imageViews enumerateObjectsUsingBlock:^(UIImageView  *_Nonnull imageView, NSUInteger idx, BOOL * _Nonnull stop) {
             if (repositoryModel.topContributors.count > idx) {
                 BWGithubContributorModel *contributor = [repositoryModel.topContributors objectAtIndex:idx];
-                [imageView hnk_setImageFromURL:[NSURL URLWithString:contributor.avatarUrl] placeholder:[UIImage imageNamed:@"Github Contributon Placeholder Icon"]];
+                [imageView hnk_setImageFromURL:[NSURL URLWithString:contributor.avatarUrl]
+                                   placeholder:[UIImage imageNamed:@"Github Contributon Placeholder Icon"]];
             }
         }];
     } else {
-        _ivFirstContributor.hidden = YES;
-        _ivSecondContributor.hidden = YES;
-        _ivThirdContributor.hidden = YES;
-        _lblTopContributors.text = @"NO CONTRIBUTORS";
+        [self setupViewWithValidContributors:NO];
     }
     
+}
+
+- (void)setupViewWithValidContributors:(BOOL)hasMoreThanOneContributor {
+    _ivFirstContributor.hidden = !hasMoreThanOneContributor;
+    _ivSecondContributor.hidden = !hasMoreThanOneContributor;
+    _ivThirdContributor.hidden = !hasMoreThanOneContributor;
+    NSString *topContributorText = hasMoreThanOneContributor ? BWRepositoryStreamCollectionViewCellValidContributorText : BWRepositoryStreamCollectionViewCellInvalidContributorText;
+    _lblTopContributors.text = topContributorText;
+}
+
+#pragma mark Helpers
+
+- (NSArray *)getContributorImageViews {
+    NSArray *imageViews = @[ _ivFirstContributor, _ivSecondContributor, _ivThirdContributor];
+    return imageViews;
 }
 
 - (void)prepareForReuse {
@@ -83,10 +91,7 @@
     }];
     [_ivOrganizationImage hnk_cancelSetImage];
     _ivOrganizationImage.image = [UIImage imageNamed:@"Owner Placeholder Image"];
-    _lblTopContributors.text = @"TOP CONTRIBUTORS";
-    _ivFirstContributor.hidden = NO;
-    _ivSecondContributor.hidden = NO;
-    _ivThirdContributor.hidden = NO;
+    [self setupViewWithValidContributors:YES];
 }
 
 + (NSString *)reuseIdentifier {

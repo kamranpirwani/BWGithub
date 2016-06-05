@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * @class BWRepositoryStreamViewController
+ * @brief The view controller fetches and displayed the top 100 repositories on launch
+ * @note The functionality to search via a variety of filters is also available, so we can search for any repository on GitHub
+ */
 @interface BWRepositoryStreamViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @end

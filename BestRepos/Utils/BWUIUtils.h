@@ -31,5 +31,6 @@
 + (UIColor *)accentColor;
 + (UIColor *)primaryTextColor;
 + (UIColor *)secondaryTextColor;
++ (UIColor *)dividerColor;
 
 @end

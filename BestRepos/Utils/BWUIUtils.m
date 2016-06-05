@@ -73,4 +73,11 @@
                            alpha:1.0];
 }
 
++ (UIColor *)dividerColor {
+    return [UIColor colorWithRed:182/255.0
+                           green:182/255.0
+                            blue:182/255.0
+                           alpha:1.0];
+}
+
 @end

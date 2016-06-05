@@ -11,7 +11,10 @@
                 <outlet property="nullStateLabel" destination="DpA-h3-A19" id="2bV-jZ-6hs"/>
                 <outlet property="nullStateView" destination="Llv-pv-kLU" id="3kE-eK-1z7"/>
                 <outlet property="searchBarContainerView" destination="FpI-gc-aCG" id="3wY-AC-lvO"/>
-                <outlet property="searchHeaderView" destination="TgN-RS-isi" id="7yL-EC-6vQ"/>
+                <outlet property="searchFilterView" destination="TgN-RS-isi" id="Zuv-I0-FRY"/>
+                <outlet property="searchFilterViewHeightContraint" destination="Orq-6M-Ttq" id="jRg-W9-J0C"/>
+                <outlet property="searchFilterViewViewHeightContraint" destination="Orq-6M-Ttq" id="nYo-bD-rb3"/>
+                <outlet property="searchHeaderView" destination="TgN-RS-isi" id="F59-Qv-oBA"/>
                 <outlet property="searchHeaderViewHeightContraint" destination="Orq-6M-Ttq" id="7CY-Ou-p0W"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="r9I-cD-JEA"/>
             </connections>
@@ -21,11 +24,11 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TgN-RS-isi" userLabel="Search Header View" customClass="BWSearchHeaderView">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TgN-RS-isi" userLabel="SearcFilter View" customClass="BWSearchFilterView">
                     <rect key="frame" x="0.0" y="108" width="600" height="0.0"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" id="Orq-6M-Ttq"/>
+                        <constraint firstAttribute="height" id="Orq-6M-Ttq" userLabel="Search Filter View Height Contraint"/>
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cOw-Hd-Anv">

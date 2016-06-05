@@ -23,6 +23,7 @@
 - (instancetype)initWithModel:(BWGithubRepositoryModel *)model {
     self = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil][0];
     [self setupWithModel:model];
+    [self styleView];
     return self;
 }
 
@@ -32,8 +33,11 @@
     NSURL *imageUrl = [NSURL URLWithString:model.owner.avatarUrl];
     [_ivRepositoryImage hnk_setImageFromURL:imageUrl
                        placeholder:[UIImage imageNamed:@"Owner Placeholder Image"]];
-    _ivRepositoryImage.layer.cornerRadius = 9.f;
     _lblDescription.text = model.projectDescription;
+}
+
+- (void)styleView {
+    _ivRepositoryImage.layer.cornerRadius = 9.f;
 }
 
 @end

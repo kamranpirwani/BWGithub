@@ -21,11 +21,16 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    _ivAvatar.layer.cornerRadius = _ivAvatar.frame.size.width / 2;
+    [self styleCell];
+}
+
+- (void)styleCell {
+        _ivAvatar.layer.cornerRadius = CGRectGetWidth(_ivAvatar.frame) / 2;
 }
 
 - (void)configureWithModel:(BWGithubContributorModel *)model {
-    [_ivAvatar hnk_setImageFromURL:[NSURL URLWithString:model.avatarUrl] placeholder:[UIImage imageNamed:@"Owner Placeholder Image"]];
+    [_ivAvatar hnk_setImageFromURL:[NSURL URLWithString:model.avatarUrl]
+                       placeholder:[UIImage imageNamed:@"Owner Placeholder Image"]];
     [_lblUsername setText:model.login];
     [_lblNumberOfCommits setText:[@(model.contributions) stringValue]];
 }

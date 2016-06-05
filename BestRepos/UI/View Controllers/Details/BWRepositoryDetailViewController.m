@@ -11,6 +11,7 @@
 #import "BWRepositoryHeaderView.h"
 #import "BWGithubService.h"
 #import "BWProfileViewController.h"
+#import "BWUIUtils.h"
 #import "BWLoadingOverlayView.h"
 
 @interface BWRepositoryDetailViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -21,6 +22,10 @@
 @property(nonatomic, strong) BWLoadingOverlayView *loadingOverlayView;
 
 @end
+
+static NSString *const kBWRepositoryDetailViewControllerTitle = @"Repository";
+static NSString *const kBWRepositoryDetailViewControllerValidHeaderTitle = @"Top Contributors";
+static NSString *const kBWRepositoryDetailViewControllerInvalidHeaderTitle = @"No Contributors";
 
 @implementation BWRepositoryDetailViewController
 
@@ -34,9 +39,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"Repository";
+    [self styleView];
     [self createHeaderView];
     [self registerCellWithTableView];
+}
+
+- (void)styleView {
+    self.navigationItem.title = kBWRepositoryDetailViewControllerTitle;
 }
 
 - (void)createHeaderView {
@@ -87,17 +96,28 @@
 }
 
 - (void)loadUserProfileForBarebonesUser:(BWGithubContributorModel *)userModel {
-    _loadingOverlayView = [[BWLoadingOverlayView alloc] initWithParentView:self.view backgroundColor:[UIColor blackColor] alpha:1.f];
+    _loadingOverlayView = [[BWLoadingOverlayView alloc] initWithParentView:self.view
+                                                           backgroundColor:[UIColor blackColor]
+                                                                     alpha:1.f];
+    __weak typeof(self) weakSelf = self;
     [_loadingOverlayView showWithCallback:^{
         [[BWGithubService sharedInstance] getUserProfileFromBarebonesUserModel:userModel callback:^(NSError *error, BWGithubUserModel *completeUser) {
-            if (!error) {
-                BWProfileViewController *profileViewController = [[BWProfileViewController alloc] initWithModel:completeUser];
-                [_loadingOverlayView dismissWithCallback:^{
-                    [self.navigationController pushViewController:profileViewController animated:YES];
-                }];
-            }
+            [weakSelf handleUserProfileFetch:error withCompleteUser:completeUser];
         }];
     }];
+}
+
+- (void)handleUserProfileFetch:(NSError *)error withCompleteUser:(BWGithubUserModel *)completeUser {
+    void (^actionBlock)() = ^{
+        if (!error) {
+            BWProfileViewController *profileViewController = [[BWProfileViewController alloc] initWithModel:completeUser];
+            [self.navigationController pushViewController:profileViewController animated:YES];
+        } else {
+            //TODO handle error here
+        }
+    };
+    
+    [_loadingOverlayView dismissWithCallback:actionBlock];
 }
 
 #pragma mark - UITableViewDelegate Methods
@@ -109,15 +129,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
-    // Background color
-    UIColor *accent = [UIColor colorWithRed:182/255.0 green:182/255.0 blue:182/255.0 alpha:1.0];
-    view.tintColor = accent;
+    view.tintColor = [BWUIUtils dividerColor];
     
-    // Text Color
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
-    UIColor *primaryText = [UIColor colorWithRed:33/255.0 green:33/255.0 blue:33/255.0 alpha:1.0];
-    [header.textLabel setTextColor:primaryText];
-    
+    [header.textLabel setTextColor:[BWUIUtils primaryColor]];
 }
 
 #pragma mark - UITableViewDataSource Methods
@@ -137,9 +152,9 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (_repositoryModel.topContributors.count > 0) {
-        return @"Top Contributors";
+        return kBWRepositoryDetailViewControllerValidHeaderTitle;
     } else {
-        return @"No Contributors";
+        return kBWRepositoryDetailViewControllerInvalidHeaderTitle;
     }
 }
 
