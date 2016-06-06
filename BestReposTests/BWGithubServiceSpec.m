@@ -37,7 +37,7 @@ static const NSTimeInterval kBWGithubServiceSpecTimeout = 60.f;
 - (void)testGetMostPopularRepositoriesAndContributorsGrouped {
     XCTestExpectation *jointExpectation = [self expectationWithDescription:@"Successfully hit real endpoint and retrieved repositories and top contributors"];
     __weak typeof(self) weakSelf = self;
-    [[BWGithubService sharedInstance] searchForRepositoryWithQuery:[BWGithubSearchQuery mostPopularRepositoriesSearchQuery] callback:^(NSError *error, NSArray<BWGithubRepositoryModel *> *repositories) {
+    [[BWGithubService sharedInstance] searchForRepositoryWithQuery:[BWGithubSearchQuery mostPopularRepositoriesSearchQuery] callback:^(NSString *errorString, NSArray<BWGithubRepositoryModel *> *repositories) {
         XCTAssert(repositories.count > 0, @"unexpected results from repository endpoint");
         BWGithubRepositoryModel *firstRepository = [repositories firstObject];
         [weakSelf validateRepository:firstRepository];

@@ -22,8 +22,8 @@
 @property(nonatomic, strong) BWGithubRepositoryModel *repositoryModel;
 @property(nonatomic, strong) BWLoadingOverlayView *loadingOverlayView;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *repositoryHeaderViewContainerHeightConstraint;
-@property (weak, nonatomic) IBOutlet UIView *headerViewContainer;
+@property(nonatomic, weak) IBOutlet NSLayoutConstraint *repositoryHeaderViewContainerHeightConstraint;
+@property(nonatomic, weak) IBOutlet UIView *headerViewContainer;
 
 @property(nonatomic, strong) BWRepositoryHeaderView *headerView;
 @end
