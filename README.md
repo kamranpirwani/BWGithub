@@ -49,6 +49,7 @@ Before getting ready for production, I would focus on the following areas more:
  * Fork the third party library used for showing the loading indicator, and add a loading label underneath it. Additionally
    add the relevant code to support the layer being positioned across multiple bounds (currently it always assumed the device dimensions)
 
+* Additionally, I would remove the limitation to only retrieve the top 100 results, and follow the pagination links GitHub provides to fetch all of the data
 * Ensure we resize the images when downloading from the network, before we cache them. Currently, the cache was used as is,
   but we could modify it to squeeze out some more performance gains
 * Ensure we supported rotation
