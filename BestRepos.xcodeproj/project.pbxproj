@@ -1,0 +1,1073 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		19770CD801922BE032CA0D24 /* libPods-BestReposUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 435B5633636409C5D3705721 /* libPods-BestReposUITests.a */; };
+		47FAC009D10EF49768FEE76C /* libPods-BestReposTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15372E6B2B53E43F1B1E879F /* libPods-BestReposTests.a */; };
+		B3522D2129881B2898030BB4 /* libPods-BestRepos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D23B0D1F849958323CF5749 /* libPods-BestRepos.a */; };
+		FE0847271D02AE3E006669AB /* NSDictionary+BWTypeValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847261D02AE3E006669AB /* NSDictionary+BWTypeValidation.m */; };
+		FE08472F1D02B328006669AB /* BWGithubUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08472E1D02B328006669AB /* BWGithubUserModel.m */; };
+		FE0847321D02B567006669AB /* GET_user_profile.json in Resources */ = {isa = PBXBuildFile; fileRef = FE0847311D02B567006669AB /* GET_user_profile.json */; };
+		FE0847571D038CE0006669AB /* BWOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08473E1D038CE0006669AB /* BWOverlayView.m */; };
+		FE0847581D038CE0006669AB /* BWRepositoryDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847421D038CE0006669AB /* BWRepositoryDetailTableViewCell.m */; };
+		FE0847591D038CE0006669AB /* BWRepositoryDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847431D038CE0006669AB /* BWRepositoryDetailTableViewCell.xib */; };
+		FE08475A1D038CE0006669AB /* BWRepositoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847451D038CE0006669AB /* BWRepositoryDetailViewController.m */; };
+		FE08475B1D038CE0006669AB /* BWRepositoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847461D038CE0006669AB /* BWRepositoryDetailViewController.xib */; };
+		FE08475C1D038CE0006669AB /* BWRepositoryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847481D038CE0006669AB /* BWRepositoryHeaderView.m */; };
+		FE08475D1D038CE0006669AB /* BWRepositoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847491D038CE0006669AB /* BWRepositoryHeaderView.xib */; };
+		FE08475E1D038CE0006669AB /* BWProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08474C1D038CE0006669AB /* BWProfileViewController.m */; };
+		FE08475F1D038CE0006669AB /* BWProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE08474D1D038CE0006669AB /* BWProfileViewController.xib */; };
+		FE0847601D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847501D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.m */; };
+		FE0847611D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847511D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.xib */; };
+		FE0847621D038CE0006669AB /* BWRepositoryStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847531D038CE0006669AB /* BWRepositoryStreamViewController.m */; };
+		FE0847631D038CE0006669AB /* BWRepositoryStreamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847541D038CE0006669AB /* BWRepositoryStreamViewController.xib */; };
+		FE0847641D038CE0006669AB /* BWSearchFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0847561D038CE0006669AB /* BWSearchFilterView.m */; };
+		FE0847661D038D3B006669AB /* BWSearchFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0847651D038D3B006669AB /* BWSearchFilterView.xib */; };
+		FE08476C1D03AF43006669AB /* BWLoadingOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08476B1D03AF43006669AB /* BWLoadingOverlayView.m */; };
+		FE08476F1D03B7FC006669AB /* BWUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08476E1D03B7FC006669AB /* BWUIUtils.m */; };
+		FE2B331A1CFD126A00E6CECD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE2B33191CFD126A00E6CECD /* Assets.xcassets */; };
+		FE2B331D1CFD126A00E6CECD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE2B331B1CFD126A00E6CECD /* LaunchScreen.storyboard */; };
+		FE2B33331CFD126A00E6CECD /* BestReposUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B33321CFD126A00E6CECD /* BestReposUITests.m */; };
+		FE2B33541CFD325A00E6CECD /* BWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B33431CFD325A00E6CECD /* BWAppDelegate.m */; };
+		FE2B33561CFD325A00E6CECD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE2B33461CFD325A00E6CECD /* LaunchScreen.storyboard */; };
+		FE2B33591CFD325A00E6CECD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B33501CFD325A00E6CECD /* main.m */; };
+		FE2B335D1CFD344900E6CECD /* BWGithubService.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B335C1CFD344900E6CECD /* BWGithubService.m */; };
+		FE2B33601CFD379400E6CECD /* BWGithubRepositoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B335F1CFD379400E6CECD /* BWGithubRepositoryModel.m */; };
+		FE2B33631CFD3A9500E6CECD /* BWGithubBarebonesUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B33621CFD3A9500E6CECD /* BWGithubBarebonesUserModel.m */; };
+		FE2B33661CFD46E200E6CECD /* BWGithubProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B33651CFD46E200E6CECD /* BWGithubProvider.m */; };
+		FE2B33691CFD46F100E6CECD /* BWGithubMockProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B33681CFD46F100E6CECD /* BWGithubMockProvider.m */; };
+		FE2B33711CFD474200E6CECD /* BWGithubParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B33701CFD474200E6CECD /* BWGithubParser.m */; };
+		FE2B33781CFD483100E6CECD /* BWAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B33771CFD483100E6CECD /* BWAppController.m */; };
+		FE2B337C1CFD584800E6CECD /* BWUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B337B1CFD584800E6CECD /* BWUtils.m */; };
+		FE2B337F1CFE7D2500E6CECD /* BWGithubContributorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B337E1CFE7D2500E6CECD /* BWGithubContributorModel.m */; };
+		FE6338371CFE8954005DE1B5 /* BWProviderUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6338361CFE8954005DE1B5 /* BWProviderUtils.m */; };
+		FE63383E1CFE981F005DE1B5 /* BWBaseProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FE63383D1CFE981F005DE1B5 /* BWBaseProvider.m */; };
+		FE63384D1CFEACBB005DE1B5 /* GET_most_starred_repositories.json in Resources */ = {isa = PBXBuildFile; fileRef = FE63384B1CFEACBB005DE1B5 /* GET_most_starred_repositories.json */; };
+		FE63384E1CFEACBB005DE1B5 /* GET_top_contributors.json in Resources */ = {isa = PBXBuildFile; fileRef = FE63384C1CFEACBB005DE1B5 /* GET_top_contributors.json */; };
+		FE6338501CFEAD83005DE1B5 /* BWGithubParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = FE63384F1CFEAD83005DE1B5 /* BWGithubParserSpec.m */; };
+		FE6338511CFEADA0005DE1B5 /* BWGithubParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B33701CFD474200E6CECD /* BWGithubParser.m */; };
+		FE6338521CFEADB8005DE1B5 /* BWGithubMockProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B33681CFD46F100E6CECD /* BWGithubMockProvider.m */; };
+		FE63385A1CFEC76F005DE1B5 /* BWGithubContributorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B337E1CFE7D2500E6CECD /* BWGithubContributorModel.m */; };
+		FE63385C1CFECA06005DE1B5 /* BWGithubProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = FE63385B1CFECA06005DE1B5 /* BWGithubProviderSpec.m */; };
+		FE63385D1CFECCD9005DE1B5 /* BWProviderUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6338361CFE8954005DE1B5 /* BWProviderUtils.m */; };
+		FE63385F1CFEEB9C005DE1B5 /* BWGithubServiceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = FE63385E1CFEEB9C005DE1B5 /* BWGithubServiceSpec.m */; };
+		FE6338641CFF58B2005DE1B5 /* Credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE6338631CFF58B2005DE1B5 /* Credentials.plist */; };
+		FE6338761CFFAA29005DE1B5 /* BWGithubAuthCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6338711CFFAA29005DE1B5 /* BWGithubAuthCredentials.m */; };
+		FE6338771CFFAA29005DE1B5 /* BWServiceLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6338751CFFAA29005DE1B5 /* BWServiceLocator.m */; };
+		FE63387A1CFFAA35005DE1B5 /* BWGithubSearchQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6338791CFFAA35005DE1B5 /* BWGithubSearchQuery.m */; };
+		FE63387B1CFFB3E9005DE1B5 /* BWGithubSearchQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6338791CFFAA35005DE1B5 /* BWGithubSearchQuery.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE2B33241CFD126A00E6CECD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE2B33021CFD126A00E6CECD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE2B33091CFD126A00E6CECD;
+			remoteInfo = BestRepos;
+		};
+		FE2B332F1CFD126A00E6CECD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE2B33021CFD126A00E6CECD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE2B33091CFD126A00E6CECD;
+			remoteInfo = BestRepos;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		15372E6B2B53E43F1B1E879F /* libPods-BestReposTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BestReposTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D23B0D1F849958323CF5749 /* libPods-BestRepos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BestRepos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		435B5633636409C5D3705721 /* libPods-BestReposUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BestReposUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A0CBFDA849CCF5B096C5239 /* Pods-BestReposTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestReposTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BestReposTests/Pods-BestReposTests.debug.xcconfig"; sourceTree = "<group>"; };
+		52DCB0E5E17EBD99157C4E68 /* Pods-BestReposUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestReposUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BestReposUITests/Pods-BestReposUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		76586C412F1EA879538019A7 /* Pods-BestRepos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestRepos.release.xcconfig"; path = "Pods/Target Support Files/Pods-BestRepos/Pods-BestRepos.release.xcconfig"; sourceTree = "<group>"; };
+		766F1AFA6227806B53CC9591 /* Pods-BestReposUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestReposUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BestReposUITests/Pods-BestReposUITests.release.xcconfig"; sourceTree = "<group>"; };
+		78379834CD0C6121452F936B /* Pods-BestReposTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestReposTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BestReposTests/Pods-BestReposTests.release.xcconfig"; sourceTree = "<group>"; };
+		D7BF05DB4E2E4B3B7EB38FAF /* Pods-BestRepos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestRepos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BestRepos/Pods-BestRepos.debug.xcconfig"; sourceTree = "<group>"; };
+		FE0847251D02AE3E006669AB /* NSDictionary+BWTypeValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BWTypeValidation.h"; sourceTree = "<group>"; };
+		FE0847261D02AE3E006669AB /* NSDictionary+BWTypeValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BWTypeValidation.m"; sourceTree = "<group>"; };
+		FE08472D1D02B328006669AB /* BWGithubUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubUserModel.h; sourceTree = "<group>"; };
+		FE08472E1D02B328006669AB /* BWGithubUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWGithubUserModel.m; sourceTree = "<group>"; };
+		FE0847301D02B3C7006669AB /* BWGithubUserModel_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubUserModel_Internal.h; sourceTree = "<group>"; };
+		FE0847311D02B567006669AB /* GET_user_profile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GET_user_profile.json; sourceTree = "<group>"; };
+		FE08473D1D038CE0006669AB /* BWOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWOverlayView.h; sourceTree = "<group>"; };
+		FE08473E1D038CE0006669AB /* BWOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWOverlayView.m; sourceTree = "<group>"; };
+		FE0847411D038CE0006669AB /* BWRepositoryDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRepositoryDetailTableViewCell.h; sourceTree = "<group>"; };
+		FE0847421D038CE0006669AB /* BWRepositoryDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRepositoryDetailTableViewCell.m; sourceTree = "<group>"; };
+		FE0847431D038CE0006669AB /* BWRepositoryDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRepositoryDetailTableViewCell.xib; sourceTree = "<group>"; };
+		FE0847441D038CE0006669AB /* BWRepositoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRepositoryDetailViewController.h; sourceTree = "<group>"; };
+		FE0847451D038CE0006669AB /* BWRepositoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRepositoryDetailViewController.m; sourceTree = "<group>"; };
+		FE0847461D038CE0006669AB /* BWRepositoryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRepositoryDetailViewController.xib; sourceTree = "<group>"; };
+		FE0847471D038CE0006669AB /* BWRepositoryHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRepositoryHeaderView.h; sourceTree = "<group>"; };
+		FE0847481D038CE0006669AB /* BWRepositoryHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRepositoryHeaderView.m; sourceTree = "<group>"; };
+		FE0847491D038CE0006669AB /* BWRepositoryHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRepositoryHeaderView.xib; sourceTree = "<group>"; };
+		FE08474B1D038CE0006669AB /* BWProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWProfileViewController.h; sourceTree = "<group>"; };
+		FE08474C1D038CE0006669AB /* BWProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWProfileViewController.m; sourceTree = "<group>"; };
+		FE08474D1D038CE0006669AB /* BWProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWProfileViewController.xib; sourceTree = "<group>"; };
+		FE08474F1D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRepositoryStreamCollectionViewCell.h; sourceTree = "<group>"; };
+		FE0847501D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRepositoryStreamCollectionViewCell.m; sourceTree = "<group>"; };
+		FE0847511D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRepositoryStreamCollectionViewCell.xib; sourceTree = "<group>"; };
+		FE0847521D038CE0006669AB /* BWRepositoryStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWRepositoryStreamViewController.h; sourceTree = "<group>"; };
+		FE0847531D038CE0006669AB /* BWRepositoryStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWRepositoryStreamViewController.m; sourceTree = "<group>"; };
+		FE0847541D038CE0006669AB /* BWRepositoryStreamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWRepositoryStreamViewController.xib; sourceTree = "<group>"; };
+		FE0847551D038CE0006669AB /* BWSearchFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWSearchFilterView.h; sourceTree = "<group>"; };
+		FE0847561D038CE0006669AB /* BWSearchFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWSearchFilterView.m; sourceTree = "<group>"; };
+		FE0847651D038D3B006669AB /* BWSearchFilterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BWSearchFilterView.xib; sourceTree = "<group>"; };
+		FE08476A1D03AF43006669AB /* BWLoadingOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWLoadingOverlayView.h; sourceTree = "<group>"; };
+		FE08476B1D03AF43006669AB /* BWLoadingOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWLoadingOverlayView.m; sourceTree = "<group>"; };
+		FE08476D1D03B7FC006669AB /* BWUIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWUIUtils.h; sourceTree = "<group>"; };
+		FE08476E1D03B7FC006669AB /* BWUIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWUIUtils.m; sourceTree = "<group>"; };
+		FE2B330A1CFD126A00E6CECD /* BestRepos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestRepos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE2B33191CFD126A00E6CECD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FE2B331C1CFD126A00E6CECD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FE2B33231CFD126A00E6CECD /* BestReposTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BestReposTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE2B33291CFD126A00E6CECD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE2B332E1CFD126A00E6CECD /* BestReposUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BestReposUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE2B33321CFD126A00E6CECD /* BestReposUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BestReposUITests.m; sourceTree = "<group>"; };
+		FE2B33341CFD126A00E6CECD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE2B33421CFD325A00E6CECD /* BWAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWAppDelegate.h; sourceTree = "<group>"; };
+		FE2B33431CFD325A00E6CECD /* BWAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWAppDelegate.m; sourceTree = "<group>"; };
+		FE2B33471CFD325A00E6CECD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FE2B334F1CFD325A00E6CECD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE2B33501CFD325A00E6CECD /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FE2B335B1CFD344900E6CECD /* BWGithubService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubService.h; sourceTree = "<group>"; };
+		FE2B335C1CFD344900E6CECD /* BWGithubService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWGithubService.m; sourceTree = "<group>"; };
+		FE2B335E1CFD379400E6CECD /* BWGithubRepositoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubRepositoryModel.h; sourceTree = "<group>"; };
+		FE2B335F1CFD379400E6CECD /* BWGithubRepositoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWGithubRepositoryModel.m; sourceTree = "<group>"; };
+		FE2B33611CFD3A9500E6CECD /* BWGithubBarebonesUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubBarebonesUserModel.h; sourceTree = "<group>"; };
+		FE2B33621CFD3A9500E6CECD /* BWGithubBarebonesUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWGithubBarebonesUserModel.m; sourceTree = "<group>"; };
+		FE2B33641CFD46E200E6CECD /* BWGithubProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubProvider.h; sourceTree = "<group>"; };
+		FE2B33651CFD46E200E6CECD /* BWGithubProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWGithubProvider.m; sourceTree = "<group>"; };
+		FE2B33671CFD46F100E6CECD /* BWGithubMockProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubMockProvider.h; sourceTree = "<group>"; };
+		FE2B33681CFD46F100E6CECD /* BWGithubMockProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWGithubMockProvider.m; sourceTree = "<group>"; };
+		FE2B336A1CFD470700E6CECD /* BWGithubProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubProviderProtocol.h; sourceTree = "<group>"; };
+		FE2B336F1CFD474200E6CECD /* BWGithubParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubParser.h; sourceTree = "<group>"; };
+		FE2B33701CFD474200E6CECD /* BWGithubParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWGithubParser.m; sourceTree = "<group>"; };
+		FE2B33761CFD483100E6CECD /* BWAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWAppController.h; sourceTree = "<group>"; };
+		FE2B33771CFD483100E6CECD /* BWAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWAppController.m; sourceTree = "<group>"; };
+		FE2B337A1CFD584800E6CECD /* BWUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWUtils.h; sourceTree = "<group>"; };
+		FE2B337B1CFD584800E6CECD /* BWUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWUtils.m; sourceTree = "<group>"; };
+		FE2B337D1CFE7D2500E6CECD /* BWGithubContributorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubContributorModel.h; sourceTree = "<group>"; };
+		FE2B337E1CFE7D2500E6CECD /* BWGithubContributorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWGithubContributorModel.m; sourceTree = "<group>"; };
+		FE6338351CFE8954005DE1B5 /* BWProviderUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWProviderUtils.h; sourceTree = "<group>"; };
+		FE6338361CFE8954005DE1B5 /* BWProviderUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWProviderUtils.m; sourceTree = "<group>"; };
+		FE63383C1CFE981F005DE1B5 /* BWBaseProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWBaseProvider.h; sourceTree = "<group>"; };
+		FE63383D1CFE981F005DE1B5 /* BWBaseProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWBaseProvider.m; sourceTree = "<group>"; };
+		FE63384B1CFEACBB005DE1B5 /* GET_most_starred_repositories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GET_most_starred_repositories.json; sourceTree = "<group>"; };
+		FE63384C1CFEACBB005DE1B5 /* GET_top_contributors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GET_top_contributors.json; sourceTree = "<group>"; };
+		FE63384F1CFEAD83005DE1B5 /* BWGithubParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWGithubParserSpec.m; sourceTree = "<group>"; };
+		FE6338561CFEB064005DE1B5 /* BWGithubRepositoryModel_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubRepositoryModel_Internal.h; sourceTree = "<group>"; };
+		FE6338571CFEB082005DE1B5 /* BWGithubBarebonesUserModel_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubBarebonesUserModel_Internal.h; sourceTree = "<group>"; };
+		FE6338581CFEB096005DE1B5 /* BWGithubContributorModel_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubContributorModel_Internal.h; sourceTree = "<group>"; };
+		FE63385B1CFECA06005DE1B5 /* BWGithubProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWGithubProviderSpec.m; sourceTree = "<group>"; };
+		FE63385E1CFEEB9C005DE1B5 /* BWGithubServiceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWGithubServiceSpec.m; sourceTree = "<group>"; };
+		FE6338631CFF58B2005DE1B5 /* Credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.plist; sourceTree = "<group>"; };
+		FE6338701CFFAA29005DE1B5 /* BWGithubAuthCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubAuthCredentials.h; sourceTree = "<group>"; };
+		FE6338711CFFAA29005DE1B5 /* BWGithubAuthCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWGithubAuthCredentials.m; sourceTree = "<group>"; };
+		FE6338741CFFAA29005DE1B5 /* BWServiceLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWServiceLocator.h; sourceTree = "<group>"; };
+		FE6338751CFFAA29005DE1B5 /* BWServiceLocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWServiceLocator.m; sourceTree = "<group>"; };
+		FE6338781CFFAA35005DE1B5 /* BWGithubSearchQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWGithubSearchQuery.h; sourceTree = "<group>"; };
+		FE6338791CFFAA35005DE1B5 /* BWGithubSearchQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWGithubSearchQuery.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE2B33071CFD126A00E6CECD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3522D2129881B2898030BB4 /* libPods-BestRepos.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE2B33201CFD126A00E6CECD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47FAC009D10EF49768FEE76C /* libPods-BestReposTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE2B332B1CFD126A00E6CECD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19770CD801922BE032CA0D24 /* libPods-BestReposUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		47E3D3F1E3CFB8FC143A5DBD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D7BF05DB4E2E4B3B7EB38FAF /* Pods-BestRepos.debug.xcconfig */,
+				76586C412F1EA879538019A7 /* Pods-BestRepos.release.xcconfig */,
+				4A0CBFDA849CCF5B096C5239 /* Pods-BestReposTests.debug.xcconfig */,
+				78379834CD0C6121452F936B /* Pods-BestReposTests.release.xcconfig */,
+				52DCB0E5E17EBD99157C4E68 /* Pods-BestReposUITests.debug.xcconfig */,
+				766F1AFA6227806B53CC9591 /* Pods-BestReposUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8BCF34E02574ACD93C97EAD6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D23B0D1F849958323CF5749 /* libPods-BestRepos.a */,
+				15372E6B2B53E43F1B1E879F /* libPods-BestReposTests.a */,
+				435B5633636409C5D3705721 /* libPods-BestReposUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE08473B1D038CE0006669AB /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FE08473C1D038CE0006669AB /* Overlay */,
+				FE08473F1D038CE0006669AB /* View Controllers */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		FE08473C1D038CE0006669AB /* Overlay */ = {
+			isa = PBXGroup;
+			children = (
+				FE08473D1D038CE0006669AB /* BWOverlayView.h */,
+				FE08473E1D038CE0006669AB /* BWOverlayView.m */,
+				FE08476A1D03AF43006669AB /* BWLoadingOverlayView.h */,
+				FE08476B1D03AF43006669AB /* BWLoadingOverlayView.m */,
+			);
+			path = Overlay;
+			sourceTree = "<group>";
+		};
+		FE08473F1D038CE0006669AB /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE0847401D038CE0006669AB /* Details */,
+				FE08474A1D038CE0006669AB /* Profile */,
+				FE08474E1D038CE0006669AB /* Stream */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FE0847401D038CE0006669AB /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				FE0847411D038CE0006669AB /* BWRepositoryDetailTableViewCell.h */,
+				FE0847421D038CE0006669AB /* BWRepositoryDetailTableViewCell.m */,
+				FE0847431D038CE0006669AB /* BWRepositoryDetailTableViewCell.xib */,
+				FE0847441D038CE0006669AB /* BWRepositoryDetailViewController.h */,
+				FE0847451D038CE0006669AB /* BWRepositoryDetailViewController.m */,
+				FE0847461D038CE0006669AB /* BWRepositoryDetailViewController.xib */,
+				FE0847471D038CE0006669AB /* BWRepositoryHeaderView.h */,
+				FE0847481D038CE0006669AB /* BWRepositoryHeaderView.m */,
+				FE0847491D038CE0006669AB /* BWRepositoryHeaderView.xib */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		FE08474A1D038CE0006669AB /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FE08474B1D038CE0006669AB /* BWProfileViewController.h */,
+				FE08474C1D038CE0006669AB /* BWProfileViewController.m */,
+				FE08474D1D038CE0006669AB /* BWProfileViewController.xib */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		FE08474E1D038CE0006669AB /* Stream */ = {
+			isa = PBXGroup;
+			children = (
+				FE08474F1D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.h */,
+				FE0847501D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.m */,
+				FE0847511D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.xib */,
+				FE0847521D038CE0006669AB /* BWRepositoryStreamViewController.h */,
+				FE0847531D038CE0006669AB /* BWRepositoryStreamViewController.m */,
+				FE0847541D038CE0006669AB /* BWRepositoryStreamViewController.xib */,
+				FE0847551D038CE0006669AB /* BWSearchFilterView.h */,
+				FE0847561D038CE0006669AB /* BWSearchFilterView.m */,
+				FE0847651D038D3B006669AB /* BWSearchFilterView.xib */,
+			);
+			path = Stream;
+			sourceTree = "<group>";
+		};
+		FE2B33011CFD126A00E6CECD = {
+			isa = PBXGroup;
+			children = (
+				FE2B330C1CFD126A00E6CECD /* BestRepos */,
+				FE2B33261CFD126A00E6CECD /* BestReposTests */,
+				FE2B33311CFD126A00E6CECD /* BestReposUITests */,
+				FE2B330B1CFD126A00E6CECD /* Products */,
+				47E3D3F1E3CFB8FC143A5DBD /* Pods */,
+				8BCF34E02574ACD93C97EAD6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FE2B330B1CFD126A00E6CECD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B330A1CFD126A00E6CECD /* BestRepos.app */,
+				FE2B33231CFD126A00E6CECD /* BestReposTests.xctest */,
+				FE2B332E1CFD126A00E6CECD /* BestReposUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE2B330C1CFD126A00E6CECD /* BestRepos */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B33411CFD325A00E6CECD /* App Controller */,
+				FE2B33451CFD325A00E6CECD /* Base.lproj */,
+				FE2B334B1CFD325A00E6CECD /* Model */,
+				FE2B336E1CFD474200E6CECD /* Parser */,
+				FE2B334C1CFD325A00E6CECD /* Provider */,
+				FE2B334D1CFD325A00E6CECD /* Service */,
+				FE2B334E1CFD325A00E6CECD /* Supporting Files */,
+				FE2B33721CFD47B500E6CECD /* Tech */,
+				FE08473B1D038CE0006669AB /* UI */,
+				FE2B33791CFD57C700E6CECD /* Utils */,
+				FE2B33191CFD126A00E6CECD /* Assets.xcassets */,
+				FE2B331B1CFD126A00E6CECD /* LaunchScreen.storyboard */,
+			);
+			path = BestRepos;
+			sourceTree = "<group>";
+		};
+		FE2B33261CFD126A00E6CECD /* BestReposTests */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B33291CFD126A00E6CECD /* Info.plist */,
+				FE63384F1CFEAD83005DE1B5 /* BWGithubParserSpec.m */,
+				FE63385B1CFECA06005DE1B5 /* BWGithubProviderSpec.m */,
+				FE63385E1CFEEB9C005DE1B5 /* BWGithubServiceSpec.m */,
+			);
+			path = BestReposTests;
+			sourceTree = "<group>";
+		};
+		FE2B33311CFD126A00E6CECD /* BestReposUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B33321CFD126A00E6CECD /* BestReposUITests.m */,
+				FE2B33341CFD126A00E6CECD /* Info.plist */,
+			);
+			path = BestReposUITests;
+			sourceTree = "<group>";
+		};
+		FE2B33411CFD325A00E6CECD /* App Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B33421CFD325A00E6CECD /* BWAppDelegate.h */,
+				FE2B33431CFD325A00E6CECD /* BWAppDelegate.m */,
+				FE2B33761CFD483100E6CECD /* BWAppController.h */,
+				FE2B33771CFD483100E6CECD /* BWAppController.m */,
+			);
+			path = "App Controller";
+			sourceTree = "<group>";
+		};
+		FE2B33451CFD325A00E6CECD /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B33461CFD325A00E6CECD /* LaunchScreen.storyboard */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		FE2B334B1CFD325A00E6CECD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B335E1CFD379400E6CECD /* BWGithubRepositoryModel.h */,
+				FE2B335F1CFD379400E6CECD /* BWGithubRepositoryModel.m */,
+				FE2B33611CFD3A9500E6CECD /* BWGithubBarebonesUserModel.h */,
+				FE2B33621CFD3A9500E6CECD /* BWGithubBarebonesUserModel.m */,
+				FE2B337D1CFE7D2500E6CECD /* BWGithubContributorModel.h */,
+				FE2B337E1CFE7D2500E6CECD /* BWGithubContributorModel.m */,
+				FE6338561CFEB064005DE1B5 /* BWGithubRepositoryModel_Internal.h */,
+				FE6338571CFEB082005DE1B5 /* BWGithubBarebonesUserModel_Internal.h */,
+				FE6338581CFEB096005DE1B5 /* BWGithubContributorModel_Internal.h */,
+				FE08472D1D02B328006669AB /* BWGithubUserModel.h */,
+				FE08472E1D02B328006669AB /* BWGithubUserModel.m */,
+				FE0847301D02B3C7006669AB /* BWGithubUserModel_Internal.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FE2B334C1CFD325A00E6CECD /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				FE63383B1CFE981F005DE1B5 /* Base Provider */,
+				FE2B33641CFD46E200E6CECD /* BWGithubProvider.h */,
+				FE2B33651CFD46E200E6CECD /* BWGithubProvider.m */,
+				FE2B33671CFD46F100E6CECD /* BWGithubMockProvider.h */,
+				FE2B33681CFD46F100E6CECD /* BWGithubMockProvider.m */,
+				FE2B336A1CFD470700E6CECD /* BWGithubProviderProtocol.h */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		FE2B334D1CFD325A00E6CECD /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B335B1CFD344900E6CECD /* BWGithubService.h */,
+				FE2B335C1CFD344900E6CECD /* BWGithubService.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FE2B334E1CFD325A00E6CECD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE63384A1CFEACBB005DE1B5 /* Mock Data */,
+				FE2B334F1CFD325A00E6CECD /* Info.plist */,
+				FE2B33501CFD325A00E6CECD /* main.m */,
+				FE6338631CFF58B2005DE1B5 /* Credentials.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FE2B336E1CFD474200E6CECD /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B336F1CFD474200E6CECD /* BWGithubParser.h */,
+				FE2B33701CFD474200E6CECD /* BWGithubParser.m */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		FE2B33721CFD47B500E6CECD /* Tech */ = {
+			isa = PBXGroup;
+			children = (
+				FE63386F1CFFAA29005DE1B5 /* Authentication */,
+				FE6338721CFFAA29005DE1B5 /* Search */,
+				FE6338731CFFAA29005DE1B5 /* Service Locator */,
+			);
+			path = Tech;
+			sourceTree = "<group>";
+		};
+		FE2B33791CFD57C700E6CECD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B337A1CFD584800E6CECD /* BWUtils.h */,
+				FE2B337B1CFD584800E6CECD /* BWUtils.m */,
+				FE6338351CFE8954005DE1B5 /* BWProviderUtils.h */,
+				FE6338361CFE8954005DE1B5 /* BWProviderUtils.m */,
+				FE0847251D02AE3E006669AB /* NSDictionary+BWTypeValidation.h */,
+				FE0847261D02AE3E006669AB /* NSDictionary+BWTypeValidation.m */,
+				FE08476D1D03B7FC006669AB /* BWUIUtils.h */,
+				FE08476E1D03B7FC006669AB /* BWUIUtils.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FE63383B1CFE981F005DE1B5 /* Base Provider */ = {
+			isa = PBXGroup;
+			children = (
+				FE63383C1CFE981F005DE1B5 /* BWBaseProvider.h */,
+				FE63383D1CFE981F005DE1B5 /* BWBaseProvider.m */,
+			);
+			path = "Base Provider";
+			sourceTree = "<group>";
+		};
+		FE63384A1CFEACBB005DE1B5 /* Mock Data */ = {
+			isa = PBXGroup;
+			children = (
+				FE0847311D02B567006669AB /* GET_user_profile.json */,
+				FE63384B1CFEACBB005DE1B5 /* GET_most_starred_repositories.json */,
+				FE63384C1CFEACBB005DE1B5 /* GET_top_contributors.json */,
+			);
+			path = "Mock Data";
+			sourceTree = "<group>";
+		};
+		FE63386F1CFFAA29005DE1B5 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				FE6338701CFFAA29005DE1B5 /* BWGithubAuthCredentials.h */,
+				FE6338711CFFAA29005DE1B5 /* BWGithubAuthCredentials.m */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		FE6338721CFFAA29005DE1B5 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				FE6338781CFFAA35005DE1B5 /* BWGithubSearchQuery.h */,
+				FE6338791CFFAA35005DE1B5 /* BWGithubSearchQuery.m */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		FE6338731CFFAA29005DE1B5 /* Service Locator */ = {
+			isa = PBXGroup;
+			children = (
+				FE6338741CFFAA29005DE1B5 /* BWServiceLocator.h */,
+				FE6338751CFFAA29005DE1B5 /* BWServiceLocator.m */,
+			);
+			path = "Service Locator";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE2B33091CFD126A00E6CECD /* BestRepos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE2B33371CFD126A00E6CECD /* Build configuration list for PBXNativeTarget "BestRepos" */;
+			buildPhases = (
+				84D276E474B5DDDB085D85CC /* 📦 Check Pods Manifest.lock */,
+				FE2B33061CFD126A00E6CECD /* Sources */,
+				FE2B33071CFD126A00E6CECD /* Frameworks */,
+				FE2B33081CFD126A00E6CECD /* Resources */,
+				E25E59113D3BF4DDEC11552E /* 📦 Embed Pods Frameworks */,
+				D245BBE730A07C627D96CDF7 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BestRepos;
+			productName = BestRepos;
+			productReference = FE2B330A1CFD126A00E6CECD /* BestRepos.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FE2B33221CFD126A00E6CECD /* BestReposTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE2B333A1CFD126A00E6CECD /* Build configuration list for PBXNativeTarget "BestReposTests" */;
+			buildPhases = (
+				5B02B33812AC9AE6DBE80483 /* 📦 Check Pods Manifest.lock */,
+				FE2B331F1CFD126A00E6CECD /* Sources */,
+				FE2B33201CFD126A00E6CECD /* Frameworks */,
+				FE2B33211CFD126A00E6CECD /* Resources */,
+				96965D04E2AE091043E06544 /* 📦 Embed Pods Frameworks */,
+				13882C056B16701F81D04142 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE2B33251CFD126A00E6CECD /* PBXTargetDependency */,
+			);
+			name = BestReposTests;
+			productName = BestReposTests;
+			productReference = FE2B33231CFD126A00E6CECD /* BestReposTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FE2B332D1CFD126A00E6CECD /* BestReposUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE2B333D1CFD126A00E6CECD /* Build configuration list for PBXNativeTarget "BestReposUITests" */;
+			buildPhases = (
+				CE265929A70158B7FC362FDF /* 📦 Check Pods Manifest.lock */,
+				FE2B332A1CFD126A00E6CECD /* Sources */,
+				FE2B332B1CFD126A00E6CECD /* Frameworks */,
+				FE2B332C1CFD126A00E6CECD /* Resources */,
+				3230327DD2F6DC94D37687C2 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE2B33301CFD126A00E6CECD /* PBXTargetDependency */,
+			);
+			name = BestReposUITests;
+			productName = BestReposUITests;
+			productReference = FE2B332E1CFD126A00E6CECD /* BestReposUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE2B33021CFD126A00E6CECD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Kamran Pirwani";
+				TargetAttributes = {
+					FE2B33091CFD126A00E6CECD = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					FE2B33221CFD126A00E6CECD = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = FE2B33091CFD126A00E6CECD;
+					};
+					FE2B332D1CFD126A00E6CECD = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = FE2B33091CFD126A00E6CECD;
+					};
+				};
+			};
+			buildConfigurationList = FE2B33051CFD126A00E6CECD /* Build configuration list for PBXProject "BestRepos" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FE2B33011CFD126A00E6CECD;
+			productRefGroup = FE2B330B1CFD126A00E6CECD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE2B33091CFD126A00E6CECD /* BestRepos */,
+				FE2B33221CFD126A00E6CECD /* BestReposTests */,
+				FE2B332D1CFD126A00E6CECD /* BestReposUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE2B33081CFD126A00E6CECD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE0847591D038CE0006669AB /* BWRepositoryDetailTableViewCell.xib in Resources */,
+				FE6338641CFF58B2005DE1B5 /* Credentials.plist in Resources */,
+				FE63384E1CFEACBB005DE1B5 /* GET_top_contributors.json in Resources */,
+				FE0847631D038CE0006669AB /* BWRepositoryStreamViewController.xib in Resources */,
+				FE2B331D1CFD126A00E6CECD /* LaunchScreen.storyboard in Resources */,
+				FE2B331A1CFD126A00E6CECD /* Assets.xcassets in Resources */,
+				FE63384D1CFEACBB005DE1B5 /* GET_most_starred_repositories.json in Resources */,
+				FE08475B1D038CE0006669AB /* BWRepositoryDetailViewController.xib in Resources */,
+				FE2B33561CFD325A00E6CECD /* LaunchScreen.storyboard in Resources */,
+				FE0847661D038D3B006669AB /* BWSearchFilterView.xib in Resources */,
+				FE0847611D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.xib in Resources */,
+				FE08475F1D038CE0006669AB /* BWProfileViewController.xib in Resources */,
+				FE08475D1D038CE0006669AB /* BWRepositoryHeaderView.xib in Resources */,
+				FE0847321D02B567006669AB /* GET_user_profile.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE2B33211CFD126A00E6CECD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE2B332C1CFD126A00E6CECD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13882C056B16701F81D04142 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BestReposTests/Pods-BestReposTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3230327DD2F6DC94D37687C2 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BestReposUITests/Pods-BestReposUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B02B33812AC9AE6DBE80483 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		84D276E474B5DDDB085D85CC /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		96965D04E2AE091043E06544 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BestReposTests/Pods-BestReposTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE265929A70158B7FC362FDF /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D245BBE730A07C627D96CDF7 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BestRepos/Pods-BestRepos-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E25E59113D3BF4DDEC11552E /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BestRepos/Pods-BestRepos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE2B33061CFD126A00E6CECD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE0847271D02AE3E006669AB /* NSDictionary+BWTypeValidation.m in Sources */,
+				FE2B33661CFD46E200E6CECD /* BWGithubProvider.m in Sources */,
+				FE2B33691CFD46F100E6CECD /* BWGithubMockProvider.m in Sources */,
+				FE63383E1CFE981F005DE1B5 /* BWBaseProvider.m in Sources */,
+				FE08475C1D038CE0006669AB /* BWRepositoryHeaderView.m in Sources */,
+				FE0847601D038CE0006669AB /* BWRepositoryStreamCollectionViewCell.m in Sources */,
+				FE2B33711CFD474200E6CECD /* BWGithubParser.m in Sources */,
+				FE0847581D038CE0006669AB /* BWRepositoryDetailTableViewCell.m in Sources */,
+				FE08475E1D038CE0006669AB /* BWProfileViewController.m in Sources */,
+				FE0847621D038CE0006669AB /* BWRepositoryStreamViewController.m in Sources */,
+				FE2B33631CFD3A9500E6CECD /* BWGithubBarebonesUserModel.m in Sources */,
+				FE08476F1D03B7FC006669AB /* BWUIUtils.m in Sources */,
+				FE2B335D1CFD344900E6CECD /* BWGithubService.m in Sources */,
+				FE6338761CFFAA29005DE1B5 /* BWGithubAuthCredentials.m in Sources */,
+				FE63387A1CFFAA35005DE1B5 /* BWGithubSearchQuery.m in Sources */,
+				FE2B33601CFD379400E6CECD /* BWGithubRepositoryModel.m in Sources */,
+				FE2B33591CFD325A00E6CECD /* main.m in Sources */,
+				FE2B33781CFD483100E6CECD /* BWAppController.m in Sources */,
+				FE08475A1D038CE0006669AB /* BWRepositoryDetailViewController.m in Sources */,
+				FE6338771CFFAA29005DE1B5 /* BWServiceLocator.m in Sources */,
+				FE08472F1D02B328006669AB /* BWGithubUserModel.m in Sources */,
+				FE2B337C1CFD584800E6CECD /* BWUtils.m in Sources */,
+				FE08476C1D03AF43006669AB /* BWLoadingOverlayView.m in Sources */,
+				FE2B337F1CFE7D2500E6CECD /* BWGithubContributorModel.m in Sources */,
+				FE2B33541CFD325A00E6CECD /* BWAppDelegate.m in Sources */,
+				FE0847571D038CE0006669AB /* BWOverlayView.m in Sources */,
+				FE0847641D038CE0006669AB /* BWSearchFilterView.m in Sources */,
+				FE6338371CFE8954005DE1B5 /* BWProviderUtils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE2B331F1CFD126A00E6CECD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE63387B1CFFB3E9005DE1B5 /* BWGithubSearchQuery.m in Sources */,
+				FE6338511CFEADA0005DE1B5 /* BWGithubParser.m in Sources */,
+				FE63385D1CFECCD9005DE1B5 /* BWProviderUtils.m in Sources */,
+				FE63385A1CFEC76F005DE1B5 /* BWGithubContributorModel.m in Sources */,
+				FE63385F1CFEEB9C005DE1B5 /* BWGithubServiceSpec.m in Sources */,
+				FE63385C1CFECA06005DE1B5 /* BWGithubProviderSpec.m in Sources */,
+				FE6338501CFEAD83005DE1B5 /* BWGithubParserSpec.m in Sources */,
+				FE6338521CFEADB8005DE1B5 /* BWGithubMockProvider.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE2B332A1CFD126A00E6CECD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE2B33331CFD126A00E6CECD /* BestReposUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE2B33251CFD126A00E6CECD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE2B33091CFD126A00E6CECD /* BestRepos */;
+			targetProxy = FE2B33241CFD126A00E6CECD /* PBXContainerItemProxy */;
+		};
+		FE2B33301CFD126A00E6CECD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE2B33091CFD126A00E6CECD /* BestRepos */;
+			targetProxy = FE2B332F1CFD126A00E6CECD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FE2B331B1CFD126A00E6CECD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE2B331C1CFD126A00E6CECD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FE2B33461CFD325A00E6CECD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE2B33471CFD325A00E6CECD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE2B33351CFD126A00E6CECD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FE2B33361CFD126A00E6CECD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE2B33381CFD126A00E6CECD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7BF05DB4E2E4B3B7EB38FAF /* Pods-BestRepos.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "$(SRCROOT)/BestRepos/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BWGithub.BestRepos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FE2B33391CFD126A00E6CECD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76586C412F1EA879538019A7 /* Pods-BestRepos.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "$(SRCROOT)/BestRepos/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BWGithub.BestRepos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FE2B333B1CFD126A00E6CECD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A0CBFDA849CCF5B096C5239 /* Pods-BestReposTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BestReposTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BWGithub.BestReposTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BestRepos.app/BestRepos";
+			};
+			name = Debug;
+		};
+		FE2B333C1CFD126A00E6CECD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78379834CD0C6121452F936B /* Pods-BestReposTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BestReposTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BWGithub.BestReposTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BestRepos.app/BestRepos";
+			};
+			name = Release;
+		};
+		FE2B333E1CFD126A00E6CECD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52DCB0E5E17EBD99157C4E68 /* Pods-BestReposUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = BestReposUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BWGithub.BestReposUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BestRepos;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		FE2B333F1CFD126A00E6CECD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 766F1AFA6227806B53CC9591 /* Pods-BestReposUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = BestReposUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BWGithub.BestReposUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BestRepos;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE2B33051CFD126A00E6CECD /* Build configuration list for PBXProject "BestRepos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE2B33351CFD126A00E6CECD /* Debug */,
+				FE2B33361CFD126A00E6CECD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE2B33371CFD126A00E6CECD /* Build configuration list for PBXNativeTarget "BestRepos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE2B33381CFD126A00E6CECD /* Debug */,
+				FE2B33391CFD126A00E6CECD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE2B333A1CFD126A00E6CECD /* Build configuration list for PBXNativeTarget "BestReposTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE2B333B1CFD126A00E6CECD /* Debug */,
+				FE2B333C1CFD126A00E6CECD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE2B333D1CFD126A00E6CECD /* Build configuration list for PBXNativeTarget "BestReposUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE2B333E1CFD126A00E6CECD /* Debug */,
+				FE2B333F1CFD126A00E6CECD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE2B33021CFD126A00E6CECD /* Project object */;
+}

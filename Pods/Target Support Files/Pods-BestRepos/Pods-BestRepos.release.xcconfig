@@ -1,0 +1,8 @@
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/Haneke" "${PODS_ROOT}/Headers/Public/SCLAlertView-Objective-C" "${PODS_ROOT}/Headers/Public/XHAmazingLoading"
+LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/AFNetworking" "$PODS_CONFIGURATION_BUILD_DIR/Haneke" "$PODS_CONFIGURATION_BUILD_DIR/SCLAlertView-Objective-C" "$PODS_CONFIGURATION_BUILD_DIR/XHAmazingLoading"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AFNetworking" -isystem "${PODS_ROOT}/Headers/Public/Haneke" -isystem "${PODS_ROOT}/Headers/Public/SCLAlertView-Objective-C" -isystem "${PODS_ROOT}/Headers/Public/XHAmazingLoading"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"AFNetworking" -l"Haneke" -l"SCLAlertView-Objective-C" -l"XHAmazingLoading" -framework "Accelerate" -framework "AudioToolbox" -framework "CoreGraphics" -framework "Foundation" -framework "ImageIO" -framework "MobileCoreServices" -framework "Security" -framework "SystemConfiguration" -framework "UIKit"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}/Pods

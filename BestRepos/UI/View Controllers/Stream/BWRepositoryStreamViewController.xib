@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BWRepositoryStreamViewController">
+            <connections>
+                <outlet property="collectionView" destination="cOw-Hd-Anv" id="ncN-6o-geV"/>
+                <outlet property="nullStateLabel" destination="DpA-h3-A19" id="2bV-jZ-6hs"/>
+                <outlet property="nullStateView" destination="Llv-pv-kLU" id="3kE-eK-1z7"/>
+                <outlet property="searchBarContainerView" destination="FpI-gc-aCG" id="3wY-AC-lvO"/>
+                <outlet property="searchFilterView" destination="TgN-RS-isi" id="Zuv-I0-FRY"/>
+                <outlet property="searchFilterViewHeightContraint" destination="Orq-6M-Ttq" id="jRg-W9-J0C"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="r9I-cD-JEA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TgN-RS-isi" userLabel="SearcFilter View" customClass="BWSearchFilterView">
+                    <rect key="frame" x="0.0" y="108" width="600" height="0.0"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="Orq-6M-Ttq" userLabel="Search Filter View Height Contraint"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cOw-Hd-Anv">
+                    <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                    <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RHd-gp-ZAr">
+                        <size key="itemSize" width="250" height="350"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="o23-Rx-tCe"/>
+                        <outlet property="delegate" destination="-1" id="Psf-0W-yKr"/>
+                    </connections>
+                </collectionView>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Llv-pv-kLU" userLabel="Null State View">
+                    <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DpA-h3-A19" userLabel="Null State Label">
+                            <rect key="frame" x="10" y="246" width="580" height="0.0"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="DpA-h3-A19" firstAttribute="leading" secondItem="Llv-pv-kLU" secondAttribute="leading" constant="10" id="7Iq-N4-AR9"/>
+                        <constraint firstAttribute="trailing" secondItem="DpA-h3-A19" secondAttribute="trailing" constant="10" id="7Q9-vM-TFS"/>
+                        <constraint firstItem="DpA-h3-A19" firstAttribute="centerY" secondItem="Llv-pv-kLU" secondAttribute="centerY" id="b1W-jw-kRB"/>
+                        <constraint firstItem="DpA-h3-A19" firstAttribute="centerX" secondItem="Llv-pv-kLU" secondAttribute="centerX" id="zua-Bf-dBg"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FpI-gc-aCG" userLabel="Search Bar Container View">
+                    <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="jf5-U0-Oah"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="FpI-gc-aCG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="6kj-I0-Skf"/>
+                <constraint firstItem="Llv-pv-kLU" firstAttribute="bottom" secondItem="cOw-Hd-Anv" secondAttribute="bottom" id="7tC-kx-CU7"/>
+                <constraint firstItem="Llv-pv-kLU" firstAttribute="top" secondItem="cOw-Hd-Anv" secondAttribute="top" id="MbX-xh-mB1"/>
+                <constraint firstAttribute="trailing" secondItem="cOw-Hd-Anv" secondAttribute="trailing" id="N57-hF-6JR"/>
+                <constraint firstItem="Llv-pv-kLU" firstAttribute="trailing" secondItem="cOw-Hd-Anv" secondAttribute="trailing" id="TUI-fq-CVd"/>
+                <constraint firstItem="FpI-gc-aCG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WYh-ub-Qld"/>
+                <constraint firstItem="Llv-pv-kLU" firstAttribute="leading" secondItem="cOw-Hd-Anv" secondAttribute="leading" id="Xl1-NY-lYT"/>
+                <constraint firstAttribute="trailing" secondItem="FpI-gc-aCG" secondAttribute="trailing" id="Zs1-fS-ir2"/>
+                <constraint firstItem="TgN-RS-isi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hH0-PZ-LBd"/>
+                <constraint firstItem="cOw-Hd-Anv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hcn-NA-Qk4"/>
+                <constraint firstAttribute="bottom" secondItem="cOw-Hd-Anv" secondAttribute="bottom" id="hkW-c0-6di"/>
+                <constraint firstItem="TgN-RS-isi" firstAttribute="top" secondItem="FpI-gc-aCG" secondAttribute="bottom" id="oo3-4a-51V"/>
+                <constraint firstItem="cOw-Hd-Anv" firstAttribute="top" secondItem="TgN-RS-isi" secondAttribute="bottom" id="qgo-xp-X3U"/>
+                <constraint firstAttribute="trailing" secondItem="TgN-RS-isi" secondAttribute="trailing" id="zBT-t6-4iC"/>
+            </constraints>
+            <point key="canvasLocation" x="-15" y="171"/>
+        </view>
+    </objects>
+</document>
