@@ -9,12 +9,12 @@ Time spent: 30 hours spent in total
 - [x] User can browse the top 100 starred repos on GitHub
 - [x] User can view the top contributors for each repository
 
-### Optional User Facing Stories:
+### Additional User Facing Stories:
 - [x] The user can filter searches based on stars, forks, last time updated and best match
 - [x] The user can order the results in ascending/descending order
 - [x] The user can visit a top contributors profile and receieve relevant information
 
-### Optional Tech Stories:
+### Additional Tech Stories:
 - [x] Architected the app in such a way that adding any functionality, whether it be for the GitHub API or another external 
       API is extremely streamlined and easily testable
 - [x] Added unit testing for all of the backend work(parser, mock provider, real provider, service)
@@ -32,7 +32,7 @@ Time spent: 30 hours spent in total
 - [x] The project has no warning and passes the static analyzer entirely
 - [x] Add a way to use mock data from save json files so I wouldn't hit the rate limiter
 
-### Optional Design Stories:
+### Additional Design Stories:
 - [x] Used the following material design palettes across the app: http://www.materialpalette.com/teal/red
 
 ## Production Ready
