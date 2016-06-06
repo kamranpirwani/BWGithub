@@ -63,18 +63,28 @@ Before getting ready for production, I would focus on the following areas more:
 ![Alt text](/Demo/app_browse_100.gif)
 
 ### Search for a repository
+Search for a few repositories and filter by the relevant criteria.
+
 ![Alt text](/Demo/app_search.gif)
 
 ### App running on Mock Data
+The app is running on mock data, which is providing a single repository and top contributor. This is beneficial to test the
+code flows of the app, and allowing us to unit test against expected values.
+
 ![Alt text](/Demo/app_mock_data.gif)
 
 ### Invalid GitHub Credentials
+The app reacts and displays a message to the user when we have an authentication error with GitHub.
 ![Alt text](/Demo/app_handle_invalid_credentials.gif)
 
 ### Invalid Network Connection on Launch
+The app notifies the user when they do not have a valid network connection, and works whenever their network connection is restored.
+
 ![Alt text](/Demo/app_no_internet_connection_launch.gif)
 
 ### Invalid Network Connection Mid Session
+The app notifies the user when they lose connection in the middle of a session (when trying to perform a network call) and works correctly whenever their network connection is restored.
+
 ![Alt text](/Demo/app_no_internet_connection_middle.gif)
 
 ## Open-source libraries used
