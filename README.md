@@ -81,9 +81,10 @@ Before getting ready for production, I would focus on the following areas more:
   * When displaying a loading spinner to the user, we leverage XHAmazingLoading to perform this for us. The primarily purpose of using
     this library was because I liked the animation it provided. Upon deep diving into the library, there were a couple of issues I would have like to fixed - given more time.
 - [Haneke](https://github.com/Haneke/Haneke) A lightweight zero-config image cache for iOS
-- * This was primarily used to fetch and cache images asyncronously. I would haved liked to use FastImageCache by path,
+  * This was primarily used to fetch and cache images asyncronously. I would haved liked to use FastImageCache by path,
     but did not have the time to write my own networking logic to retrieve the images. Instead, I relied on the configuration-less 
     cache provided by Haneke. If this app was going into production, I would add additional code to modify the Haneke cache to resize images instead of storing them at the full size.
 - [SCLAlertView-Objective-C](https://github.com/dogo/SCLAlertView) Beautiful animated Alert View
-  * This was primarily used to surface beautiful alerts to the user. It was extremely simple to intergate, widely adopted, and allowed   me to surface errors to the user such as invalid auth or network failure to the user in an elegant manner.
+    This was primarily used to surface beautiful alerts to the user. It was extremely simple to intergate, widely adopted, 
+    and allowed me to surface errors to the user such as invalid auth or network failure to the user in an elegant manner.
 
