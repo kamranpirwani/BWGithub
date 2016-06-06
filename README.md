@@ -1,7 +1,13 @@
 # BWGithub
 A simple app which allows the user to search for repositories on Github and identify top contributors for a given repo, as well as view their profile.
 
-Time spent: 30 hours spent in total
+Time spent: 34 hours spent in total
+
+## Instructions
+In order to utilize the app, one needs to generate their own GitHub access token by following the instructions outlined below:
+https://github.com/blog/1509-personal-api-tokens
+
+Once the access token has been generated, navigate to the ```Credentials.plist``` file and replace your username and password with the relevant information. Until this step is done, you will not be able to query against the GitHub API, and the unit tests will also fail.
 
 ## User Stories
 
@@ -69,7 +75,15 @@ Before getting ready for production, I would focus on the following areas more:
 ## Open-source libraries used
 
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - A delightful networking framework for iOS
+  * The underlying network stack is written on top of AFNetworking. We have a BWBaseProvider which handles fetching data from
+    a given endpoint. We utilize AFNetworking because of it's easy of integration, less code written overall, wide adoption, and less time taken to get everything setup.
 - [XHAmazingLoading](https://github.com/xhzengAIB/XHAmazingLoading) A library used for displaying various loading indicators
+  * When displaying a loading spinner to the user, we leverage XHAmazingLoading to perform this for us. The primarily purpose of using
+    this library was because I liked the animation it provided. Upon deep diving into the library, there were a couple of issues I would have like to fixed - given more time.
 - [Haneke](https://github.com/Haneke/Haneke) A lightweight zero-config image cache for iOS
+- * This was primarily used to fetch and cache images asyncronously. I would haved liked to use FastImageCache by path,
+    but did not have the time to write my own networking logic to retrieve the images. Instead, I relied on the configuration-less 
+    cache provided by Haneke. If this app was going into production, I would add additional code to modify the Haneke cache to resize images instead of storing them at the full size.
 - [SCLAlertView-Objective-C](https://github.com/dogo/SCLAlertView) Beautiful animated Alert View
+  * This was primarily used to surface beautiful alerts to the user. It was extremely simple to intergate, widely adopted, and allowed   me to surface errors to the user such as invalid auth or network failure to the user in an elegant manner.
 
