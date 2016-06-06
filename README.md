@@ -53,6 +53,9 @@ Before getting ready for production, I would focus on the following areas more:
 * Ensure we supported rotation
 * If bandwidth was a concern, we would not fetch ALL top contributors for each repository call, and lazily load the data instead
 
+## High Level Architecture
+![alt text](/Documentation/high_level_diagram.png)
+
 ## Video Walkthrough 
 
 ### Browse 100 Repositories
