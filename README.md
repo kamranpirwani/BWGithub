@@ -18,25 +18,26 @@ Once the access token has been generated, navigate to the ```Credentials.plist``
 ### Additional User Facing Stories:
 - [x] The user can filter searches based on stars, forks, last time updated and best match
 - [x] The user can order the results in ascending/descending order
-- [x] The user can visit a top contributors profile and receieve relevant information
+- [x] The user can visit a top contributor's profile and receive relevant information
 
 ### Additional Tech Stories:
 - [x] Architected the app in such a way that adding any functionality, whether it be for the GitHub API or another external 
       API is extremely streamlined and easily testable
-- [x] Added unit testing for all of the backend work(parser, mock provider, real provider, service)
+- [x] Added unit testing for all of the backend work (parser, mock provider, real provider, service)
 - [x] Seperated out the network request logic, data parsing logic, and added a layer of abstraction over the provider in
-      order to provide the consume with the best experience
+      order to provide the consumer with the best experience
 - [x] Created a base class to handle all network requests
-- [x] Use class extensions to only give required classes(such as parser and unit testing) access to the underlying mutable 
+- [x] Use class extensions to only give required classes (such as parser and unit testing) access to the underlying mutable 
       accessors of the models - thus improving encapsulation and making the models immutable
-- [x] Using the Google Objective-C Style guide
-- [x] Explicitly hit the v3 API(future proofing the app)
-- [x] Set up the infrastructure to easily switch between real network providers and mock providers with the flip of a switch(literally)       without introducing any hacky code
-- [x] Carefully validated and parsed all responses, forming the 
-- [x] Robust error handling, check if internet is available, handle error cases, network and auth failures
-- [x] When a network request is sent, user sees an indeterminate progress indicator 
+- [x] Used the Google Objective-C Style guide: https://google.github.io/styleguide/objcguide.xml
+- [x] Explicitly hit the v3 API (future proofing the app)
+- [x] Set up the infrastructure to easily switch between real network providers and mock providers with the flip of a switch    
+      (literally) without introducing any spaghetti code
+- [x] Carefully validated and parsed all responses
+- [x] Robust error handling around network and auth
+- [x] Added an indeterminate progress indicator for when a network request is sent 
 - [x] The project has no warning and passes the static analyzer entirely
-- [x] Add a way to use mock data from save json files so I wouldn't hit the rate limiter
+- [x] Added a way to use mock data from save json files so I wouldn't hit the rate limiter
 
 ### Additional Design Stories:
 - [x] Used the following material design palettes across the app: http://www.materialpalette.com/teal/red
@@ -46,9 +47,9 @@ Before getting ready for production, I would focus on the following areas more:
  * GitHub oAuth Access for the app itself
  * Assets would have proper 1x,2x,3x..resolutions, or better yet vector pdf assets
  * Fork the third party library used for showing the loading indicator, and add a loading label underneath it. Additionally
-   add the relevant code to support the layer being positioned across multiple bounds(currently it always assumed the device dimensions)
+   add the relevant code to support the layer being positioned across multiple bounds (currently it always assumed the device dimensions)
 
-* Ensure we resize the images when downloading from the network, before we cache them. Currently the cache was used as is,
+* Ensure we resize the images when downloading from the network, before we cache them. Currently, the cache was used as is,
   but we could modify it to squeeze out some more performance gains
 * Ensure we supported rotation
 * If bandwidth was a concern, we would not fetch ALL top contributors for each repository call, and lazily load the data instead
