@@ -1,4 +1,4 @@
-# BWGithub
+# Best Repos
 A simple app which allows the user to search for repositories on Github and identify top contributors for a given repo, as well as view their profile.
 
 Time spent: 34 hours spent in total
