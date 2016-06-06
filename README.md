@@ -47,6 +47,7 @@ Before getting ready for production, I would focus on the following areas more:
  * Assets would have proper 1x,2x,3x..resolutions, or better yet vector pdf assets
  * Fork the third party library used for showing the loading indicator, and add a loading label underneath it. Additionally
    add the relevant code to support the layer being positioned across multiple bounds(currently it always assumed the device dimensions)
+
 * Ensure we resize the images when downloading from the network, before we cache them. Currently the cache was used as is,
   but we could modify it to squeeze out some more performance gains
 * Ensure we supported rotation
@@ -77,14 +78,17 @@ Before getting ready for production, I would focus on the following areas more:
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - A delightful networking framework for iOS
   * The underlying network stack is written on top of AFNetworking. We have a BWBaseProvider which handles fetching data from
     a given endpoint. We utilize AFNetworking because of it's easy of integration, less code written overall, wide adoption, and less time taken to get everything setup.
+
 - [XHAmazingLoading](https://github.com/xhzengAIB/XHAmazingLoading) A library used for displaying various loading indicators
   * When displaying a loading spinner to the user, we leverage XHAmazingLoading to perform this for us. The primarily purpose of using
     this library was because I liked the animation it provided. Upon deep diving into the library, there were a couple of issues I would have like to fixed - given more time.
+
 - [Haneke](https://github.com/Haneke/Haneke) A lightweight zero-config image cache for iOS
   * This was primarily used to fetch and cache images asyncronously. I would haved liked to use FastImageCache by path,
     but did not have the time to write my own networking logic to retrieve the images. Instead, I relied on the configuration-less 
     cache provided by Haneke. If this app was going into production, I would add additional code to modify the Haneke cache to resize images instead of storing them at the full size.
+
 - [SCLAlertView-Objective-C](https://github.com/dogo/SCLAlertView) Beautiful animated Alert View
-    This was primarily used to surface beautiful alerts to the user. It was extremely simple to intergate, widely adopted, 
+    * This was primarily used to surface beautiful alerts to the user. It was extremely simple to intergate, widely adopted, 
     and allowed me to surface errors to the user such as invalid auth or network failure to the user in an elegant manner.
 
