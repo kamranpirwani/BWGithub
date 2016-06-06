@@ -60,8 +60,11 @@ Before getting ready for production, I would focus on the following areas more:
 ### Invalid GitHub Credentials
 ![Alt text](/Demo/app_handle_invalid_credentials.gif)
 
-### Invalid Network Connection
+### Invalid Network Connection on Launch
 ![Alt text](/Demo/app_no_internet_connection_launch.gif)
+
+### Invalid Network Connection Mid Session
+![Alt text](/Demo/app_no_internet_connection_middle.gif)
 
 ## Open-source libraries used
 
